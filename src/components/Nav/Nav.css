@@ -1,0 +1,49 @@
+.nav-title {
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-block;
+    color: black;
+    padding-left: 10px;
+    position: relative;
+}
+
+.nav-title:hover {
+  background-color: black;
+  color: grey;
+}
+
+.WWLogo {
+  height: 75px;
+  width: 75px;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 4px solid black;
+  height: 10vh;
+}
+
+.nav-link {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 24px 10px;
+  text-decoration: none;
+  font-size: 15px;
+
+  /* these last two make the logout button in
+  the nav bar look like another link */
+  border:none;
+  cursor: pointer;
+  outline:0;
+}
+
+.nav-link:hover {
+  background-color: black;
+  color: grey;
+}
+
+.nav-right {
+  float: right;
+}

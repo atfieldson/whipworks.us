@@ -1,0 +1,28 @@
+.designHeader {
+text-align: center;
+}
+
+.designContainer {
+    border: 5px solid black;
+    text-align: center;
+}
+
+.handleAndRendering {
+    display: flex;
+}
+
+.handleContainer {
+    flex: 1;
+    border-top: 0;
+    border-right: 0;
+}
+
+.rendering {
+    flex: 1;
+    border-top: 0;
+
+}
+
+.hidden {
+    visibility: hidden;
+}
