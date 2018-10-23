@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import CanvasRenderer from './CanvasRenderer';
 import ColorChooser from './ColorChooser';
 import HandleChooser from './HandleChooser';
+import THREEJSRenderer from './THREEJSRenderer';
 
 import './DesignABullwhip.css';
 
@@ -21,8 +22,7 @@ class DesignABullwhip extends Component {
           <HandleChooser />
           </div>
           <div className="rendering designContainer">
-            <CanvasRenderer />
-            {/* <THREEJSRenderer /> */}
+            <THREEJSRenderer />
           </div>
         </div>
       </div>

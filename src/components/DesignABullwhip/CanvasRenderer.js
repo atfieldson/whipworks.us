@@ -768,19 +768,6 @@ class CanvasRenderer extends Component {
         }
     }
 
-    // updateState = () => {
-    //     this.setState({
-    //         color1: this.props.state.bullwhip.designABullwhipReducer.color1,
-    //         color2: this.props.state.bullwhip.designABullwhipReducer.color2,
-    //         pattern: this.props.state.bullwhip.designABullwhipReducer.pattern, 
-    //     })
-    // }
-
-componentDidMount() {
-    // this.updateState()
-}
-
-
 render() {
     return (
         <div>
