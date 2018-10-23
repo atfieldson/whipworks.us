@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CanvasRenderer from './CanvasRenderer';
 import ColorChooser from './ColorChooser';
+import HandleChooser from './HandleChooser';
 
 import './DesignABullwhip.css';
 
@@ -17,7 +18,7 @@ class DesignABullwhip extends Component {
         </div>
         <div className="handleAndRendering">
           <div className="handleContainer designContainer">
-            <h2>Choose Your Handle</h2>
+          <HandleChooser />
           </div>
           <div className="rendering designContainer">
             <CanvasRenderer />

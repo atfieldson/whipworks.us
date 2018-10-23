@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const designABullwhipReducer = (state = {color1: '', color2: '', pattern: 'boxPattern'}, action) => {
+const designABullwhipReducer = (state = {color1: '', color2: '', pattern: ''}, action) => {
     switch (action.type) {
       case 'SET_COLOR1':
         return {
@@ -31,8 +31,19 @@ const designABullwhipReducer = (state = {color1: '', color2: '', pattern: 'boxPa
             return state 
           } 
     }
+
+  const handlesReducer = (state = [], action) => {
+    console.log('in SET_HANDLES')
+    switch (action.type) {
+        case 'SET_HANDLES':
+          return action.payload;
+        default: 
+          return state 
+        } 
+  }
   
   export default combineReducers({
     designABullwhipReducer,
     colorsReducer,
+    handlesReducer,
   })

@@ -749,19 +749,19 @@ class CanvasRenderer extends Component {
         
         let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern;
     
-        if (pattern === 'boxPattern'){
+        if (pattern === 'box'){
             this.boxPattern();
-        } else if  (pattern === 'accentPattern') {
+        } else if  (pattern === 'accent') {
             this.accentPattern();
-        } else if  (pattern === 'celticPattern') {
+        } else if  (pattern === 'celtic') {
             this.celticPattern();
-        } else if  (pattern === 'egyptianEyePattern') {
+        } else if  (pattern === 'egyptian eye') {
             this.egyptianEyePattern();
-        } else if  (pattern === 'emeraldPattern') {
+        } else if  (pattern === 'emerald') {
             this.emeraldPattern();
-        } else if  (pattern === 'verticalStripPattern') {
+        } else if  (pattern === 'vertical strip') {
             this.verticalStripPattern();
-        } else if  (pattern === 'newPattern') {
+        } else if  (pattern === 'new') {
             this.newPattern();
         } else {
             return false

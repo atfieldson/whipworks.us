@@ -62,6 +62,17 @@ CREATE TABLE "handle_designs" (
 	"16p_or_20p" VARCHAR(100) DEFAULT '16 Plait'
 );
 
+INSERT INTO "handle_designs" ("handle_design", "cost", "img_url", "16p_or_20p")
+VALUES 
+('accent', 0, 'accent.jpg', '16p'),
+('box', 0, 'box.jpg', '16p'),
+('celtic', 0, 'celtic.jpg', '16p'),
+('egyptian eye', 0, 'egyptianEye.jpg', '16p'),
+('emerald', 0, 'emerald.jpg', '16p'),
+('vertical strip', 0, 'verticalStrip.jpg', '16p'),
+('new', 0, '', '16p');
+
+
 CREATE TABLE "conchos_and_pommels" (
 	"id" SERIAL PRIMARY KEY,
 	"name" TEXT NOT NULL,
