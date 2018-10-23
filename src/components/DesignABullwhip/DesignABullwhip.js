@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CanvasRenderer from './CanvasRenderer';
+import ColorChooser from './ColorChooser';
 
 import './DesignABullwhip.css';
 
@@ -12,7 +13,7 @@ class DesignABullwhip extends Component {
           <h1>Design A Bullwhip</h1>
         </div>
         <div className="colorContainer designContainer">
-          <h2>Choose Your Colors</h2>
+          <ColorChooser />
         </div>
         <div className="handleAndRendering">
           <div className="handleContainer designContainer">
@@ -20,6 +21,7 @@ class DesignABullwhip extends Component {
           </div>
           <div className="rendering designContainer">
             <CanvasRenderer />
+            {/* <THREEJSRenderer /> */}
           </div>
         </div>
       </div>

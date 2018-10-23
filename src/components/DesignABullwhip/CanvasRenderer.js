@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import THREE from 'three';
+import OrbitControls from 'three-orbit-controls';
 
 import './DesignABullwhip.css';
 
 class CanvasRenderer extends Component {
     state = {
-        color1: 'blackRightWaxed.jpg',
-        color2: 'neonGreenLeftWaxed.jpg',
-        pattern: 'newPattern',
+        color1: '',
+        color2: '',
+        pattern: '',
     }
 
     boxPattern = () => {
@@ -743,7 +745,9 @@ class CanvasRenderer extends Component {
     };//end newPattern
 
     renderHandle = () => {
-        let pattern = this.state.pattern
+        console.log('in render handle:', this.state)
+        
+        let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern;
     
         if (pattern === 'boxPattern'){
             this.boxPattern();
@@ -760,31 +764,48 @@ class CanvasRenderer extends Component {
         } else if  (pattern === 'newPattern') {
             this.newPattern();
         } else {
-            return null
+            return false
         }
     }
 
+    // updateState = () => {
+    //     this.setState({
+    //         color1: this.props.state.bullwhip.designABullwhipReducer.color1,
+    //         color2: this.props.state.bullwhip.designABullwhipReducer.color2,
+    //         pattern: this.props.state.bullwhip.designABullwhipReducer.pattern, 
+    //     })
+    // }
+
 componentDidMount() {
-    this.renderHandle();
+    // this.updateState()
 }
 
-componentDidUpdate() {
-    this.renderHandle();
-}
 
 render() {
     return (
         <div>
+            <button onClick={this.renderHandle}>Render Handle</button>
+            {/* <canvas ref="myCanvas" className="myCanvas" width="1000" height = "1000" /> */}
             <canvas ref="materialCanvas" width="400" height="1600"></canvas>
-            <img ref="color1" src={require(`./images/waxed/${this.state.color1}`)} className="hidden" alt=""></img>
-            <img ref="color2" src={require(`./images/waxed/${this.state.color2}`)} className="hidden" alt=""></img>
+            <div>
+            {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
+            {this.props.state.bullwhip.designABullwhipReducer.color1 !== '' 
+            && this.props.state.bullwhip.designABullwhipReducer.color2 !== '' 
+            ?
+            <div>
+            <img ref="color1" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1}`)} alt=""></img>
+            <img ref="color2" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color2}`)} alt=""></img>
+            </div>
+            : <span></span>}
+            </div>
+            <p>{`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1}`}</p>
         </div>
     )
 }
 }
 
 const mapStateToProps = state => ({
-    user: state.user,
+    state,
 });
 
 // this allows us to use <App /> in index.js
