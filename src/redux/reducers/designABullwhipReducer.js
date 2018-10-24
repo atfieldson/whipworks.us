@@ -1,18 +1,25 @@
 import { combineReducers } from 'redux';
 
-const designABullwhipReducer = (state = {color1: '', color2: '', pattern: '', whipLength: '', handleLength: ''}, action) => {
+const designABullwhipReducer = (state = {
+  color1: {name: '', url: ''}, 
+  color2: {name: '', url: ''}, 
+  pattern: '', 
+  whipLength: {name: '', cost: 0}, 
+  handleLength: {name: '', cost: 0}, 
+  concho: {name: '', cost: 0}}, 
+  action) => {
     switch (action.type) {
-      case 'SET_COLOR1':
+      case 'SET_WHIP_COLOR1':
         return {
             ...state,
             color1: action.payload,
         };
-      case 'SET_COLOR2':
+      case 'SET_WHIP_COLOR2':
         return {
             ...state,
             color2: action.payload,
         };
-      case 'SET_HANDLE_PATTERN':
+      case 'SET_WHIP_HANDLE_PATTERN':
         return {
             ...state,
             pattern: action.payload,
@@ -22,10 +29,15 @@ const designABullwhipReducer = (state = {color1: '', color2: '', pattern: '', wh
           ...state,
           whipLength: action.payload,
         }
-      case 'SET_HANDLE_LENGTH':
+      case 'SET_WHIP_HANDLE_LENGTH':
         return {
           ...state,
           handleLength: action.payload,
+        }
+      case 'SET_WHIP_CONCHO':
+        return {
+          ...state,
+          concho: action.payload,
         }
       default:
         return state;
@@ -71,6 +83,16 @@ const designABullwhipReducer = (state = {color1: '', color2: '', pattern: '', wh
         return state
     }
   }
+
+  const conchosReducer = (state = [], action ) => {
+    console.log('in SET_CONCHOS');
+    switch (action.type) {
+      case 'SET_CONCHOS':
+        return action.payload;
+      default:
+        return state
+    }
+  }
   
   export default combineReducers({
     designABullwhipReducer,
@@ -78,4 +100,5 @@ const designABullwhipReducer = (state = {color1: '', color2: '', pattern: '', wh
     handlesReducer,
     whipLengthsReducer,
     handleLengthsReducer,
+    conchosReducer,
   })

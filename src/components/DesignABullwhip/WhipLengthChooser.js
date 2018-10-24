@@ -10,10 +10,10 @@ class WhipLengthChooser extends Component {
 
     updateWhipLength = (event) => {
         this.setState({
-            whipLength: event.target.value
+            whipLength: event.target.name
         })
-        this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: event.target.value})
-
+        console.log('cost:', event.target.cost)
+        this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: { name: event.target.name, cost: event.target.value }})
     }
 
     getWhipLengths = () => {
@@ -33,9 +33,10 @@ class WhipLengthChooser extends Component {
                 <div className="whipLengthButtonsContainer">
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
                         return <button 
+                        value={length.cost}
                         key={length.id} 
                         onClick={this.updateWhipLength}
-                        value={length.length}
+                        name={length.length}
                         >                        
                         {length.length} Feet
                         </button>

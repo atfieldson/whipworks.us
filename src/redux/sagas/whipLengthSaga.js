@@ -18,8 +18,8 @@ function* fetchWhipLengths() {
       } 
 }
 
-function* handleSaga() {
+function* whipLengthSaga() {
   yield takeLatest('FETCH_WHIP_LENGTHS', fetchWhipLengths);
 }
 
-export default handleSaga;
+export default whipLengthSaga;

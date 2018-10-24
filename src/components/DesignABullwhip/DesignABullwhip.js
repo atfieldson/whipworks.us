@@ -5,6 +5,8 @@ import HandleChooser from './HandleChooser';
 import CanvasRenderer from './CanvasRenderer';
 import WhipLengthChooser from './WhipLengthChooser';
 import HandleLengthChooser from './HandleLengthChooser';
+import ConchoChooser from './ConchoChooser';
+import YourWhip from './YourWhip';
 
 
 import './DesignABullwhip.css';
@@ -33,8 +35,11 @@ class DesignABullwhip extends Component {
         <div className="designContainer">
           <HandleLengthChooser />
         </div>
-        <div>
-          {/* <ConchoChooser /> */}
+        <div className="designContainer">
+          <ConchoChooser />
+        </div>
+        <div className="designContainer">
+          <YourWhip />
         </div>
         <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p>
       </div>

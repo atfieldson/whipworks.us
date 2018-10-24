@@ -44,4 +44,14 @@ router.get('/handlelength', (req, res) => {
     })
 });
 
+router.get('/concho', (req, res) => {
+    pool.query(
+        `SELECT * FROM "conchos_and_pommels";`
+    ).then((result) => {
+        res.send(result.rows)
+    }).catch(error => {
+        console.log('error getting handle lengths', error);
+    })
+});
+
 module.exports = router;

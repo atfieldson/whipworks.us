@@ -10,9 +10,9 @@ class HandleLengthChooser extends Component {
 
     updateHandleLength = (event) => {
         this.setState({
-            handleLength: event.target.value
+            handleLength: event.target.name
         })
-        this.props.dispatch({type: 'SET_HANDLE_LENGTH', payload: event.target.value})
+        this.props.dispatch({type: 'SET_WHIP_HANDLE_LENGTH', payload: { name: event.target.name, cost: event.target.value}})
     }
 
     getHandleLengths = () => {
@@ -34,7 +34,7 @@ class HandleLengthChooser extends Component {
                         return <button 
                         key={length.id} 
                         onClick={this.updateHandleLength}
-                        value={length.length}
+                        name={length.length}
                         >                        
                         {length.length} Inches
                         </button>

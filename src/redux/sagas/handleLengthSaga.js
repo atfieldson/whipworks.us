@@ -18,8 +18,8 @@ function* fetchHandleLengths() {
       } 
 }
 
-function* handleSaga() {
+function* handleLengthSaga() {
   yield takeLatest('FETCH_HANDLE_LENGTHS', fetchHandleLengths);
 }
 
-export default handleSaga;
+export default handleLengthSaga;

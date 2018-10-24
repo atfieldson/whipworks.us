@@ -23,7 +23,7 @@ class ColorChooser extends Component {
             ...this.state,
             color1: event.target.name,
         })
-        this.props.dispatch({type: 'SET_COLOR1', payload: event.target.value})
+        this.props.dispatch({type: 'SET_WHIP_COLOR1', payload: { name: event.target.name, url: event.target.value }})
     }
 
     updateColor2 = (event) => {
@@ -31,7 +31,7 @@ class ColorChooser extends Component {
             ...this.state,
             color2: event.target.name,
         })
-        this.props.dispatch({type: 'SET_COLOR2', payload: event.target.value})
+        this.props.dispatch({type: 'SET_WHIP_COLOR2', payload: { name: event.target.name, url: event.target.value }})
     }
 
 
@@ -53,6 +53,7 @@ class ColorChooser extends Component {
                 <div className="colorButtonsContainer">
                     {this.props.state.bullwhip.colorsReducer.map(color => {
                         return <button 
+                        className = "capitalize"
                         key={color.id} 
                         name={color.color}
                         onClick=
@@ -70,9 +71,9 @@ class ColorChooser extends Component {
                 </div>
                 <button value="1" onClick={this.setColorChooser}>Color 1</button>
                 <button value="2" onClick={this.setColorChooser}>Color 2</button>
-                <p>Color 1: {this.state.color1}</p>
-                <p>Selecting Color: {this.state.colorChooser}</p>
-                <p>Color 2: {this.state.color2}</p>
+                <p>Currently Selecting Color: {this.state.colorChooser}</p>
+                <p className = "capitalize">Color 1: {this.state.color1}</p>
+                <p className = "capitalize">Color 2: {this.state.color2}</p>
             </div>
         );
     }

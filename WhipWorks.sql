@@ -82,6 +82,16 @@ CREATE TABLE "conchos_and_pommels" (
 	"img_url" TEXT
 );
 
+INSERT INTO "conchos_and_pommels" ("name", "cost", "color")
+VALUES 
+('celtic silver', 0, 'silver'),
+('celtic brass', 0, 'brass'),
+('celtic copper', 0, 'copper'),
+('wolf', 80, 'silver'),
+('dragon', 80, 'silver'),
+('cobra', 80, 'silver');
+
+
 CREATE TABLE "colors" (
 	"id" SERIAL PRIMARY KEY,
 	"color" VARCHAR(255),

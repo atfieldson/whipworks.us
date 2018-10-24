@@ -926,12 +926,12 @@ class CanvasRenderer extends Component {
                 <canvas ref={(canvas) => { this.canvas = canvas}} width="400" height="1600" className = "hidden"></canvas>
                 <div>
                     {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
-                    {this.props.state.bullwhip.designABullwhipReducer.color1 !== ''
-                        && this.props.state.bullwhip.designABullwhipReducer.color2 !== ''
+                    {this.props.state.bullwhip.designABullwhipReducer.color1.url !== ''
+                        && this.props.state.bullwhip.designABullwhipReducer.color2.url !== ''
                         ?
                         <div>
-                            <img ref="color1" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1}`)} className="hidden" alt=""></img>
-                            <img ref="color2" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color2}`)} className="hidden" alt=""></img>
+                            <img ref="color1" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1.url}`)} className="hidden" alt=""></img>
+                            <img ref="color2" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color2.url}`)} className="hidden" alt=""></img>
                         </div>
                         : <span></span>}
                 </div>

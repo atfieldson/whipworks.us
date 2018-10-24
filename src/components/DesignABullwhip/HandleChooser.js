@@ -13,7 +13,7 @@ class HandleChooser extends Component {
             ...this.state,
             handle: event.target.value,
         })
-        this.props.dispatch({type: 'SET_HANDLE_PATTERN', payload: event.target.value})
+        this.props.dispatch({type: 'SET_WHIP_HANDLE_PATTERN', payload: event.target.value})
     }
 
     getHandles = () => {
@@ -32,7 +32,8 @@ class HandleChooser extends Component {
                 </h2>
                 <div className="handleButtonsContainer">
                     {this.props.state.bullwhip.handlesReducer.map(handle => {
-                        return <button 
+                        return <button
+                        className = "capitalize" 
                         key={handle.id} 
                         onClick={this.updateHandle}
                         value={handle.handle_design}
@@ -42,7 +43,7 @@ class HandleChooser extends Component {
                     })}
                 </div>
                 
-                <p>Selected Handle: {this.state.handle}</p>
+                <p className = "capitalize">Selected Handle: {this.state.handle}</p>
                 
             </div>
         );
