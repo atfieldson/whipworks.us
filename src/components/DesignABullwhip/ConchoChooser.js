@@ -13,7 +13,8 @@ class ConchoChooser extends Component {
             ...this.state,
             concho: event.target.name,
         })
-        this.props.dispatch({type: 'SET_WHIP_CONCHO', payload: { name: event.target.name, cost: event.target.cost}})
+        this.props.dispatch({type: 'SET_WHIP_CONCHO', payload: { name: event.target.name, cost: event.target.value}})
+        this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
     getConchos = () => {

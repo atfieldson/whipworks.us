@@ -8,7 +8,6 @@ function* fetchConchos() {
         const conchos = yield call(
           axios.get, '/design/concho'
         );
-        yield console.log('conchos:', conchos)
         yield put(
             { type: 'SET_CONCHOS', payload: conchos.data}
         );

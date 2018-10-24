@@ -6,7 +6,8 @@ const designABullwhipReducer = (state = {
   pattern: '', 
   whipLength: {name: '', cost: 0}, 
   handleLength: {name: '', cost: 0}, 
-  concho: {name: '', cost: 0}}, 
+  concho: {name: '', cost: 0}, 
+  total: 0},
   action) => {
     switch (action.type) {
       case 'SET_WHIP_COLOR1':
@@ -38,6 +39,15 @@ const designABullwhipReducer = (state = {
         return {
           ...state,
           concho: action.payload,
+        }
+      case 'SET_WHIP_TOTAL':
+        let total = 0
+        total += parseInt(state.whipLength.cost);
+        total += parseInt(state.handleLength.cost);
+        total += parseInt(state.concho.cost);
+        return {
+          ...state,
+          total: total,
         }
       default:
         return state;

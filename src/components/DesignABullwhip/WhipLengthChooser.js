@@ -14,6 +14,7 @@ class WhipLengthChooser extends Component {
         })
         console.log('cost:', event.target.cost)
         this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: { name: event.target.name, cost: event.target.value }})
+        this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
     getWhipLengths = () => {
