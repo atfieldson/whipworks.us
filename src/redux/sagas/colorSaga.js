@@ -6,7 +6,7 @@ function* fetchColors() {
     console.log('in FETCH_COLORS')
     try {
         const colors = yield call(
-          axios.get, '/color'
+          axios.get, '/design/color'
         );
         yield console.log('colors:', colors)
         yield put(

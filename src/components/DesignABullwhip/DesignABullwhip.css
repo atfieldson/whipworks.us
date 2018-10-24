@@ -18,11 +18,17 @@ text-align: center;
 }
 
 .rendering {
-    flex: 1;
     border-top: 0;
-
+    width: 500px;
 }
 
 .hidden {
     visibility: hidden;
+    display: none;
+    top: 0
+}
+
+.myCanvas {
+    width: 500px;
+    height: 1000px;
 }

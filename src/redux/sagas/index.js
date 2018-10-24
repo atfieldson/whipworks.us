@@ -3,7 +3,9 @@ import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import colorSaga from './colorSaga';
-import handleSaga from './handleSaga'
+import handleSaga from './handleSaga';
+import whipLengthSaga from './whipLengthSaga';
+import handleLengthSaga from './handleLengthSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -19,5 +21,7 @@ export default function* rootSaga() {
     userSaga(),
     colorSaga(),
     handleSaga(),
+    whipLengthSaga(),
+    handleLengthSaga(),
   ]);
 }

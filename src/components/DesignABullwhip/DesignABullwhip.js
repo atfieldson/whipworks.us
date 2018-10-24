@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CanvasRenderer from './CanvasRenderer';
 import ColorChooser from './ColorChooser';
 import HandleChooser from './HandleChooser';
-import THREEJSRenderer from './THREEJSRenderer';
+import CanvasRenderer from './CanvasRenderer';
+import WhipLengthChooser from './WhipLengthChooser';
+import HandleLengthChooser from './HandleLengthChooser';
+
 
 import './DesignABullwhip.css';
 
@@ -22,16 +24,26 @@ class DesignABullwhip extends Component {
           <HandleChooser />
           </div>
           <div className="rendering designContainer">
-            <THREEJSRenderer />
+            <CanvasRenderer />
           </div>
         </div>
+        <div className="designContainer">
+          <WhipLengthChooser />
+        </div>
+        <div className="designContainer">
+          <HandleLengthChooser />
+        </div>
+        <div>
+          {/* <ConchoChooser /> */}
+        </div>
+        <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  user: state.user,
+  state,
 });
 
 // this allows us to use <App /> in index.js

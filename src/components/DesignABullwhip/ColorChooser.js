@@ -21,7 +21,7 @@ class ColorChooser extends Component {
     updateColor1 = (event) => {
         this.setState({
             ...this.state,
-            color1: event.target.value,
+            color1: event.target.name,
         })
         this.props.dispatch({type: 'SET_COLOR1', payload: event.target.value})
     }
@@ -29,7 +29,7 @@ class ColorChooser extends Component {
     updateColor2 = (event) => {
         this.setState({
             ...this.state,
-            color2: event.target.value,
+            color2: event.target.name,
         })
         this.props.dispatch({type: 'SET_COLOR2', payload: event.target.value})
     }
@@ -54,6 +54,7 @@ class ColorChooser extends Component {
                     {this.props.state.bullwhip.colorsReducer.map(color => {
                         return <button 
                         key={color.id} 
+                        name={color.color}
                         onClick=
                         {this.state.colorChooser === "1" 
                         ? this.updateColor1

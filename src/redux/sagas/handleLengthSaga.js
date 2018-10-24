@@ -2,15 +2,15 @@ import axios from 'axios';
 import { put, takeLatest, call } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
-function* fetchHandles() {
-    console.log('in FETCH_HANDLES')
+function* fetchHandleLengths() {
+    console.log('in FETCH_HANDLE_LENGTHS')
     try {
-        const handles = yield call(
-          axios.get, '/design/design'
+        const lengths = yield call(
+          axios.get, '/design/handlelength'
         );
-        yield console.log('handles:', handles)
+        yield console.log('handles:', lengths)
         yield put(
-            { type: 'SET_HANDLES', payload: handles.data}
+            { type: 'SET_HANDLE_LENGTHS', payload: lengths.data}
         );
       } catch (error) {
         // sets that the async request is finished
@@ -19,7 +19,7 @@ function* fetchHandles() {
 }
 
 function* handleSaga() {
-  yield takeLatest('FETCH_HANDLES', fetchHandles);
+  yield takeLatest('FETCH_HANDLE_LENGTHS', fetchHandleLengths);
 }
 
 export default handleSaga;

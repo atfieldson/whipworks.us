@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-const designABullwhipReducer = (state = {color1: '', color2: '', pattern: ''}, action) => {
+const designABullwhipReducer = (state = {color1: '', color2: '', pattern: '', whipLength: '', handleLength: ''}, action) => {
     switch (action.type) {
       case 'SET_COLOR1':
         return {
@@ -17,6 +17,16 @@ const designABullwhipReducer = (state = {color1: '', color2: '', pattern: ''}, a
             ...state,
             pattern: action.payload,
         };
+      case 'SET_WHIP_LENGTH':
+        return {
+          ...state,
+          whipLength: action.payload,
+        }
+      case 'SET_HANDLE_LENGTH':
+        return {
+          ...state,
+          handleLength: action.payload,
+        }
       default:
         return state;
     }
@@ -41,9 +51,31 @@ const designABullwhipReducer = (state = {color1: '', color2: '', pattern: ''}, a
           return state 
         } 
   }
+
+  const whipLengthsReducer = (state = [], action ) => {
+    console.log('in SET_WHIP_LENGTHS');
+    switch (action.type) {
+      case 'SET_WHIP_LENGTHS':
+        return action.payload;
+      default:
+        return state
+    }
+  }
+
+  const handleLengthsReducer = (state = [], action ) => {
+    console.log('in SET_HANDLE_LENGTHS');
+    switch (action.type) {
+      case 'SET_HANDLE_LENGTHS':
+        return action.payload;
+      default:
+        return state
+    }
+  }
   
   export default combineReducers({
     designABullwhipReducer,
     colorsReducer,
     handlesReducer,
+    whipLengthsReducer,
+    handleLengthsReducer,
   })

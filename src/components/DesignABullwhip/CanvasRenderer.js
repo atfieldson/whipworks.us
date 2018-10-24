@@ -1,23 +1,172 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import THREE from 'three';
-import OrbitControls from 'three-orbit-controls';
+import THREEJSRenderer from './THREEJSRenderer';
+import * as THREE from 'three';
+
 
 import './DesignABullwhip.css';
 
 class CanvasRenderer extends Component {
-    state = {
-        color1: '',
-        color2: '',
-        pattern: '',
+
+    constructor(state) {
+        super(state)
+
+        this.number = 1
+        this.start = this.start.bind(this)
+        this.stop = this.stop.bind(this)
+        this.animate = this.animate.bind(this)
+        this.color1 = ''
+        this.color2 = ''
+        this.pattern = ''
+    }
+    // state = {
+    //     color1: '',
+    //     color2: '',
+    //     pattern: '',
+    // }
+
+    //-----------------------THREEJS CODE---------------------------
+
+    componentDidMount() {
+        const width = this.mount.clientWidth
+        const height = this.mount.clientHeight
+
+        const scene = new THREE.Scene()
+        const camera = new THREE.PerspectiveCamera(
+            35,
+            width / height,
+            2,
+            1000
+        )
+        const renderer = new THREE.WebGLRenderer({ antialias: true })
+        // const geometry = new THREE.BoxGeometry(10, 10, 10)
+        // const material = new THREE.MeshPhongMaterial({ color: '#433F81' })
+        // const cube = new THREE.Mesh(geometry, material)
+
+        //lights
+        const light = new THREE.AmbientLight(0xffffff, .3);
+        scene.add(light);
+
+        const light1 = new THREE.PointLight(0xffffff, .6);
+        light1.position.set(-50, -15, 15)
+        scene.add(light1);
+
+        const light2 = new THREE.PointLight(0xffffff, .6);
+        light2.position.set(50, 15, 15)
+        scene.add(light2);
+        //end lights
+
+        //backgrounds
+        const WWLogo = new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"));
+        const geo0WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
+        const mat0WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: WWLogo });
+        const plane0 = new THREE.Mesh(geo0WW, mat0WW);
+        plane0.position.set(0, 0, -60)
+        plane0.rotation.y = 0;
+
+        const Indy = new THREE.TextureLoader().load(require("./images/backgrounds/catWhip.jpg"));
+        const geo1WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
+        const mat1WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: Indy });
+        const plane1 = new THREE.Mesh(geo1WW, mat1WW);
+        plane1.position.set(60, 0, 0)
+        plane1.rotation.y = -Math.PI / 2;
+
+        const CatWhip = new THREE.TextureLoader().load(require("./images/backgrounds/saberWhip.jpg"));
+        const geo2WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
+        const mat2WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: CatWhip });
+        const plane2 = new THREE.Mesh(geo2WW, mat2WW);
+        plane2.position.set(-60, 0, 0)
+        plane2.rotation.y = Math.PI / 2;
+
+        const SaberWhip = new THREE.TextureLoader().load(require("./images/backgrounds/indy.jpg"));
+        const geo3WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
+        const mat3WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: SaberWhip });
+        const plane3 = new THREE.Mesh(geo3WW, mat3WW);
+        plane3.position.set(0, 0, 60)
+        plane3.rotation.y = Math.PI;
+
+        scene.add(plane0, plane1, plane2, plane3);
+        //end backgrounds
+
+        //handle
+        const handleCanvas = this.canvas //? this.ref.materialCanvas : require("./images/backgrounds/ww.jpg");
+
+        const texture = new THREE.CanvasTexture(handleCanvas); //document.getElementById('materialCanvas')
+
+        // const texture = () =>{
+        //     if (this.ref.materialCanvas !== null) {
+        //         new THREE.CanvasTexture(this.ref.materialCanvas)}
+        //     else {
+        //         new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"));
+        //     }
+        // }
+
+        // const texture = new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"))
+
+        const geometry1 = new THREE.CylinderGeometry(4, 4, 80, 16);
+        const material1 = new THREE.MeshPhongMaterial({ color: 0xffffff, map: texture, bumpMap : texture}); //, map: texture, bumpMap : texture
+        const handle = new THREE.Mesh(geometry1, material1);
+        handle.rotation.y = Math.PI;
+        //end handle
+
+        camera.position.set(0, 0, 100)
+        // scene.add(cube)
+        scene.add(handle);
+        renderer.setClearColor('#000000')
+        renderer.setSize(width, height)
+
+        this.scene = scene
+        this.camera = camera
+        this.renderer = renderer
+        // this.material = material
+        // this.cube = cube
+        this.handle = handle
+        this.texture = texture
+        this.mount.appendChild(this.renderer.domElement)
+        this.start()
     }
 
+    componentWillUnmount() {
+        this.stop()
+        this.mount.removeChild(this.renderer.domElement)
+    }
+
+    start() {
+        if (!this.frameId) {
+            this.frameId = requestAnimationFrame(this.animate)
+        }
+    }
+
+    stop() {
+        cancelAnimationFrame(this.frameId)
+    }
+    animate() {
+        // this.cube.rotation.x += 0.01
+        // this.cube.rotation.y += 0.01
+
+        this.texture.needsUpdate = true
+
+        this.handle.rotation.y += 0.01
+
+        this.renderScene()
+        this.frameId = window.requestAnimationFrame(this.animate)
+    }
+
+    renderScene() {
+        this.renderer.render(this.scene, this.camera)
+    }
+
+    //-----------------------END THREEJS CODE---------------------------
+
+
+
+    //-----------------------CANVAS CODE---------------------------
     boxPattern = () => {
-        const c = this.refs.materialCanvas.getContext('2d');
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
-        
+
         let bw = 400;
         let b16 = bw / 16;
         let pattern1 = [0, 1, 4, 5, 8, 9, 12, 13, 16];
@@ -71,11 +220,11 @@ class CanvasRenderer extends Component {
 
     accentPattern = () => {
 
-        const c = this.refs.materialCanvas.getContext('2d');
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
-        
+
         let bw = 400;
         let b16 = bw / 16;
         let pattern1 = [3, 4, 11, 12, 19, 20, 27, 28];
@@ -106,8 +255,8 @@ class CanvasRenderer extends Component {
     };//end accent
 
     celticPattern = () => {
-        
-        const c = this.refs.materialCanvas.getContext('2d');
+
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
@@ -315,12 +464,12 @@ class CanvasRenderer extends Component {
     };//end celtic
 
     egyptianEyePattern = () => {
-        
-        const c = this.refs.materialCanvas.getContext('2d');
+
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
-        
+
         let bw = 400;
         let b16 = bw / 16;
 
@@ -390,12 +539,12 @@ class CanvasRenderer extends Component {
     };//end egyptian eye
 
     emeraldPattern = () => {
-        
-        const c = this.refs.materialCanvas.getContext('2d');
+
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
-        
+
         let bw = 400;
         let b16 = bw / 16;
         let pattern1 = [0, 1, 3, 5, 8, 9, 11, 13, 16];
@@ -405,7 +554,7 @@ class CanvasRenderer extends Component {
         let row1 = [-16, -12, -8, -4, 0, 4, 8, 12, 16, 20, 24, 28, 32];
         let row2 = [-15, -11, -7, -3, 1, 5, 9, 13, 17, 21, 25, 29, 33];
         let row3 = [-14, -10, -6, -2, 2, 6, 10, 14, 18, 22, 26, 30];
-        
+
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
                 console.log('hello');
@@ -447,12 +596,12 @@ class CanvasRenderer extends Component {
     };//end emerald
 
     verticalStripPattern = () => {
-        
-        const c = this.refs.materialCanvas.getContext('2d');
+
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
-        
+
         let bw = 400;
         let b16 = bw / 16;
         let pattern1 = [0, 1, 4, 5, 8, 9, 12, 13, 16];
@@ -479,12 +628,12 @@ class CanvasRenderer extends Component {
     }//end vertical strip
 
     newPattern = () => {
-        
-        const c = this.refs.materialCanvas.getContext('2d');
+
+        const c = this.canvas.getContext('2d');
 
         let color1 = c.createPattern(this.refs.color1, "repeat");
         let color2 = c.createPattern(this.refs.color2, "repeat");
-        
+
         let bw = 400;
         let b16 = bw / 16;
 
@@ -746,49 +895,49 @@ class CanvasRenderer extends Component {
 
     renderHandle = () => {
         console.log('in render handle:', this.state)
-        
+
         let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern;
-    
-        if (pattern === 'box'){
+
+        if (pattern === 'box') {
             this.boxPattern();
-        } else if  (pattern === 'accent') {
+        } else if (pattern === 'accent') {
             this.accentPattern();
-        } else if  (pattern === 'celtic') {
+        } else if (pattern === 'celtic') {
             this.celticPattern();
-        } else if  (pattern === 'egyptian eye') {
+        } else if (pattern === 'egyptian eye') {
             this.egyptianEyePattern();
-        } else if  (pattern === 'emerald') {
+        } else if (pattern === 'emerald') {
             this.emeraldPattern();
-        } else if  (pattern === 'vertical strip') {
+        } else if (pattern === 'vertical strip') {
             this.verticalStripPattern();
-        } else if  (pattern === 'new') {
+        } else if (pattern === 'new') {
             this.newPattern();
         } else {
             return false
         }
     }
+    //-----------------------END CANVAS CODE---------------------------
 
-render() {
-    return (
-        <div>
-            <button onClick={this.renderHandle}>Render Handle</button>
-            {/* <canvas ref="myCanvas" className="myCanvas" width="1000" height = "1000" /> */}
-            <canvas ref="materialCanvas" width="400" height="1600"></canvas>
+    render() {
+        return (
             <div>
-            {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
-            {this.props.state.bullwhip.designABullwhipReducer.color1 !== '' 
-            && this.props.state.bullwhip.designABullwhipReducer.color2 !== '' 
-            ?
-            <div>
-            <img ref="color1" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1}`)} alt=""></img>
-            <img ref="color2" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color2}`)} alt=""></img>
+                <button onClick={this.renderHandle}>Render Handle</button>
+                <div ref={(mount) => { this.mount = mount }} className="myCanvas" width="500" height="1000" ></div>
+                <canvas ref={(canvas) => { this.canvas = canvas}} width="400" height="1600" className = "hidden"></canvas>
+                <div>
+                    {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
+                    {this.props.state.bullwhip.designABullwhipReducer.color1 !== ''
+                        && this.props.state.bullwhip.designABullwhipReducer.color2 !== ''
+                        ?
+                        <div>
+                            <img ref="color1" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1}`)} className="hidden" alt=""></img>
+                            <img ref="color2" src={require(`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color2}`)} className="hidden" alt=""></img>
+                        </div>
+                        : <span></span>}
+                </div>
             </div>
-            : <span></span>}
-            </div>
-            <p>{`./images/waxed/${this.props.state.bullwhip.designABullwhipReducer.color1}`}</p>
-        </div>
-    )
-}
+        )
+    }
 }
 
 const mapStateToProps = state => ({
