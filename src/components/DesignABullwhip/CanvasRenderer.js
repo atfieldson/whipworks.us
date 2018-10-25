@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as THREE from 'three';
+import initialImage from './images/backgrounds/handleWrap.svg';
 
 
 import './DesignABullwhip.css';
@@ -16,6 +17,7 @@ class CanvasRenderer extends Component {
         this.color1 = ''
         this.color2 = ''
         this.pattern = ''
+        this.runInitialCanvas = 0
     }
     // state = {
     //     color1: '',
@@ -26,6 +28,7 @@ class CanvasRenderer extends Component {
     //-----------------------THREEJS CODE---------------------------
 
     componentDidMount() {
+
         const width = this.mount.clientWidth
         const height = this.mount.clientHeight
 
@@ -87,29 +90,18 @@ class CanvasRenderer extends Component {
         //end backgrounds
 
         //handle
-        const handleCanvas = this.canvas //? this.ref.materialCanvas : require("./images/backgrounds/ww.jpg");
-
+        //creates texture to wrap around cylinder geometry
+        const handleCanvas = this.canvas
         const texture = new THREE.CanvasTexture(handleCanvas);
-        const texture2 = new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"))  
-        
-        // const texture = () =>{
-        //     if (this.ref.materialCanvas !== null) {
-        //         new THREE.CanvasTexture(this.ref.materialCanvas)}
-        //     else {
-        //         new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"));
-        //     }
-        // }
-
-        // const texture = new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"))
 
         const handleGeo = new THREE.CylinderGeometry(4, 4, 80, 16);
-        const handleMat = new THREE.MeshPhongMaterial({ color: 0xffffff, map: texture, bumpMap : texture});
+        const handleMat = new THREE.MeshPhongMaterial({ color: 0xffffff, map: texture, bumpMap: texture });
         const handle = new THREE.Mesh(handleGeo, handleMat);
+        handle.position.y = -5;
         handle.rotation.y = Math.PI;
-        //end handle
 
         camera.position.set(0, 0, 100)
-        // scene.add(cube)
+
         scene.add(handle);
         renderer.setClearColor('#000000')
         renderer.setSize(width, height)
@@ -117,13 +109,13 @@ class CanvasRenderer extends Component {
         this.scene = scene
         this.camera = camera
         this.renderer = renderer
-        // this.material = material
-        // this.cube = cube
+        
         this.handle = handle
         this.texture = texture
+
         this.mount.appendChild(this.renderer.domElement)
         this.start()
-        this.initialPattern()
+        
     }
 
     componentWillUnmount() {
@@ -141,9 +133,6 @@ class CanvasRenderer extends Component {
         cancelAnimationFrame(this.frameId)
     }
     animate() {
-        // this.cube.rotation.x += 0.01
-        // this.cube.rotation.y += 0.01
-
         this.texture.needsUpdate = true
 
         this.handle.rotation.y -= 0.01
@@ -154,9 +143,6 @@ class CanvasRenderer extends Component {
 
     renderScene() {
         this.renderer.render(this.scene, this.camera)
-        //succesfully loads screen with canvas, but then 
-        //has to re-render canvas on every render
-        // this.renderHandle()
     }
 
     //-----------------------END THREEJS CODE---------------------------
@@ -898,7 +884,7 @@ class CanvasRenderer extends Component {
 
     initialPattern = () => {
         const c = this.canvas.getContext('2d');
-        const image =this.refs.initialHandleWrap;
+        const image = this.refs.initialHandleWrap;
         c.drawImage(image, 2, 2)
     }
 
@@ -907,8 +893,8 @@ class CanvasRenderer extends Component {
         let color1 = this.props.state.bullwhip.designABullwhipReducer.color1.name;
         let color2 = this.props.state.bullwhip.designABullwhipReducer.color2.name;
 
-        
-        if (pattern === '' || color1=== '' || color2=== '') {
+
+        if (pattern === '' || color1 === '' || color2 === '') {
             this.initialPattern();
         } else if (pattern === 'box') {
             this.boxPattern();
@@ -928,6 +914,7 @@ class CanvasRenderer extends Component {
             return false
         }
     }
+
     //-----------------------END CANVAS CODE---------------------------
 
     render() {
@@ -935,32 +922,33 @@ class CanvasRenderer extends Component {
             <div>
                 <button onClick={this.renderHandle}>Render Handle</button>
                 <div ref={(mount) => { this.mount = mount }} className="myCanvas" width="500" height="1000" ></div>
-                <canvas ref={(canvas) => { this.canvas = canvas}} width="400" height="1600" ></canvas>
+                <canvas ref={(canvas) => { this.canvas = canvas }} width="400" height="1600" className="hidden"></canvas>
                 <div>
                     {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
                     {this.props.state.bullwhip.designABullwhipReducer.color1.url !== ''
-                    && this.props.state.bullwhip.designABullwhipReducer.color2.url !== ''
-                    && this.props.state.bullwhip.designABullwhipReducer.waxed === "yes"
+                        && this.props.state.bullwhip.designABullwhipReducer.color2.url !== ''
+                        && this.props.state.bullwhip.designABullwhipReducer.waxed === "yes"
                         ?
                         <div>
                             <img ref="color1" src={require(`./images/paracord/${this.props.state.bullwhip.designABullwhipReducer.color1.url}`)} className="hidden" alt=""></img>
                             <img ref="color2" src={require(`./images/paracord/${this.props.state.bullwhip.designABullwhipReducer.color2.url}`)} className="hidden" alt=""></img>
                         </div>
-                        : 
+                        :
                         <span></span>
                     }
                     {this.props.state.bullwhip.designABullwhipReducer.color1.url !== ''
-                    && this.props.state.bullwhip.designABullwhipReducer.color2.url !== ''
-                    && this.props.state.bullwhip.designABullwhipReducer.waxed === "no"
-                        ?   
+                        && this.props.state.bullwhip.designABullwhipReducer.color2.url !== ''
+                        && this.props.state.bullwhip.designABullwhipReducer.waxed === "no"
+                        ?
                         <div>
                             <img ref="color1" src={require(`./images/paracord/${this.props.state.bullwhip.designABullwhipReducer.color1.unwaxedurl}`)} className="hidden" alt=""></img>
                             <img ref="color2" src={require(`./images/paracord/${this.props.state.bullwhip.designABullwhipReducer.color2.unwaxedurl}`)} className="hidden" alt=""></img>
                         </div>
-                        : 
+                        :
                         <span></span>
                     }
-                    <img ref="initialHandleWrap" src={require(`./images/backgrounds/handleWrap.jpg`)} className="hidden" alt=""></img>
+                    {/* onLoad below runs initialPattern once initialHandleWrap has completely loaded, allowing the handle to update with the logo */}
+                    <img onLoad={this.initialPattern} ref="initialHandleWrap" src={require(`./images/backgrounds/handleWrap.jpg`)} className="hidden" alt=""></img>
                 </div>
             </div>
         )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter} from 'react-router-dom';
 
 class Checkout extends Component {
     logout = () => {
@@ -12,6 +13,12 @@ class Checkout extends Component {
                 <h1>
                     Checkout        
                 </h1>
+                <button onClick={() => this.props.history.push("/bullwhip")}>
+                    Edit Your Bullwhip
+                </button>
+                <button>
+                    Finalize Order
+                </button>
             </div>
         );
     }
@@ -24,5 +31,7 @@ const mapStateToProps = state => ({
     user: state.user,
 });
 
-// this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(Checkout);
+const checkoutWithRouter = withRouter(Checkout)
+
+export default connect(mapStateToProps)(checkoutWithRouter);
+

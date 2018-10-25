@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
-import { totalmem } from 'os';
+import { withRouter} from 'react-router-dom';
+import Nav from '../../components/Nav/Nav';
 
 class YourWhip extends Component {
-
-    calculateTotal = () => {
-        let calculatedTotal = 0;
-        calculatedTotal += this.props.state.bullwhip.designABullwhipReducer.whipLength.cost;
-        calculatedTotal += this.props.state.bullwhip.designABullwhipReducer.handleLength.cost;
-        calculatedTotal += this.props.state.bullwhip.designABullwhipReducer.concho.cost;
-
-        this.setState({
-            total: calculatedTotal,
-        })
-    }
 
     render() {
         return (
@@ -54,7 +44,8 @@ class YourWhip extends Component {
                     ?
                     <div>
                     <p>Your total is: ${this.props.state.bullwhip.designABullwhipReducer.total}</p>
-                    <button>
+                    
+                    <button onClick={() => this.props.history.push("/checkout")}>
                         Proceed to Checkout
                     </button> 
                     </div>
@@ -81,5 +72,7 @@ const mapStateToProps = state => ({
     state,
 });
 
+const whipWithRouter = withRouter(YourWhip)
+
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(YourWhip);
+export default connect(mapStateToProps)(whipWithRouter);
