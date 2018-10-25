@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux';
 
 const designABullwhipReducer = (state = {
-  color1: {name: '', url: ''}, 
-  color2: {name: '', url: ''}, 
+  color1: {name: '', url: '', unwaxedurl: ''}, 
+  color2: {name: '', url: '', unwaxedurl: ''},
+  waxed: 'yes', 
   pattern: '', 
-  whipLength: {name: '', cost: 0}, 
-  handleLength: {name: '', cost: 0}, 
-  concho: {name: '', cost: 0}, 
+  whipLength: {name: '', cost: '0', waxed_cost: '0'}, 
+  handleLength: {name: '', cost: '0'}, 
+  concho: {name: '', cost: '0'}, 
   total: 0},
   action) => {
     switch (action.type) {
@@ -20,6 +21,11 @@ const designABullwhipReducer = (state = {
             ...state,
             color2: action.payload,
         };
+      case 'SET_WHIP_WAXED':
+        return {
+          ...state,
+          waxed: action.payload
+        }
       case 'SET_WHIP_HANDLE_PATTERN':
         return {
             ...state,
@@ -45,6 +51,9 @@ const designABullwhipReducer = (state = {
         total += parseInt(state.whipLength.cost);
         total += parseInt(state.handleLength.cost);
         total += parseInt(state.concho.cost);
+        if (state.waxed === 'yes') {
+        total += parseInt(state.whipLength.waxed_cost);
+        }
         return {
           ...state,
           total: total,

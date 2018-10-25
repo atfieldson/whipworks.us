@@ -26,8 +26,11 @@ class YourWhip extends Component {
                     <p className="capitalize">Color 1: {this.props.state.bullwhip.designABullwhipReducer.color1.name}</p> :
                     <p>Please Choose Your Whip's Color 1</p>}
                     {this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' ?
-                    <p className="capitalize">Color 2: {this.props.state.bullwhip.designABullwhipReducer.color1.name}</p> :
+                    <p className="capitalize">Color 2: {this.props.state.bullwhip.designABullwhipReducer.color2.name}</p> :
                     <p>Please Choose Your Whip's Color 2</p>}
+                    {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes' ?
+                    <p>Waxed</p> :
+                    <p>Unwaxed</p>}
                     {this.props.state.bullwhip.designABullwhipReducer.pattern !== '' ?
                     <p className="capitalize">Handle Pattern: {this.props.state.bullwhip.designABullwhipReducer.pattern}</p> :
                     <p>Please Choose Your Whip's Handle Pattern</p>}
