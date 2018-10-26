@@ -12,7 +12,7 @@ class HandleLengthChooser extends Component {
         this.setState({
             handleLength: event.target.name
         })
-        this.props.dispatch({type: 'SET_WHIP_HANDLE_LENGTH', payload: { name: event.target.name, cost: event.target.value}})
+        this.props.dispatch({type: 'SET_WHIP_HANDLE_LENGTH', payload: { name: event.target.name, cost: event.target.value, id: event.target.id}})
         this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
@@ -28,13 +28,14 @@ class HandleLengthChooser extends Component {
         return (
             <div >
                 <h2>
-                    Choose Your Handle Length        
+                    Handle Length        
                 </h2>
                 <div className="whipLengthButtonsContainer">
                     {this.props.state.bullwhip.handleLengthsReducer.map(length => {
                         return <button 
                         value={length.cost}
                         key={length.id} 
+                        id={length.id}
                         onClick={this.updateHandleLength}
                         name={length.length}
                         >                        
@@ -42,8 +43,12 @@ class HandleLengthChooser extends Component {
                         </button>
                     })}
                 </div>
-                
-                <p>Selected Handle Length: {this.state.handleLength}</p>
+                { this.props.state.bullwhip.designABullwhipReducer.handleLength.name === ''
+                ?
+                <p>Select you Handle's Length</p>
+                :
+                <p>Selected Handle Length: {this.props.state.bullwhip.designABullwhipReducer.handleLength.name} Inches</p>
+                }
             </div>
         );
     }

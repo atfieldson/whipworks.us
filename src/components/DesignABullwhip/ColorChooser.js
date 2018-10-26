@@ -6,8 +6,6 @@ class ColorChooser extends Component {
 
     state = {
         colorChooser: "1",
-        color1: '',
-        color2: '',
         waxed: 'yes',
     }
 
@@ -30,7 +28,7 @@ class ColorChooser extends Component {
             ...this.state,
             color1: event.target.name,
         })
-        this.props.dispatch({ type: 'SET_WHIP_COLOR1', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title  } })
+        this.props.dispatch({ type: 'SET_WHIP_COLOR1', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title, id: event.target.id} })
     }
 
     updateColor2 = (event) => {
@@ -38,7 +36,7 @@ class ColorChooser extends Component {
             ...this.state,
             color2: event.target.name,
         })
-        this.props.dispatch({ type: 'SET_WHIP_COLOR2', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title } })
+        this.props.dispatch({ type: 'SET_WHIP_COLOR2', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title, id: event.target.id} })
     }
 
     updateWaxed = (event) => {
@@ -71,6 +69,7 @@ class ColorChooser extends Component {
                         return <button
                             className="capitalize"
                             key={color.id}
+                            id={color.id}
                             name={color.color}
                             onClick=
                             {this.state.colorChooser === "1"
@@ -91,17 +90,29 @@ class ColorChooser extends Component {
                         </button>
                     })}
                 </div>
+                <h3>Currently Selecting: Color {this.state.colorChooser}</h3>
                 <button value="1" onClick={this.setColorChooser}>Color 1</button>
                 <button value="2" onClick={this.setColorChooser}>Color 2</button>
-                <br></br>
+                {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes' 
+                ?
+                <h3>Waxed</h3> 
+                :
+                <h3>Unwaxed</h3>}
                 <button value="yes" onClick={this.updateWaxed}>Waxed</button>
                 <button value="no" onClick={this.updateWaxed}>Unwaxed</button>
-                <p>Currently Selecting Color: {this.state.colorChooser}</p>
-                <p className="capitalize">Color 1: {this.state.color1}</p>
-                <p className="capitalize">Color 2: {this.state.color2}</p>
-                {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes' ?
-                <p>Waxed <br></br>Waxed whips will hold up to the elements better than unwaxed whips.  Waxing your whip is one of the best ways to increase the lifespan you your bullwhip! </p> :
-                <p>Unwaxed</p>}
+                { this.props.state.bullwhip.designABullwhipReducer.color1.name === ''
+                ?
+                <p>Select you Color 1</p>
+                :
+                <p className = "capitalize">Color 1: {this.props.state.bullwhip.designABullwhipReducer.color1.name}</p>
+                }
+                { this.props.state.bullwhip.designABullwhipReducer.color2.name === ''
+                ?
+                <p>Select you Color 2</p>
+                :
+                <p className = "capitalize">Color 2: {this.props.state.bullwhip.designABullwhipReducer.color2.name}</p>
+                }              
+                
             </div>
         );
     }

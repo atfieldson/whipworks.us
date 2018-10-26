@@ -6,6 +6,10 @@ import Nav from '../../components/Nav/Nav';
 
 class YourWhip extends Component {
 
+    addBullwhipToCart = () => {
+        this.props.dispatch({type: 'ADD_BULLWHIP_TO_CART', payload: this.props.state.bullwhip.designABullwhipReducer})
+    }
+
     render() {
         return (
             <div >
@@ -21,8 +25,8 @@ class YourWhip extends Component {
                     {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes' ?
                     <p>Waxed</p> :
                     <p>Unwaxed</p>}
-                    {this.props.state.bullwhip.designABullwhipReducer.pattern !== '' ?
-                    <p className="capitalize">Handle Pattern: {this.props.state.bullwhip.designABullwhipReducer.pattern}</p> :
+                    {this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '' ?
+                    <p className="capitalize">Handle Pattern: {this.props.state.bullwhip.designABullwhipReducer.pattern.name}</p> :
                     <p>Please Choose Your Whip's Handle Pattern</p>}
                     {this.props.state.bullwhip.designABullwhipReducer.whipLength.name !== '' ?
                     <p className="capitalize">Whip Length: {this.props.state.bullwhip.designABullwhipReducer.whipLength.name} Feet</p> :
@@ -37,27 +41,22 @@ class YourWhip extends Component {
                     {
                     this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' &&
                     this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' &&
-                    this.props.state.bullwhip.designABullwhipReducer.pattern !== '' &&
+                    this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '' &&
                     this.props.state.bullwhip.designABullwhipReducer.whipLength.name !== '' &&
                     this.props.state.bullwhip.designABullwhipReducer.handleLength.name !== '' &&
                     this.props.state.bullwhip.designABullwhipReducer.concho.name !== '' 
                     ?
                     <div>
                     <p>Your total is: ${this.props.state.bullwhip.designABullwhipReducer.total}</p>
-                    
+                    <button onClick={this.addBullwhipToCart}>
+                        Add Bullwhip to Cart
+                    </button>
                     <button onClick={() => this.props.history.push("/checkout")}>
                         Proceed to Checkout
                     </button> 
                     </div>
                     :
                     <span></span>}
-
-
-                    {/* <p className="capitalize">Color 2: {this.props.state.bullwhip.designABullwhipReducer.color2.name}</p>
-                    <p className="capitalize">Handle Design: {this.props.state.bullwhip.designABullwhipReducer.pattern}</p>
-                    <p className="capitalize">Whip Length: {this.props.state.bullwhip.designABullwhipReducer.whipLength.name}</p>
-                    <p className="capitalize">Handle Length: {this.props.state.bullwhip.designABullwhipReducer.handleLength.name}</p>
-                    <p className="capitalize">Concho: {this.props.state.bullwhip.designABullwhipReducer.concho.name}</p> */}
                 </div>
             </div>
                 

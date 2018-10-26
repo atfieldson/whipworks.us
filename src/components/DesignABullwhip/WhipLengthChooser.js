@@ -13,7 +13,7 @@ class WhipLengthChooser extends Component {
             whipLength: event.target.name
         })
         console.log('cost:', event.target.cost)
-        this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: { name: event.target.name, cost: event.target.value, waxed_cost: event.target.title }})
+        this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: { name: event.target.name, cost: event.target.value, waxed_cost: event.target.title, id: event.target.id }})
         this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
@@ -29,13 +29,14 @@ class WhipLengthChooser extends Component {
         return (
             <div >
                 <h2>
-                    Choose Your Whip Length        
+                    Whip Length        
                 </h2>
                 <div className="whipLengthButtonsContainer">
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
                         return <button 
                         value={length.cost}
                         key={length.id} 
+                        id={length.id}
                         onClick={this.updateWhipLength}
                         name={length.length}
                         title={length.waxed_cost}
@@ -44,8 +45,12 @@ class WhipLengthChooser extends Component {
                         </button>
                     })}
                 </div>
-                
-                <p>Selected Whip Length: {this.state.whipLength}</p>
+                { this.props.state.bullwhip.designABullwhipReducer.whipLength.name === ''
+                ?
+                <p>Select you Whip's Length</p>
+                :
+                <p>Selected Whip Length: {this.props.state.bullwhip.designABullwhipReducer.whipLength.name} Feet</p>
+                }
             </div>
         );
     }

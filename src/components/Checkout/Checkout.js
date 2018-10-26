@@ -15,12 +15,7 @@ class Checkout extends Component {
                 <h1>
                     Checkout
                 </h1>
-                {this.props.state.bullwhip.designABullwhipReducer.color1.name === '' ||
-                    this.props.state.bullwhip.designABullwhipReducer.color2.name === '' ||
-                    this.props.state.bullwhip.designABullwhipReducer.pattern === '' ||
-                    this.props.state.bullwhip.designABullwhipReducer.whipLength.name === '' ||
-                    this.props.state.bullwhip.designABullwhipReducer.handleLength.name === '' ||
-                    this.props.state.bullwhip.designABullwhipReducer.concho.name === ''
+                {this.props.state.bullwhip.cartReducer.length === 0 
                     ?
                     <div className="incompleteContainer">
                         <h3>Your cart is currently empty</h3>
@@ -35,31 +30,30 @@ class Checkout extends Component {
                             <div className="cartContainer">
                                 <h3>Your Cart</h3>
                                 <ul>
-                                    <li className="capitalize">Color 1: {this.props.state.bullwhip.designABullwhipReducer.color1.name}</li>
-                                    <li className="capitalize">Color 2: {this.props.state.bullwhip.designABullwhipReducer.color2.name}</li>
-                                    <li className="capitalize">Handle Pattern: {this.props.state.bullwhip.designABullwhipReducer.pattern}</li>
-                                    <li className="capitalize">Waxed: {this.props.state.bullwhip.designABullwhipReducer.waxed}
-                                        ( +${this.props.state.bullwhip.designABullwhipReducer.whipLength.waxed_cost} )</li>
-                                    <li className="capitalize">Whip Length: {this.props.state.bullwhip.designABullwhipReducer.whipLength.name} Feet
-                                    ( +${this.props.state.bullwhip.designABullwhipReducer.whipLength.cost} )</li>
-                                    <li className="capitalize">Handle Length: {this.props.state.bullwhip.designABullwhipReducer.handleLength.name} Inches
-                                    ( +${this.props.state.bullwhip.designABullwhipReducer.handleLength.cost} )</li>
-                                    <li className="capitalize">Concho: {this.props.state.bullwhip.designABullwhipReducer.concho.name}
-                                        ( +${this.props.state.bullwhip.designABullwhipReducer.concho.cost} )</li>
-                                    <li className="capitalize">Total: ${this.props.state.bullwhip.designABullwhipReducer.total}</li>
+                                    <li className="capitalize">Color 1: {this.props.state.bullwhip.cartReducer.item.color1.name}</li>
+                                    <li className="capitalize">Color 2: {this.props.state.bullwhip.cartReducer.item.color2.name}</li>
+                                    <li className="capitalize">Handle Pattern: {this.props.state.bullwhip.cartReducer.item.pattern.name}</li>
+                                    <li className="capitalize">Waxed: {this.props.state.bullwhip.cartReducer.item.waxed}
+                                        ( +${this.props.state.bullwhip.cartReducer.item.whipLength.waxed_cost} )</li>
+                                    <li className="capitalize">Whip Length: {this.props.state.bullwhip.cartReducer.item.whipLength.name} Feet
+                                    ( +${this.props.state.bullwhip.cartReducer.item.whipLength.cost} )</li>
+                                    <li className="capitalize">Handle Length: {this.props.state.bullwhip.cartReducer.item.handleLength.name} Inches
+                                    ( +${this.props.state.bullwhip.cartReducer.item.handleLength.cost} )</li>
+                                    <li className="capitalize">Concho: {this.props.state.bullwhip.cartReducer.item.concho.name}
+                                        ( +${this.props.state.bullwhip.cartReducer.item.concho.cost} )</li>
+                                    <li className="capitalize">Total: ${this.props.state.bullwhip.cartReducer.item.total}</li>
                                 </ul>
+                                <button onClick={() => this.props.history.push("/bullwhip")}>
+                                    Edit Your Bullwhip
+                                </button>
                             </div>
                             <div className="paymentContainer">
                                 <h3>Payment Information</h3>
+                                <button>
+                                    Finalize Order
+                                </button>
                             </div>
                         </div>
-                        <br></br>
-                        <button onClick={() => this.props.history.push("/bullwhip")}>
-                            Edit Your Bullwhip
-                        </button>
-                        <button>
-                            Finalize Order
-                        </button>
                     </div>
                 }
 

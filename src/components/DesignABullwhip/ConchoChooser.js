@@ -13,7 +13,7 @@ class ConchoChooser extends Component {
             ...this.state,
             concho: event.target.name,
         })
-        this.props.dispatch({type: 'SET_WHIP_CONCHO', payload: { name: event.target.name, cost: event.target.value}})
+        this.props.dispatch({type: 'SET_WHIP_CONCHO', payload: { name: event.target.name, cost: event.target.value, id: event.target.id}})
         this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
@@ -29,14 +29,15 @@ class ConchoChooser extends Component {
         return (
             <div >
                 <h2>
-                    Choose Your Concho or Pommel
+                    Concho or Pommel
                 </h2>
                 <div className="conchoButtonsContainer">
                     {this.props.state.bullwhip.conchosReducer.map(concho => {
                         return <button 
                         className = "capitalize"
-                        value={concho.cost}
                         key={concho.id} 
+                        id={concho.id}
+                        value={concho.cost}
                         onClick={this.updateConcho}
                         name={concho.name}
                         >                        
@@ -44,8 +45,13 @@ class ConchoChooser extends Component {
                         </button>
                     })}
                 </div>
+                { this.props.state.bullwhip.designABullwhipReducer.concho.name === ''
+                ?
+                <p>Select you Whip's Concho</p>
+                :
+                <p className="capitalize">Selected Concho: {this.props.state.bullwhip.designABullwhipReducer.concho.name}</p>
+                }
                 
-                <p className = "capitalize">Selected Concho: {this.state.concho}</p>
             </div>
         );
     }

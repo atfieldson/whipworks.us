@@ -1,14 +1,15 @@
 import { combineReducers } from 'redux';
 
 const designABullwhipReducer = (state = {
-  color1: {name: '', url: '', unwaxedurl: ''}, 
-  color2: {name: '', url: '', unwaxedurl: ''},
+  color1: {name: '', url: '', unwaxedurl: '', id: ''}, 
+  color2: {name: '', url: '', unwaxedurl: '', id: ''},
   waxed: 'yes', 
-  pattern: '', 
-  whipLength: {name: '', cost: '0', waxed_cost: '0'}, 
-  handleLength: {name: '', cost: '0'}, 
-  concho: {name: '', cost: '0'}, 
-  total: 0},
+  pattern: {name:'', id: ''}, 
+  whipLength: {name: '', cost: '0', waxed_cost: '0', id: ''}, 
+  handleLength: {name: '', cost: '0', id: ''}, 
+  concho: {name: '', cost: '0', id: ''}, 
+  total: 0,
+},
   action) => {
     switch (action.type) {
       case 'SET_WHIP_COLOR1':
@@ -62,6 +63,18 @@ const designABullwhipReducer = (state = {
         return state;
     }
   };
+
+  const cartReducer = (state = [], action ) => {
+    switch (action.type) {
+      case 'ADD_BULLWHIP_TO_CART':
+        return {
+          type: 'bullwhip',
+          item: action.payload
+        };
+      default: 
+        return state;
+    }
+  }
 
   const colorsReducer = (state = [], action) => {
       console.log('in SET_COLORS')
@@ -120,4 +133,5 @@ const designABullwhipReducer = (state = {
     whipLengthsReducer,
     handleLengthsReducer,
     conchosReducer,
+    cartReducer,
   })

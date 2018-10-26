@@ -868,7 +868,7 @@ class CanvasRenderer extends Component {
     }
 
     renderHandle = () => {
-        let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern;
+        let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern.name;
         let color1 = this.props.state.bullwhip.designABullwhipReducer.color1.name;
         let color2 = this.props.state.bullwhip.designABullwhipReducer.color2.name;
 

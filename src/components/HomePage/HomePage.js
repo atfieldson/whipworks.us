@@ -5,7 +5,7 @@ import './homePage.css';
 import "react-image-gallery/styles/css/image-gallery.css";
 
 
-class UserPage extends Component {
+class HomePage extends Component {
   constructor() {
     super();
     this.state = {
@@ -80,7 +80,7 @@ class UserPage extends Component {
           </div>
           <div className="aboutWWContainer">
             <h3>About WhipWorks</h3>
-            <p>stuff about ww</p>
+            <p>Adam is a Whip Maker bassed in the beautiful Twin Cities, MN.  He would like to thank his beautiful cohort for their wonderful company!</p>
           </div>
         </div>
       </div>
@@ -96,5 +96,5 @@ const mapStateToProps = state => ({
 });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(UserPage);
+export default connect(mapStateToProps)(HomePage);
 
