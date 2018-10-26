@@ -30,9 +30,10 @@ class HandleLengthChooser extends Component {
                 <h2>
                     Handle Length        
                 </h2>
-                <div className="whipLengthButtonsContainer">
+                <div className="buttonsContainer">
                     {this.props.state.bullwhip.handleLengthsReducer.map(length => {
-                        return <button 
+                        return <div className="buttonDiv">
+                        <button 
                         value={length.cost}
                         key={length.id} 
                         id={length.id}
@@ -41,6 +42,8 @@ class HandleLengthChooser extends Component {
                         >                        
                         {length.length} Inches
                         </button>
+                        <p>${length.cost}</p>
+                        </div>
                     })}
                 </div>
                 { this.props.state.bullwhip.designABullwhipReducer.handleLength.name === ''

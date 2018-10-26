@@ -29,11 +29,12 @@ class WhipLengthChooser extends Component {
         return (
             <div >
                 <h2>
-                    Whip Length        
+                    Whip Length         
                 </h2>
-                <div className="whipLengthButtonsContainer">
+                <div className="buttonsContainer">
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
-                        return <button 
+                        return <div className="buttonDiv">
+                        <button 
                         value={length.cost}
                         key={length.id} 
                         id={length.id}
@@ -43,8 +44,12 @@ class WhipLengthChooser extends Component {
                         >                        
                         {length.length} Feet
                         </button>
+                        <p>${length.cost}</p>
+                        <p>${length.waxed_cost}*</p>
+                        </div>
                     })}
                 </div>
+                <p>( * Additional Cost for Waxed Whip, different per length )</p>
                 { this.props.state.bullwhip.designABullwhipReducer.whipLength.name === ''
                 ?
                 <p>Select you Whip's Length</p>

@@ -172,7 +172,8 @@ CREATE TABLE "users" (
 CREATE TABLE "orders" (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT,
-	"shipping_name" TEXT NOT NULL,
+	"first_name" TEXT NOT NULL,
+	"last_name" TEXT NOT NULL,
 	"shipping_street_address" TEXT NOT NULL,
 	"shipping_city" TEXT NOT NULL,
 	"shipping_country" TEXT NOT NULL,

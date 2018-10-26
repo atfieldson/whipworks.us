@@ -1,5 +1,6 @@
 .checkoutContainer {
     text-align: center;
+    font-family: 'BioRhyme', serif;
 }
 
 .orderContainer{
@@ -14,16 +15,29 @@
 }
 
 .cartContainer{
-    border: 5px solid black;
-    width: 350px;
+    width: 100vw;
+}
 
+.itemContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.cartItem{
+    border: 5px solid black;
 }
 
 ul{
     text-align: left;
 }
 
+.shippingContainer{
+    margin: 4px;
+    border: 5px solid black;
+}
+
 .paymentContainer{
+    margin: 4px;
     border: 5px solid black;
 }
 

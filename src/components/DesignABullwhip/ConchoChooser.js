@@ -31,9 +31,10 @@ class ConchoChooser extends Component {
                 <h2>
                     Concho or Pommel
                 </h2>
-                <div className="conchoButtonsContainer">
+                <div className="buttonsContainer">
                     {this.props.state.bullwhip.conchosReducer.map(concho => {
-                        return <button 
+                        return <div className = "buttonDiv">
+                        <button 
                         className = "capitalize"
                         key={concho.id} 
                         id={concho.id}
@@ -43,6 +44,8 @@ class ConchoChooser extends Component {
                         >                        
                         {concho.name}
                         </button>
+                        <p>${concho.cost}</p>
+                        </div>
                     })}
                 </div>
                 { this.props.state.bullwhip.designABullwhipReducer.concho.name === ''

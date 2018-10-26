@@ -42,6 +42,8 @@ const designABullwhipReducer = (state = {
           ...state,
           handleLength: action.payload,
         }
+      case 'SET_BULLWHIP':
+        return action.payload;
       case 'SET_WHIP_CONCHO':
         return {
           ...state,
@@ -67,17 +69,30 @@ const designABullwhipReducer = (state = {
   const cartReducer = (state = [], action ) => {
     switch (action.type) {
       case 'ADD_BULLWHIP_TO_CART':
-        return {
-          type: 'bullwhip',
-          item: action.payload
-        };
+        return [
+          ...state,
+          {type: 'bullwhip',
+          item: action.payload,
+          }];
+      case 'DELETE_ITEM_FROM_CART':
+          let newArray = state.slice(0);
+          newArray.splice(action.payload, 1)
+          return newArray;
       default: 
         return state;
     }
   }
 
+  const orderTotalReducer = (state = 0, action) => {
+    switch (action.type) {
+      case 'SET_ORDER_TOTAL':
+        return action.payload;
+    default:
+      return state;
+    };
+  }
+
   const colorsReducer = (state = [], action) => {
-      console.log('in SET_COLORS')
       switch (action.type) {
           case 'SET_COLORS':
             return action.payload;
@@ -87,7 +102,6 @@ const designABullwhipReducer = (state = {
     }
 
   const handlesReducer = (state = [], action) => {
-    console.log('in SET_HANDLES')
     switch (action.type) {
         case 'SET_HANDLES':
           return action.payload;
@@ -107,7 +121,6 @@ const designABullwhipReducer = (state = {
   }
 
   const handleLengthsReducer = (state = [], action ) => {
-    console.log('in SET_HANDLE_LENGTHS');
     switch (action.type) {
       case 'SET_HANDLE_LENGTHS':
         return action.payload;
@@ -134,4 +147,5 @@ const designABullwhipReducer = (state = {
     handleLengthsReducer,
     conchosReducer,
     cartReducer,
+    orderTotalReducer,
   })
