@@ -3,10 +3,12 @@
 }
 
 .designHeader {
+font-family: 'BioRhyme', serif;
 text-align: center;
 }
 
 .designContainer {
+    font-family: 'BioRhyme', serif;
     border: 5px solid black;
     text-align: center;
 }

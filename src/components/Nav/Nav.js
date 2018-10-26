@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Nav.css';
 
+
 const Nav = (props) => (
   <div className="nav">
+    <img src={require('./wwBanner.jpg')} className="wwBanner" alt="WhipWorks" />
     <img src={require("./ww.jpg")} className="WWLogo" alt="WhipWorks" />
     <Link to="/home">
       <h2 className="nav-title">Home</h2>
@@ -12,7 +14,7 @@ const Nav = (props) => (
     <Link to="/login">
       <h2 className="nav-title">Login</h2>
     </Link>
-    <div className="nav-right">
+    <div className="nav-link-container">
       <Link className="nav-link" to="/bullwhip">
         Design A Bullwhip
       </Link>

@@ -1,0 +1,21 @@
+.homeTitle {
+    text-align: center;
+}
+
+.homePageContentContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.imageGalleryContainer {
+    width: 30vw;
+    border: 5px solid black
+}
+
+.aboutWWContainer{
+    text-align: center;
+    border: 5px solid black;
+    width: 30vw;
+
+}

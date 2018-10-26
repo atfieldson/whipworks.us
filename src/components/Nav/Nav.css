@@ -1,10 +1,33 @@
+.nav {
+  font-family: 'BioRhyme', serif;
+  /* background-image: url("./wwBanner.jpg");
+  background-position: center;
+  background-size: 800px 100px;
+  background-repeat: no-repeat; */
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 4px solid black;
+  height: 120px;
+}
+
+.wwBanner {
+  height: 100px;
+  position: absolute;
+  right: 10vw;
+  max-width: 950px;
+}
+
 .nav-title {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     display: inline-block;
     color: black;
-    padding-left: 10px;
+    padding: 5px;
     position: relative;
+    top: -25px;
+    margin-right: 3vw;
+    margin-left: 3vw;
+
 }
 
 .nav-title:hover {
@@ -17,20 +40,21 @@
   width: 75px;
 }
 
-.nav {
-  overflow: hidden;
-  background-color: white;
-  border-bottom: 4px solid black;
-  height: 10vh;
+.nav-link-container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 38px;
 }
 
 .nav-link {
-  float: left;
+  /* float: left; */
+  
   color: black;
   text-align: center;
-  padding: 24px 10px;
+  padding: 10px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
 
   /* these last two make the logout button in
   the nav bar look like another link */

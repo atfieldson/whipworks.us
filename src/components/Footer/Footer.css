@@ -1,3 +1,18 @@
-footer {
+
+.footerContainer{
     margin-top: 80px;
+    border-top: 5px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}
+.mediaLogo {
+    height: 50px;
+    margin: 5px; 
+    cursor: pointer;
+}
+
+.footerRight{
+    position: absolute;
+    right: 10px;
+    margin-top: auto;
 }

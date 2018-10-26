@@ -59,34 +59,13 @@ class CanvasRenderer extends Component {
 
         //backgrounds
         const WWLogo = new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"));
-        const geo0WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
-        const mat0WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: WWLogo });
-        const plane0 = new THREE.Mesh(geo0WW, mat0WW);
-        plane0.position.set(0, 0, -60)
-        plane0.rotation.y = 0;
+        const geoWW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
+        const matWW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: WWLogo });
+        const plane = new THREE.Mesh(geoWW, matWW);
+        plane.position.set(0, 0, -60)
+        plane.rotation.y = 0;
 
-        const Indy = new THREE.TextureLoader().load(require("./images/backgrounds/catWhip.jpg"));
-        const geo1WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
-        const mat1WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: Indy });
-        const plane1 = new THREE.Mesh(geo1WW, mat1WW);
-        plane1.position.set(60, 0, 0)
-        plane1.rotation.y = -Math.PI / 2;
-
-        const CatWhip = new THREE.TextureLoader().load(require("./images/backgrounds/saberWhip.jpg"));
-        const geo2WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
-        const mat2WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: CatWhip });
-        const plane2 = new THREE.Mesh(geo2WW, mat2WW);
-        plane2.position.set(-60, 0, 0)
-        plane2.rotation.y = Math.PI / 2;
-
-        const SaberWhip = new THREE.TextureLoader().load(require("./images/backgrounds/indy.jpg"));
-        const geo3WW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
-        const mat3WW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: SaberWhip });
-        const plane3 = new THREE.Mesh(geo3WW, mat3WW);
-        plane3.position.set(0, 0, 60)
-        plane3.rotation.y = Math.PI;
-
-        scene.add(plane0, plane1, plane2, plane3);
+        scene.add(plane);
         //end backgrounds
 
         //handle

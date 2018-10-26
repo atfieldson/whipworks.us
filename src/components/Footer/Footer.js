@@ -8,8 +8,22 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; WhipWorks
-  </footer>
+  <div className="footerContainer">
+  <a href="https://www.facebook.com/adamswhipworks/">
+  <img src={require('./images/facebook.jpg')} className="mediaLogo" />
+  </a>
+  <a href="https://www.instagram.com/whipworks/?hl=en">
+    <img src={require('./images/instagram.png')} className="mediaLogo" />
+  </a>
+  <a href="https://www.youtube.com/channel/UCy1U3l1nwB3TwFbCV3Z5peQ">
+  <img src={require('./images/youtube.png')} className="mediaLogo" />
+  </a>
+  <p className="footerRight">
+   &copy; WhipWorks
+   </p>
+  </div>
+   
+   </footer>
 );
 
 export default Footer;
