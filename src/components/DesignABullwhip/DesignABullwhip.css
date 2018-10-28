@@ -1,42 +1,74 @@
-.capitalize {
-    text-transform: capitalize;
-}
-
+/* Where You choose your whip and handle renders */
 .designHeader {
 font-family: 'BioRhyme', serif;
 text-align: center;
+}
+
+.designYourBullwhipContainer{
+    display: flex;
+}
+
+.waxedColorPatternColumn{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsRenderColumn{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.whipHandleDetails {
+    flex: 2;
+}
+
+.renderWhip {
+    flex: 1;
+}
+
+.rendering {
+    flex: 2;
+    max-width: 400px;
+}
+/* end */
+
+/* Where you add final details to whip and eventually proceed to card/checkout */
+.purchaseWhipContainer{
+    display: flex;
+}
+
+.lengthConchoContainer{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.yourWhipContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.yourWhip{
+    flex: 1;
+}
+/* end */
+
+.handleContainer {
+    flex: 1;
+}
+
+.myCanvas {
+    max-width: 400px;
+    height: 800px;
 }
 
 .designContainer {
     font-family: 'BioRhyme', serif;
     border: 5px solid black;
     text-align: center;
-}
-
-.handleAndRendering {
-    display: flex;
-}
-
-.handleContainer {
-    flex: 1;
-    border-top: 0;
-    border-right: 0;
-}
-
-.rendering {
-    border-top: 0;
-    width: 500px;
-}
-
-.hidden {
-    visibility: hidden;
-    display: none;
-    top: 0
-}
-
-.myCanvas {
-    width: 500px;
-    height: 1000px;
+    margin: 2px;
 }
 
 .buttonsContainer{
@@ -48,6 +80,58 @@ text-align: center;
 .buttonDiv {
     margin-right: 2px;
     margin-left: 2px;
+}
+
+.colorButtonsContainer {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.colorButton {
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 60px;
+    width: 100px;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background-size: cover;
+    background-position: 0px -8px;
+    color: #ffffff;
+    /* font-family: 1rem; */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.colorButton:hover,
+.colorButton:focus {
+    background: black;
+    color: white;
+}
+
+/* .highlight1 {
+    background-color: pink;
+}
+
+.highlight2 {
+    background-color: orange;
+} */
+
+
+.hidden {
+    visibility: hidden;
+    display: none;
+    top: 0
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import WaxChooser from './WaxChooser';
 import ColorChooser from './ColorChooser';
+import WhipHandleDetails from './WhipHandleDetails';
 import HandleChooser from './HandleChooser';
 import CanvasRenderer from './CanvasRenderer';
 import WhipLengthChooser from './WhipLengthChooser';
@@ -18,31 +20,34 @@ class DesignABullwhip extends Component {
         <div className="designHeader">
           <h1>Design A Bullwhip</h1>
         </div>
-        <div className="colorContainer designContainer">
-          <ColorChooser />
-        </div>
-        <div className="handleAndRendering">
-          <div className="handleContainer designContainer">
-          <HandleChooser />
+        <div className="designYourBullwhipContainer">
+          <div className="waxedColorPatternColumn">
+            <WaxChooser />
+            <ColorChooser />
+            <HandleChooser />
           </div>
-          <div className="rendering designContainer">
-            <CanvasRenderer />
+          <div className="detailsRenderColumn">
+            <WhipHandleDetails />
+            <div className="designContainer renderWhip">
+              <h3>Render Your Whip</h3>
+            </div>
+          </div>
+          <CanvasRenderer />
+        </div>
+
+
+        <div className="purchaseWhipContainer">
+          <div className="lengthConchoContainer">
+            <WhipLengthChooser />
+            <HandleLengthChooser />
+            <ConchoChooser />
+          </div>
+          <div className="yourWhipContainer">
+            <YourWhip />
           </div>
         </div>
-        <div className="designContainer">
-          <WhipLengthChooser />
-        </div>
-        <div className="designContainer">
-          <HandleLengthChooser />
-        </div>
-        <div className="designContainer">
-          <ConchoChooser />
-        </div>
-        <div className="designContainer">
-          <YourWhip />
-        </div>
-        <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p>
-      </div>
+        {/* <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p> */}
+      </div >
     )
   }
 }

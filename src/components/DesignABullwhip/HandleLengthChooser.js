@@ -26,16 +26,15 @@ class HandleLengthChooser extends Component {
 
     render() {
         return (
-            <div >
+            <div className="designContainer">
                 <h2>
                     Handle Length        
                 </h2>
                 <div className="buttonsContainer">
                     {this.props.state.bullwhip.handleLengthsReducer.map(length => {
-                        return <div className="buttonDiv">
+                        return <div className="buttonDiv" key={length.id}>
                         <button 
                         value={length.cost}
-                        key={length.id} 
                         id={length.id}
                         onClick={this.updateHandleLength}
                         name={length.length}

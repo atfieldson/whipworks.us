@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
+import './spools.css';
 
 class ColorChooser extends Component {
 
@@ -9,12 +10,20 @@ class ColorChooser extends Component {
         waxed: 'yes',
     }
 
-    setWaxed = () => {
-    
-    //set waxed status in redux
+    getSpool = (color) => {
+//takes in a name of a color and returns a string without spaces, the class
+        let name = color.replace(/\s/g, '')
+        console.log('in spool:', name);
+        let highlight = ''
+        if (this.props.state.bullwhip.designABullwhipReducer.color1.name === color) {
+            highlight = 'highlight1'
+        } else if (this.props.state.bullwhip.designABullwhipReducer.color2.name === color) {
+            highlight = 'highlight2'
+        }
 
-    //reset color1.url and color2.url and in designABullwhipReducer to reflect waxed or unwaxed
+        return `colorButton capitalize ${highlight} ${name}`
     }
+
     setColorChooser = (event) => {
         this.setState({
             ...this.state,
@@ -39,17 +48,6 @@ class ColorChooser extends Component {
         this.props.dispatch({ type: 'SET_WHIP_COLOR2', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title, id: event.target.id} })
     }
 
-    updateWaxed = (event) => {
-        this.setState({
-            ...this.state,
-            waxed: event.target.value
-        })
-        this.props.dispatch({ type: 'SET_WHIP_WAXED', payload: event.target.value })
-        this.props.dispatch({ type: 'SET_WHIP_TOTAL'})
-    }
-
-
-
     getColors = () => {
         this.props.dispatch({ type: 'FETCH_COLORS' })
     }
@@ -59,18 +57,20 @@ class ColorChooser extends Component {
     }
 
     render() {
+
         return (
-            <div >
+            <div className="colorContainer designContainer">
                 <h2>
-                    Choose Your Color
+                    Choose Your Colors
                 </h2>
                 <div className="colorButtonsContainer">
                     {this.props.state.bullwhip.colorsReducer.map(color => {
                         return <button
-                            className="capitalize"
+                            className={this.getSpool(color.color)}
                             key={color.id}
                             id={color.id}
                             name={color.color}
+                            
                             onClick=
                             {this.state.colorChooser === "1"
                                 ? this.updateColor1
@@ -93,13 +93,6 @@ class ColorChooser extends Component {
                 <h3>Currently Selecting: Color {this.state.colorChooser}</h3>
                 <button value="1" onClick={this.setColorChooser}>Color 1</button>
                 <button value="2" onClick={this.setColorChooser}>Color 2</button>
-                {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes' 
-                ?
-                <h3>Waxed</h3> 
-                :
-                <h3>Unwaxed</h3>}
-                <button value="yes" onClick={this.updateWaxed}>Waxed</button>
-                <button value="no" onClick={this.updateWaxed}>Unwaxed</button>
                 { this.props.state.bullwhip.designABullwhipReducer.color1.name === ''
                 ?
                 <p>Select you Color 1</p>

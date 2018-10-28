@@ -26,7 +26,7 @@ class HandleChooser extends Component {
 
     render() {
         return (
-            <div >
+            <div className="handleContainer designContainer">
                 <h2>
                     Handle Pattern        
                 </h2>

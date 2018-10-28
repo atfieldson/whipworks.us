@@ -12,9 +12,9 @@ class YourWhip extends Component {
 
     render() {
         return (
-            <div >
+            <div className="designContainer yourWhip">
                 <h2>
-                    Details about your whip:
+                    Complete all fields and buy your Bullwhip
                 </h2>
                 <div>{this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' ?
                     <p className="capitalize">Color 1: {this.props.state.bullwhip.designABullwhipReducer.color1.name}</p> :

@@ -27,16 +27,15 @@ class ConchoChooser extends Component {
 
     render() {
         return (
-            <div >
+            <div className="designContainer">
                 <h2>
                     Concho or Pommel
                 </h2>
                 <div className="buttonsContainer">
                     {this.props.state.bullwhip.conchosReducer.map(concho => {
-                        return <div className = "buttonDiv">
+                        return <div className = "buttonDiv" key={concho.id}>
                         <button 
-                        className = "capitalize"
-                        key={concho.id} 
+                        className = "capitalize"                       
                         id={concho.id}
                         value={concho.cost}
                         onClick={this.updateConcho}

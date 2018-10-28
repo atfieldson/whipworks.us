@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as THREE from 'three';
-import initialImage from './images/backgrounds/handleWrap.svg';
 
 
 import './DesignABullwhip.css';
@@ -56,17 +55,6 @@ class CanvasRenderer extends Component {
         light2.position.set(50, 15, 15)
         scene.add(light2);
         //end lights
-
-        //backgrounds
-        const WWLogo = new THREE.TextureLoader().load(require("./images/backgrounds/ww.jpg"));
-        const geoWW = new THREE.PlaneBufferGeometry(50, 50, 8, 8);
-        const matWW = new THREE.MeshPhongMaterial({ color: 0xffffff, map: WWLogo });
-        const plane = new THREE.Mesh(geoWW, matWW);
-        plane.position.set(0, 0, -60)
-        plane.rotation.y = 0;
-
-        scene.add(plane);
-        //end backgrounds
 
         //handle
         //creates texture to wrap around cylinder geometry
@@ -898,9 +886,9 @@ class CanvasRenderer extends Component {
 
     render() {
         return (
-            <div>
+            <div className="rendering designContainer">
                 <button onClick={this.renderHandle}>Render Handle</button>
-                <div ref={(mount) => { this.mount = mount }} className="myCanvas" width="500" height="1000" ></div>
+                <div ref={(mount) => { this.mount = mount }} className="myCanvas" width="400" height="800" ></div>
                 <canvas ref={(canvas) => { this.canvas = canvas }} width="400" height="1600" className="hidden"></canvas>
                 <div>
                     {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
@@ -927,7 +915,7 @@ class CanvasRenderer extends Component {
                         <span></span>
                     }
                     {/* onLoad below runs initialPattern once initialHandleWrap has completely loaded, allowing the handle to update with the logo */}
-                    <img onLoad={this.initialPattern} ref="initialHandleWrap" src={require(`./images/backgrounds/handleWrap.jpg`)} className="hidden" alt=""></img>
+                    <img onLoad={this.initialPattern} ref="initialHandleWrap" src={require(`./images/backgrounds/handleWrapWhite.jpg`)} className="hidden" alt=""></img>
                 </div>
             </div>
         )

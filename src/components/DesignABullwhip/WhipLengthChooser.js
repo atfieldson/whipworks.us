@@ -27,16 +27,15 @@ class WhipLengthChooser extends Component {
 
     render() {
         return (
-            <div >
+            <div className="designContainer">
                 <h2>
                     Whip Length         
                 </h2>
                 <div className="buttonsContainer">
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
-                        return <div className="buttonDiv">
+                        return <div className="buttonDiv" key={length.id}>
                         <button 
-                        value={length.cost}
-                        key={length.id} 
+                        value={length.cost} 
                         id={length.id}
                         onClick={this.updateWhipLength}
                         name={length.length}
