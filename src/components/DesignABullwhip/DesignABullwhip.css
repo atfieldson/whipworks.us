@@ -87,6 +87,7 @@ text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border: none;
 }
 .colorButton {
     border-radius: 5px;
@@ -110,9 +111,12 @@ text-align: center;
 }
 
 .colorButton:hover,
-.colorButton:focus {
+.colorButton:focus{
     background: black;
     color: white;
+    border: none;
+    /* outline gets rid of the blue border on selected item */
+    outline:0;
 }
 
 /* .highlight1 {

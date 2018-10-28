@@ -111,3 +111,54 @@
     background-image: url("./images/spools/yellow.jpg");
     color: black;
 }
+
+
+.handleDetailsSpool{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* targets all p tags with parent handleDetailsSpool  */
+.handleDetailsSpool p{
+    color: white;
+    max-width: 100px;
+}
+
+.handleDetailsSpoolWhite{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+
+.handleDetailsSpoolWhite p{
+    color: black;
+    /* text-align: center;
+    vertical-align: middle; */
+    /* line-height: 75px; */
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
+}
+
+.emptyDetailsSpool{
+    height: 75px;
+    /* width: 100px; */
+    text-align: center;
+    display: inline-block;
+}
+
+

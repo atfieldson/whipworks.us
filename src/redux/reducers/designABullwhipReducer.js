@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
 const designABullwhipReducer = (state = {
-  color1: {name: '', url: '', unwaxedurl: '', id: ''}, 
-  color2: {name: '', url: '', unwaxedurl: '', id: ''},
+  color1: {name: '', url: '', unwaxedurl: '', id: '', spool_url: ''}, 
+  color2: {name: '', url: '', unwaxedurl: '', id: '', spool_url: ''},
   waxed: 'yes', 
   pattern: {name:'', id: ''}, 
   whipLength: {name: '', cost: '0', waxed_cost: '0', id: ''}, 

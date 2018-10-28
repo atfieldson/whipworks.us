@@ -13,7 +13,6 @@ class ColorChooser extends Component {
     getSpool = (color) => {
 //takes in a name of a color and returns a string without spaces, the class
         let name = color.replace(/\s/g, '')
-        console.log('in spool:', name);
         let highlight = ''
         if (this.props.state.bullwhip.designABullwhipReducer.color1.name === color) {
             highlight = 'highlight1'
@@ -29,7 +28,6 @@ class ColorChooser extends Component {
             ...this.state,
             colorChooser: event.target.value,
         })
-        console.log('color chooser:', this.state.colorChooser)
     }
 
     updateColor1 = (event) => {
@@ -37,7 +35,15 @@ class ColorChooser extends Component {
             ...this.state,
             color1: event.target.name,
         })
-        this.props.dispatch({ type: 'SET_WHIP_COLOR1', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title, id: event.target.id} })
+        this.props.dispatch({ 
+            type: 'SET_WHIP_COLOR1', 
+            payload: { 
+                name: event.target.name, 
+                url: event.target.value, 
+                unwaxedurl: event.target.title, 
+                id: event.target.id, 
+                // dataset allows you to create custom data attributes, look at data-spool={color.img_spool} in jsx
+                spool_url: event.target.dataset.spool} })
     }
 
     updateColor2 = (event) => {
@@ -45,7 +51,15 @@ class ColorChooser extends Component {
             ...this.state,
             color2: event.target.name,
         })
-        this.props.dispatch({ type: 'SET_WHIP_COLOR2', payload: { name: event.target.name, url: event.target.value, unwaxedurl: event.target.title, id: event.target.id} })
+        this.props.dispatch({ 
+            type: 'SET_WHIP_COLOR2', 
+            payload: { 
+                name: event.target.name, 
+                url: event.target.value, 
+                unwaxedurl: event.target.title, 
+                id: event.target.id,
+                spool_url: event.target.dataset.spool,
+            } })
     }
 
     getColors = () => {
@@ -70,7 +84,7 @@ class ColorChooser extends Component {
                             key={color.id}
                             id={color.id}
                             name={color.color}
-                            
+                            data-spool={color.img_spool}
                             onClick=
                             {this.state.colorChooser === "1"
                                 ? this.updateColor1
@@ -93,19 +107,6 @@ class ColorChooser extends Component {
                 <h3>Currently Selecting: Color {this.state.colorChooser}</h3>
                 <button value="1" onClick={this.setColorChooser}>Color 1</button>
                 <button value="2" onClick={this.setColorChooser}>Color 2</button>
-                { this.props.state.bullwhip.designABullwhipReducer.color1.name === ''
-                ?
-                <p>Select you Color 1</p>
-                :
-                <p className = "capitalize">Color 1: {this.props.state.bullwhip.designABullwhipReducer.color1.name}</p>
-                }
-                { this.props.state.bullwhip.designABullwhipReducer.color2.name === ''
-                ?
-                <p>Select you Color 2</p>
-                :
-                <p className = "capitalize">Color 2: {this.props.state.bullwhip.designABullwhipReducer.color2.name}</p>
-                }              
-                
             </div>
         );
     }

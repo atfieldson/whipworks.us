@@ -4,6 +4,19 @@ import './DesignABullwhip.css';
 
 class WhipHandleDetails extends Component {
 
+    createBackgroundClass = (color) => {
+        //removes spaces
+        let name = color.replace(/\s/g, '')
+
+        if (color === 'white' || color === 'turquoise' || color === 'silver' || color === 'yellow'){
+            return `capitalize handleDetailsSpoolWhite ${name}`
+        } else{
+        let name = color.replace(/\s/g, '')
+            return `capitalize handleDetailsSpool ${name}`
+        }
+    }
+    
+
     render() {
         return (
             <div className="designContainer whipHandleDetails">
@@ -11,16 +24,27 @@ class WhipHandleDetails extends Component {
                 <h4>Color 1:</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.color1.name === ''
                     ?
+                    <div className="emptyDetailsSpool">
                     <p>Please pick your color 1</p>
+                    </div>
                     :
-                    <p className="capitalize">{this.props.state.bullwhip.designABullwhipReducer.color1.name}</p>
-                    }
+                    <div className={this.createBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.color1.name)}>
+                    <p>
+                        {this.props.state.bullwhip.designABullwhipReducer.color1.name}
+                    </p>  
+                    </div>                  }
                 <h4>Color 2:</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.color2.name === ''
                     ?
-                    <p>Please pick your color 1</p>
+                    <div className="emptyDetailsSpool">
+                    <p>Please pick your color 2</p>
+                    </div>
                     :
-                    <p className="capitalize">{this.props.state.bullwhip.designABullwhipReducer.color2.name}</p>
+                    <div className={this.createBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.color2.name)}>
+                    <p>
+                        {this.props.state.bullwhip.designABullwhipReducer.color2.name}
+                    </p>  
+                    </div>   
                     }
                 <h4>Waxed or Unwaxed?</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes'
