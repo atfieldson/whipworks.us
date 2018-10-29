@@ -66,6 +66,15 @@ const designABullwhipReducer = (state = {
     }
   };
 
+  const renderCanvas = (state = {renderHandle: false}, action) => {
+    switch (action.type) {
+      case 'RENDER_HANLE':
+        return {renderHandle: action.payload}
+      default: 
+        return state
+    }
+  }
+
   const cartReducer = (state = [], action ) => {
     switch (action.type) {
       case 'ADD_BULLWHIP_TO_CART':
@@ -87,6 +96,8 @@ const designABullwhipReducer = (state = {
     switch (action.type) {
       case 'SET_ORDER_TOTAL':
         return action.payload;
+      case 'SUBTRACT_FROM_TOTAL':
+        return state - action.payload;
     default:
       return state;
     };
@@ -148,4 +159,5 @@ const designABullwhipReducer = (state = {
     conchosReducer,
     cartReducer,
     orderTotalReducer,
+    renderCanvas,
   })

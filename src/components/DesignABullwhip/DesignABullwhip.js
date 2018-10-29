@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import WaxChooser from './WaxChooser';
 import ColorChooser from './ColorChooser';
 import WhipHandleDetails from './WhipHandleDetails';
+import RenderWhipButton from './RenderWhipButton';
 import HandleChooser from './HandleChooser';
 import CanvasRenderer from './CanvasRenderer';
 import WhipLengthChooser from './WhipLengthChooser';
@@ -28,9 +29,8 @@ class DesignABullwhip extends Component {
           </div>
           <div className="detailsRenderColumn">
             <WhipHandleDetails />
-            <div className="designContainer renderWhip">
-              <h3>Render Your Whip</h3>
-            </div>
+            <RenderWhipButton />
+            
           </div>
           <CanvasRenderer />
         </div>

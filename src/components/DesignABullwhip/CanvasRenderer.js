@@ -76,13 +76,13 @@ class CanvasRenderer extends Component {
         this.scene = scene
         this.camera = camera
         this.renderer = renderer
-        
+
         this.handle = handle
         this.texture = texture
 
         this.mount.appendChild(this.renderer.domElement)
         this.start()
-        
+
     }
 
     componentWillUnmount() {
@@ -111,7 +111,6 @@ class CanvasRenderer extends Component {
     renderScene() {
         this.renderer.render(this.scene, this.camera)
     }
-
     //-----------------------END THREEJS CODE---------------------------
 
 
@@ -860,7 +859,6 @@ class CanvasRenderer extends Component {
         let color1 = this.props.state.bullwhip.designABullwhipReducer.color1.name;
         let color2 = this.props.state.bullwhip.designABullwhipReducer.color2.name;
 
-
         if (pattern === '' || color1 === '' || color2 === '') {
             this.initialPattern();
         } else if (pattern === 'box') {
@@ -882,12 +880,27 @@ class CanvasRenderer extends Component {
         }
     }
 
+
+    triggerRenderHandle = () => {
+        //allows me to trigger renderHandle() from RenderWhipButton component
+        this.renderHandle()
+        this.props.dispatch({ type: 'RENDER_HANLE', payload: false });
+    };
+
+
+    componentDidUpdate() {
+        if (this.props.state.bullwhip.renderCanvas.renderHandle === true) {
+            this.triggerRenderHandle();
+        }
+    }
+
+
+
     //-----------------------END CANVAS CODE---------------------------
 
     render() {
         return (
             <div className="rendering designContainer">
-                <button onClick={this.renderHandle}>Render Handle</button>
                 <div ref={(mount) => { this.mount = mount }} className="myCanvas" width="400" height="800" ></div>
                 <canvas ref={(canvas) => { this.canvas = canvas }} width="400" height="1600" className="hidden"></canvas>
                 <div>

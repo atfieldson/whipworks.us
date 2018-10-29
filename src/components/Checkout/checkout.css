@@ -1,34 +1,31 @@
-.checkoutContainer {
+.checkoutComponent {
     text-align: center;
     font-family: 'BioRhyme', serif;
 }
 
-.orderContainer{
+.checkout{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .incompleteContainer{
-    margin: auto;
-    width: 350px;
-    border: 5px solid black;
-}
-
-.cartContainer{
     width: 100vw;
-}
-
-.itemContainer{
     display: flex;
     justify-content: center;
 }
 
-.cartItem{
+.incomplete{
     border: 5px solid black;
+    max-width: 400px;
 }
 
-ul{
-    text-align: left;
+/* SHIPPING AND PAYMENT INFO */
+.checkoutContainer {
+    text-align: center;
+    font-family: 'BioRhyme', serif;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .shippingContainer{
@@ -36,9 +33,41 @@ ul{
     border: 5px solid black;
 }
 
+.shippingForm{
+    width: 80%;
+}
+
 .paymentContainer{
     margin: 4px;
     border: 5px solid black;
+}
+/* END */
+
+/* CART AND LIST OF ITEMS IN CART */
+.orderContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itemContainer{
+}
+
+.cartItem{
+    border: 5px solid black;
+    margin: 3px;
+
+}
+
+ul{
+    text-align: left;
 }
 
 .capitalize {

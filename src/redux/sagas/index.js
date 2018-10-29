@@ -7,6 +7,7 @@ import handleSaga from './handleSaga';
 import whipLengthSaga from './whipLengthSaga';
 import handleLengthSaga from './handleLengthSaga';
 import conchoSaga from './conchoSaga';
+import orderSaga from './orderSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -25,5 +26,6 @@ export default function* rootSaga() {
     whipLengthSaga(),
     handleLengthSaga(),
     conchoSaga(),
+    orderSaga()
   ]);
 }

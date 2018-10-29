@@ -179,6 +179,7 @@ CREATE TABLE "orders" (
 	"shipping_country" TEXT NOT NULL,
 	"shipping_zip" INT NOT NULL,
 	"shipping_cost" INT NOT NULL,
-	"order_notes" TEXT NOT NULL,
+	"order_total" INT NOT NULL,
+	"order_notes" TEXT,
 	"complete" BOOLEAN DEFAULT 'false'
 );
