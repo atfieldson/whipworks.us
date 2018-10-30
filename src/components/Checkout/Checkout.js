@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { CardElement, injectStripe } from 'react-stripe-elements'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ShippingInfo from './ShippingInfo';
@@ -8,17 +7,7 @@ import Cart from './Cart';
 import './checkout.css'
 
 class Checkout extends Component {
-
-    constructor(props) {
-        super(props);
-        this.submit = this.submit.bind(this);
-      }
     
-      async submit(ev) {
-        // User clicked submit
-      }
-    
-
     addDummyItem = () => {
         this.props.dispatch({
             type: 'ADD_BULLWHIP_TO_CART', payload: {
@@ -55,11 +44,7 @@ class Checkout extends Component {
                     <div className="checkout">
                         <div className="checkoutContainer">
                             <ShippingInfo />
-                            {/* <PaymentInfo /> */}
-                            
-                            <button onClick={this.addDummyItem}>
-                                add dummy item
-                        </button>
+                            <PaymentInfo />
                         </div >
                         <Cart />
                     </div>

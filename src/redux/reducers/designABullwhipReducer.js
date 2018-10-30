@@ -122,7 +122,6 @@ const designABullwhipReducer = (state = {
   }
 
   const whipLengthsReducer = (state = [], action ) => {
-    console.log('in SET_WHIP_LENGTHS');
     switch (action.type) {
       case 'SET_WHIP_LENGTHS':
         return action.payload;
@@ -141,7 +140,6 @@ const designABullwhipReducer = (state = {
   }
 
   const conchosReducer = (state = [], action ) => {
-    console.log('in SET_CONCHOS');
     switch (action.type) {
       case 'SET_CONCHOS':
         return action.payload;

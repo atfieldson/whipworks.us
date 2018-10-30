@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
+import './ConchoChooser.css';
 
 class ConchoChooser extends Component {
 
@@ -17,6 +18,12 @@ class ConchoChooser extends Component {
         this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
+    determineClasses = (name) => {
+        let newClass = name.replace(/\s/g, '')
+
+        return `capitalize conchoButton ${newClass}`
+    }
+
     getConchos = () => {
         this.props.dispatch({type: 'FETCH_CONCHOS'})
     }
@@ -29,31 +36,24 @@ class ConchoChooser extends Component {
         return (
             <div className="designContainer">
                 <h2>
-                    Concho or Pommel
+                    Concho
                 </h2>
-                <div className="buttonsContainer">
+                <div className="buttonsContainer conchoContainer">
                     {this.props.state.bullwhip.conchosReducer.map(concho => {
                         return <div className = "buttonDiv" key={concho.id}>
                         <button 
-                        className = "capitalize"                       
+                        className ={this.determineClasses(concho.name)}                       
                         id={concho.id}
                         value={concho.cost}
                         onClick={this.updateConcho}
                         name={concho.name}
                         >                        
-                        {concho.name}
                         </button>
+                        <p className="capitalize">{concho.name}</p>
                         <p>${concho.cost}</p>
                         </div>
                     })}
                 </div>
-                { this.props.state.bullwhip.designABullwhipReducer.concho.name === ''
-                ?
-                <p>Select you Whip's Concho</p>
-                :
-                <p className="capitalize">Selected Concho: {this.props.state.bullwhip.designABullwhipReducer.concho.name}</p>
-                }
-                
             </div>
         );
     }

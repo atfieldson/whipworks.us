@@ -3,12 +3,10 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* fetchColors() {
-    console.log('in FETCH_COLORS')
     try {
         const colors = yield call(
           axios.get, '/design/color'
         );
-        yield console.log('colors:', colors)
         yield put(
             { type: 'SET_COLORS', payload: colors.data}
         );

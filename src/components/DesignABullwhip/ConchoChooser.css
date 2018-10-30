@@ -1,0 +1,119 @@
+.celticsilver {
+    background-image: url('./images/conchos/celticSilver.jpg')
+}
+.celticbrass {
+    background-image: url('./images/conchos/celticBrass.jpg')
+}
+.celticcopper {
+    background-image: url('./images/conchos/celticCopper.jpg')
+}
+.bear {
+    background-image: url('./images/conchos/bearSilver.jpg')
+}
+.bright {
+    background-image: url('./images/conchos/brightSilver.jpg')
+}
+.cross {
+    background-image: url('./images/conchos/crossSilver.jpg')
+}
+.dragon {
+    background-image: url('./images/conchos/dragonSilver.jpg')
+}
+.elktwo {
+    background-image: url('./images/conchos/elk2Silver.jpg')
+}
+.elk {
+    background-image: url('./images/conchos/elkSilver.jpg')
+}
+.flamingskull {
+    background-image: url('./images/conchos/flamingSkullSilver.jpg')
+}
+.pirateskull {
+    background-image: url('./images/conchos/pirateSkullSilver.jpg')
+}
+.ram {
+    background-image: url('./images/conchos/ramSilver.jpg')
+}
+.swirl {
+    background-image: url('./images/conchos/swirl.jpg')
+}
+.wavebrass {
+    background-image: url('./images/conchos/waveBrass.jpg')
+}
+.wavesilver {
+    background-image: url('./images/conchos/waveSilver.jpg')
+}
+.yinandyang {
+    background-image: url('./images/conchos/yinAndYangSilver.jpg')
+}
+
+.conchoButton {
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background-size: cover;
+    /* background-position: 0px -8px; */
+    color: #ffffff;
+    /* font-family: 1rem; */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    margin: 2px;
+    outline:0;
+    opacity: .8;
+    /* transform: rotate(270deg); */
+
+}
+
+.conchoButton:hover,
+.conchoButton:focus{
+    opacity: 1;
+    /* border: none; */
+    /* outline gets rid of the blue border on selected item */
+    outline:0; 
+} 
+
+
+.conchoContainer p {
+    margin: 0;
+}
+
+.conchoDetails {
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background-size: cover;
+    /* background-position: 0px -8px; */
+    color: #ffffff;
+    /* font-family: 1rem; */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    margin: 2px;
+    outline:0;
+    opacity: .8;
+    /* transform: rotate(270deg); */
+}
+
+.conchoDetails p {
+    color: black;
+    margin-top: 100px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
+import './handleChooser.css';
 
 class WhipHandleDetails extends Component {
 
@@ -13,7 +14,12 @@ class WhipHandleDetails extends Component {
         } else{
         let name = color.replace(/\s/g, '')
             return `capitalize handleDetailsSpool ${name}`
-        }
+        } 
+    }
+
+    createHandleBackgroundClass = (handle) => {
+        let name = handle.replace(/\s/g, '')
+        return `capitalize handleDetailsPattern ${name}`
     }
     
 
@@ -32,7 +38,8 @@ class WhipHandleDetails extends Component {
                     <p>
                         {this.props.state.bullwhip.designABullwhipReducer.color1.name}
                     </p>  
-                    </div>                  }
+                    </div>
+                    }
                 <h4>Color 2:</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.color2.name === ''
                     ?
@@ -56,9 +63,15 @@ class WhipHandleDetails extends Component {
                 <h4>Handle Pattern:</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.pattern.name === ''
                     ?
-                    <p>Please pick your whip's handle pattern</p>
+                    <div className="emptyDetailsHandle">
+                    <p>Please pick your Handle Pattern</p>
+                    </div>
                     :
-                    <p className="capitalize">{this.props.state.bullwhip.designABullwhipReducer.pattern.name}</p>
+                    <div className={this.createHandleBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.pattern.name)}>
+                    <p>
+                        {this.props.state.bullwhip.designABullwhipReducer.pattern.name}
+                    </p>  
+                    </div>  
                     }
             </div>
         );

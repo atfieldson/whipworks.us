@@ -3,7 +3,6 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* fetchConchos() {
-    console.log('in FETCH_CONCHOS')
     try {
         const conchos = yield call(
           axios.get, '/design/concho'

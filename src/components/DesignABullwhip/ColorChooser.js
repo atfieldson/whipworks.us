@@ -13,14 +13,8 @@ class ColorChooser extends Component {
     getSpool = (color) => {
 //takes in a name of a color and returns a string without spaces, the class
         let name = color.replace(/\s/g, '')
-        let highlight = ''
-        if (this.props.state.bullwhip.designABullwhipReducer.color1.name === color) {
-            highlight = 'highlight1'
-        } else if (this.props.state.bullwhip.designABullwhipReducer.color2.name === color) {
-            highlight = 'highlight2'
-        }
 
-        return `colorButton capitalize ${highlight} ${name}`
+        return `colorButton capitalize ${name}`
     }
 
     setColorChooser = (event) => {

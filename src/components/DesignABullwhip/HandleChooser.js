@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
+import './handleChooser.css';
 
 class HandleChooser extends Component {
 
@@ -15,6 +16,13 @@ class HandleChooser extends Component {
         })
         this.props.dispatch({type: 'SET_WHIP_HANDLE_PATTERN', payload: {name: event.target.value, id: event.target.id}})
     }
+
+    getHandleClasses = (handle) => {
+        //takes in a name of a color and returns a string without spaces, the class
+                let name = handle.replace(/\s/g, '')
+        
+                return `handleButton capitalize ${name}`
+            }
 
     getHandles = () => {
         this.props.dispatch({type: 'FETCH_HANDLES'})
@@ -33,7 +41,7 @@ class HandleChooser extends Component {
                 <div className="handleButtonsContainer">
                     {this.props.state.bullwhip.handlesReducer.map(handle => {
                         return <button
-                        className = "capitalize" 
+                        className = {this.getHandleClasses(handle.handle_design)} 
                         key={handle.id}
                         id={handle.id} 
                         onClick={this.updateHandle}
@@ -43,12 +51,6 @@ class HandleChooser extends Component {
                         </button>
                     })}
                 </div>
-                { this.props.state.bullwhip.designABullwhipReducer.pattern.name === ''
-                ?
-                <p>Select you Whip's Handle Pattern</p>
-                :
-                <p className = "capitalize">Selected Handle Pattern: {this.props.state.bullwhip.designABullwhipReducer.pattern.name}</p>
-                }                
             </div>
         );
     }

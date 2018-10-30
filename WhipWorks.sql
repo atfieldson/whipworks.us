@@ -70,7 +70,7 @@ VALUES
 ('egyptian eye', 0, 'egyptianEye.jpg', '16p'),
 ('emerald', 0, 'emerald.jpg', '16p'),
 ('vertical strip', 0, 'verticalStrip.jpg', '16p'),
-('new', 0, '', '16p');
+('new', 0, 'new.jpg', '16p');
 
 
 CREATE TABLE "conchos_and_pommels" (
@@ -82,14 +82,26 @@ CREATE TABLE "conchos_and_pommels" (
 	"img_url" TEXT
 );
 
-INSERT INTO "conchos_and_pommels" ("name", "cost", "color")
+INSERT INTO "conchos_and_pommels" ("name", "cost", "color", "img_url")
 VALUES 
-('celtic silver', 0, 'silver'),
-('celtic brass', 0, 'brass'),
-('celtic copper', 0, 'copper'),
-('wolf', 80, 'silver'),
-('dragon', 80, 'silver'),
-('cobra', 80, 'silver');
+('celtic silver', 0, 'silver', 'celticSilver.jpg'),
+('celtic brass', 0, 'brass', 'celticBrass.jpg'),
+('celtic copper', 0, 'copper', 'celticCopper.jpg'),
+('bear', 10, 'silver', 'bearSilver.jpg'),
+('bright', 5, 'silver', 'brightSilver.jpg'),
+('cross', 5, 'silver', 'crossSilver.jpg'),
+('dragon', 10, 'silver', 'dragonSilver.jpg'),
+('elk two', 10, 'silver', 'elk2Silver.jpg'),
+('elk', 10, 'silver', 'elkSilver.jpg'),
+('flaming skull', 10, 'silver', 'flamingSkullSilver.jpg'),
+('pirate skull', 10, 'silver', 'pirateSkullSilver.jpg'),
+('ram', 10, 'silver', 'ramSilver.jpg'),
+('swirl', 5, 'silver', 'swirl.jpg'),
+('wave brass', 5, 'brass', 'waveBrass.jpg'),
+('wave silver', 5, 'silver', 'waveSilver.jpg'),
+('yin and yang', 10, 'silver', 'yinAndYangSilver.jpg');
+
+
 
 
 CREATE TABLE "colors" (
