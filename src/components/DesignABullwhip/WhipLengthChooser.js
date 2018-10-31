@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
+import './WhipLengthChooser.css';
 
 class WhipLengthChooser extends Component {
 
@@ -20,6 +21,15 @@ class WhipLengthChooser extends Component {
         this.props.dispatch({type: 'FETCH_WHIP_LENGTHS'})
     }
 
+    determineHighlight = (waxed, length) => {
+        if (waxed === this.props.state.bullwhip.designABullwhipReducer.waxed &&
+            length === parseInt(this.props.state.bullwhip.designABullwhipReducer.whipLength.name)) {
+                return 'highlighted'
+        } else {
+            return false
+        }
+    }
+
     componentDidMount() {
         this.getWhipLengths()
     }
@@ -34,6 +44,7 @@ class WhipLengthChooser extends Component {
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
                         return <div className="buttonDiv" key={length.id}>
                         <button 
+                        className = "whipLengthButton"
                         value={length.cost} 
                         id={length.id}
                         onClick={this.updateWhipLength}
@@ -42,8 +53,8 @@ class WhipLengthChooser extends Component {
                         >                        
                         {length.length} Feet
                         </button>
-                        <p>${length.cost}</p>
-                        <p>${length.waxed_cost}*</p>
+                        <p className={this.determineHighlight('no', length.length)}>${length.cost}</p>
+                        <p className={this.determineHighlight('yes', length.length)}>${length.waxed_cost + length.cost}*</p>
                         </div>
                     })}
                 </div>

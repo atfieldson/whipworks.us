@@ -106,25 +106,26 @@ class YourWhip extends Component {
                     }
 
                     {
-                        this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' &&
-                            this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' &&
-                            this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '' &&
-                            this.props.state.bullwhip.designABullwhipReducer.whipLength.name !== '' &&
-                            this.props.state.bullwhip.designABullwhipReducer.handleLength.name !== '' &&
-                            this.props.state.bullwhip.designABullwhipReducer.concho.name !== ''
-                            ?
-                            <div>
-                                <p>Your Bullwhip's total is: ${this.props.state.bullwhip.designABullwhipReducer.total}</p>
-                                <button onClick={this.addBullwhipToCart}>
-                                    Add Bullwhip to Cart
-                    </button>
-                            </div>
-                            :
-                            <span></span>}
+                    this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' &&
+                    this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' &&
+                    this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '' &&
+                    this.props.state.bullwhip.designABullwhipReducer.whipLength.name !== '' &&
+                    this.props.state.bullwhip.designABullwhipReducer.handleLength.name !== '' &&
+                    this.props.state.bullwhip.designABullwhipReducer.concho.name !== ''
+                    ?
+                    <div>
+                        <p>Your Bullwhip's total is: ${this.props.state.bullwhip.designABullwhipReducer.total}</p>
+                        <button onClick={this.addBullwhipToCart}>
+                        Add Bullwhip to Cart
+                        </button>
+                    </div>
+                    :
+                    <span></span>
+                    }
                     {this.props.state.bullwhip.cartReducer.length !== 0
-                        &&
-                        <button onClick={() => this.props.history.push("/checkout")}>
-                            Proceed to Checkout
+                    &&
+                    <button onClick={() => this.props.history.push("/checkout")}>
+                        Proceed to Checkout
                     </button>
                     }
                 </div>
