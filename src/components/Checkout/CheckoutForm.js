@@ -9,6 +9,11 @@ class CheckoutForm extends Component {
   constructor(props) {
     super(props);
     this.submit = this.submit.bind(this);
+    this.placeOrderModal = false;
+  }
+
+  openPlaceOrderModal = () => {
+
   }
 
   async submit(ev) {
@@ -25,14 +30,15 @@ class CheckoutForm extends Component {
     catch (error) {
       console.log('error posting to stripe:', error)
     }
-
   }
 
   render() {
     return (
-      <div className="checkout">
+      <div className="checkoutPaymentContainer">
         <CardElement />
-        <button onClick={this.submit}>Send</button>
+        <div>
+        <button onClick={this.openPlaceOrderModal()} className="checkoutButtons">Place Order</button>
+        </div>
       </div>
     );
   }

@@ -32,42 +32,50 @@ class ShippingInfo extends Component {
 
     render() {
         return (
+            <div>
+            <h3>Shipping and Payment Information</h3>
             < div className="shippingContainer">
-                <h3>Shipping Information</h3>
                 <form className="shippingForm">
-                    <label>
+                    <label className="shippingFormLabel">
                         First Name
-                        <input type="text" placeholder="First Name" className= "input" onChange={this.handleState} value={this.state.first_name} name='first_name'></input>
+                        <br></br>
+                        <input type="text" placeholder="First Name" className= "shippingFormInput" onChange={this.handleState} value={this.state.first_name} name='first_name'></input>
                     </label>
                     <br></br>
-                    <label>
+                    <label className="shippingFormLabel">
                         Last Name
-                        <input type="text" placeholder="Last Name" className= "input" onChange={this.handleState} value={this.state.last_name} name='last_name'></input>
+                        <br></br>
+                        <input type="text" placeholder="Last Name" className= "shippingFormInput" onChange={this.handleState} value={this.state.last_name} name='last_name'></input>
                     </label>
                     <br></br>
-                    <label>
+                    <label className="shippingFormLabel">
                         Street Address
-                        <input type="text" placeholder="Street Address" className= "input" onChange={this.handleState} value={this.state.shipping_street_address} name='shipping_street_address'></input>
+                        <br></br>
+                        <input type="text" placeholder="Street Address" className= "shippingFormInput" onChange={this.handleState} value={this.state.shipping_street_address} name='shipping_street_address'></input>
                     </label>
                     <br></br>
-                    <label>
+                    <label className="shippingFormLabel">
                         City
-                        <input type="text" placeholder="City" className= "input" onChange={this.handleState} value={this.state.shipping_city} name='shipping_city'></input>
+                        <br></br>
+                        <input type="text" placeholder="City" className= "shippingFormInput" onChange={this.handleState} value={this.state.shipping_city} name='shipping_city'></input>
                     </label>
                     <br></br>
-                    <label>
+                    <label className="shippingFormLabel">
                         Country
-                        <input type="text" placeholder="Country" className= "input" onChange={this.handleState} value={this.state.shipping_country} name='shipping_country'></input>
+                        <br></br>
+                        <input type="text" placeholder="Country" className= "shippingFormInput" onChange={this.handleState} value={this.state.shipping_country} name='shipping_country'></input>
                     </label>
                     <br></br>
-                    <label>
+                    <label className="shippingFormLabel">
                         Zip Code
-                        <input type="number" placeholder="Zip Code" className= "input" onChange={this.handleState} value={this.state.shipping_zip} name='shipping_zip'></input>
+                        <br></br>
+                        <input type="number" placeholder="Zip Code" className= "shippingFormInput" onChange={this.handleState} value={this.state.shipping_zip} name='shipping_zip'></input>
                     </label>
                     <br></br>
-                    <label>
+                    <label className="shippingFormLabel">
                         Shipping Notes
-                        <input type="text" placeholder="Shipping Notes" className= "input" onChange={this.handleState} value={this.state.order_notes} name='order_notes'></input>
+                        <br></br>
+                        <textarea type="text" placeholder="Shipping Notes" className= "shippingFormInput" onChange={this.handleState} value={this.state.order_notes} name='order_notes'></textarea>
                     </label>
                     {/* <br></br>
                     <label>
@@ -75,7 +83,8 @@ class ShippingInfo extends Component {
                     <input type="submit" onClick={this.submitAddress}></input>
                     </label> */}
                 </form>
-            </div>    
+            </div>  
+            </div>  
         );
     }
 }

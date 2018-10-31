@@ -35,7 +35,7 @@ class Checkout extends Component {
                         <div className="incomplete">
                             <h3>Your cart is currently empty</h3>
                             <h4>Head over to Design a Bullwhip to make your perfect Bullwhip!</h4>
-                            <button onClick={() => this.props.history.push("/bullwhip")}>
+                            <button onClick={() => this.props.history.push("/bullwhip")} className="checkoutButtons">
                                 Design a Bullwhip
                         </button>
                         </div>

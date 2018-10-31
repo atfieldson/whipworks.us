@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DesignABullwhip.css';
 import { withRouter } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav';
 import './spools.css';
 import './handleChooser.css';
 import './ConchoChooser.css';
+import './DesignABullwhip.css';
+import './YourWhip.css';
+
 
 class YourWhip extends Component {
 
@@ -115,7 +117,7 @@ class YourWhip extends Component {
                     ?
                     <div>
                         <p>Your Bullwhip's total is: ${this.props.state.bullwhip.designABullwhipReducer.total}</p>
-                        <button onClick={this.addBullwhipToCart}>
+                        <button onClick={this.addBullwhipToCart} className="yourWhipButtons">
                         Add Bullwhip to Cart
                         </button>
                     </div>
@@ -124,7 +126,7 @@ class YourWhip extends Component {
                     }
                     {this.props.state.bullwhip.cartReducer.length !== 0
                     &&
-                    <button onClick={() => this.props.history.push("/checkout")}>
+                    <button onClick={() => this.props.history.push("/checkout")} className="yourWhipButtons">
                         Proceed to Checkout
                     </button>
                     }

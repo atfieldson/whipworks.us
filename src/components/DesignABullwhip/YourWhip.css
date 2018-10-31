@@ -1,0 +1,30 @@
+.yourWhipButtons {
+    background-color: black;
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 60px;
+    width: 160px;
+    margin: 0;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    margin: 2px;
+    outline:0;
+    opacity: .8;
+    font-size: 20px;
+}
+
+.yourWhipButtons:hover,
+.yourWhipButtons:focus{
+    opacity: 1;
+    /* border: none; */
+    /* outline gets rid of the blue border on selected item */
+    outline:0; 
+} 

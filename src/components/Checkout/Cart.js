@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import './checkout.css';
 
 
 class Cart extends Component {
@@ -50,12 +51,14 @@ class Cart extends Component {
                                                 ( +${item.item.concho.cost} )</li>
                                         </ul>
                                         <p className="capitalize">Total: ${item.item.total}</p>
-                                        <button onClick={() => this.editThisBullwhip(index)}>
+                                        <div className="checkoutButtonsParent">
+                                        <button onClick={() => this.editThisBullwhip(index)} className="checkoutButtons">
                                             Edit This Bullwhip
-                                            </button>
-                                        <button onClick={() => this.deleteThisBullwhip(item.item.total, index)}>
+                                        </button>
+                                        <button onClick={() => this.deleteThisBullwhip(item.item.total, index)} className="checkoutButtons">
                                             Remove This Bullwhip from Cart
-                                            </button>
+                                        </button>
+                                        </div>
                                     </div>
                                 )
                                 }
