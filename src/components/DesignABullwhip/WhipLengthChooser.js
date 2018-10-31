@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
-import './WhipLengthChooser.css';
+import './WhipAndHandleLengthChooser.css';
 
 class WhipLengthChooser extends Component {
 
@@ -44,7 +44,7 @@ class WhipLengthChooser extends Component {
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
                         return <div className="buttonDiv" key={length.id}>
                         <button 
-                        className = "whipLengthButton"
+                        className = "lengthButton"
                         value={length.cost} 
                         id={length.id}
                         onClick={this.updateWhipLength}
@@ -59,12 +59,7 @@ class WhipLengthChooser extends Component {
                     })}
                 </div>
                 <p>( * Additional Cost for Waxed Whip, different per length )</p>
-                { this.props.state.bullwhip.designABullwhipReducer.whipLength.name === ''
-                ?
-                <p>Select you Whip's Length</p>
-                :
-                <p>Selected Whip Length: {this.props.state.bullwhip.designABullwhipReducer.whipLength.name} Feet</p>
-                }
+                
             </div>
         );
     }

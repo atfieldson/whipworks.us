@@ -1,4 +1,4 @@
-.whipLengthButton {
+.lengthButton {
     background-color: black;
     border-radius: 5px;
     font-family: 'BioRhyme', serif;
@@ -20,8 +20,8 @@
     opacity: .8;
 }
 
-.whipLengthButton:hover,
-.whipLengthButton:focus{
+.lengthButton:hover,
+.lengthButton:focus{
     opacity: 1;
     /* border: none; */
     /* outline gets rid of the blue border on selected item */
@@ -31,4 +31,5 @@
 .highlighted {
     background-color: black;
     color: white;
+    border-radius: 4px;
 }

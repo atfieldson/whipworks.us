@@ -23,8 +23,8 @@ class DesignABullwhip extends Component {
         </div>
         <div className="designYourBullwhipContainer">
           <div className="waxedColorPatternColumn">
-            <WaxChooser />
             <ColorChooser />
+            <WaxChooser />
             <HandleChooser />
           </div>
           <div className="detailsRenderColumn">

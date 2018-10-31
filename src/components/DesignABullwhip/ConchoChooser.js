@@ -28,6 +28,14 @@ class ConchoChooser extends Component {
         this.props.dispatch({type: 'FETCH_CONCHOS'})
     }
 
+    determineHighlight = (concho) => {
+        if (concho === this.props.state.bullwhip.designABullwhipReducer.concho.name){
+                return 'highlighted'
+        } else {
+            return false
+        }
+    }
+
     componentDidMount() {
         this.getConchos()
     }
@@ -50,7 +58,7 @@ class ConchoChooser extends Component {
                         >                        
                         </button>
                         <p className="capitalize">{concho.name}</p>
-                        <p>${concho.cost}</p>
+                        <p className={this.determineHighlight(concho.name)}>${concho.cost}</p>
                         </div>
                     })}
                 </div>

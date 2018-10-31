@@ -109,11 +109,17 @@
     border: 1px solid black;
     margin: 2px;
     outline:0;
-    opacity: .8;
+    opacity: 1;
     /* transform: rotate(270deg); */
 }
 
 .conchoDetails p {
     color: black;
     margin-top: 100px;
+}
+
+.highlighted {
+    background-color: black;
+    color: white;
+    border-radius: 4px;
 }

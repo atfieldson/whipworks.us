@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
+import './WhipAndHandleLengthChooser.css';
 
 class HandleLengthChooser extends Component {
 
@@ -14,6 +15,14 @@ class HandleLengthChooser extends Component {
         })
         this.props.dispatch({type: 'SET_WHIP_HANDLE_LENGTH', payload: { name: event.target.name, cost: event.target.value, id: event.target.id}})
         this.props.dispatch({type: 'SET_WHIP_TOTAL'})
+    }
+
+    determineHighlight = (length) => {
+        if (length === parseInt(this.props.state.bullwhip.designABullwhipReducer.handleLength.name)){
+                return 'highlighted'
+        } else {
+            return false
+        }
     }
 
     getHandleLengths = () => {
@@ -34,6 +43,7 @@ class HandleLengthChooser extends Component {
                     {this.props.state.bullwhip.handleLengthsReducer.map(length => {
                         return <div className="buttonDiv" key={length.id}>
                         <button 
+                        className="lengthButton"
                         value={length.cost}
                         id={length.id}
                         onClick={this.updateHandleLength}
@@ -41,16 +51,10 @@ class HandleLengthChooser extends Component {
                         >                        
                         {length.length} Inches
                         </button>
-                        <p>${length.cost}</p>
+                        <p className={this.determineHighlight(length.length)}>${length.cost}</p>
                         </div>
                     })}
                 </div>
-                { this.props.state.bullwhip.designABullwhipReducer.handleLength.name === ''
-                ?
-                <p>Select you Handle's Length</p>
-                :
-                <p>Selected Handle Length: {this.props.state.bullwhip.designABullwhipReducer.handleLength.name} Inches</p>
-                }
             </div>
         );
     }
