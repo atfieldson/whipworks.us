@@ -32,7 +32,7 @@ class ConchoChooser extends Component {
         if (concho === this.props.state.bullwhip.designABullwhipReducer.concho.name){
                 return 'highlighted'
         } else {
-            return false
+            return undefined
         }
     }
 

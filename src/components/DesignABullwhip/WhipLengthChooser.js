@@ -26,7 +26,7 @@ class WhipLengthChooser extends Component {
             length === parseInt(this.props.state.bullwhip.designABullwhipReducer.whipLength.name)) {
                 return 'highlighted'
         } else {
-            return false
+            return undefined
         }
     }
 

@@ -103,6 +103,15 @@ const designABullwhipReducer = (state = {
     };
   }
 
+  const shippingAddressReducer = (state = {}, action) => {
+    switch (action.type) {
+      case 'UPDATE_SHIPPING_INFO':
+        return action.payload;
+    default:
+      return state;
+    };
+  }
+
   const colorsReducer = (state = [], action) => {
       switch (action.type) {
           case 'SET_COLORS':
@@ -157,5 +166,6 @@ const designABullwhipReducer = (state = {
     conchosReducer,
     cartReducer,
     orderTotalReducer,
+    shippingAddressReducer,
     renderCanvas,
   })

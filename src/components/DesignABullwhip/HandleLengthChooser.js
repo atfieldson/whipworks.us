@@ -21,7 +21,7 @@ class HandleLengthChooser extends Component {
         if (length === parseInt(this.props.state.bullwhip.designABullwhipReducer.handleLength.name)){
                 return 'highlighted'
         } else {
-            return false
+            return undefined
         }
     }
 

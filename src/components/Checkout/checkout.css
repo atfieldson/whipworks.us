@@ -98,6 +98,13 @@ max-height: 40px;
 font-size: 14px;
 }
 
+.fullNameInput {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 10%;
+    font-size: 14px;
+}
+
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
 }
@@ -115,7 +122,7 @@ input:-webkit-autofill {
     max-width: 300px;
     width: 100%;
     margin-bottom: 5px;
-    margin: auto;
+    margin-left: 5%;
   }
   
   .StripeElement--focus {
@@ -142,6 +149,7 @@ input:-webkit-autofill {
   .checkoutButtonsParent{
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .checkoutButtons {
@@ -161,6 +169,7 @@ input:-webkit-autofill {
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 1px solid black;
+    max-width: 200px;
     margin: 2px;
     outline:0;
     opacity: .8;
@@ -173,3 +182,74 @@ input:-webkit-autofill {
     opacity: 1;
     outline:0; 
 } 
+
+/* Modal CSS  */
+.errorModal {
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0, .7);
+}
+
+.errorModalContent {
+    border: 5px solid black;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+    /* margin: auto; */
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.errorModalContainer {
+   
+}
+
+.modalLogo {
+    width: 200px;
+    height: 200px;
+}
+
+.modalButton {
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 60px;
+    width: 100px;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background: black;
+    color: #ffffff;
+    /* font-family: 1rem; */
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 20px;
+    width: 200px;
+    opacity: .8;
+}
+
+.modalButton:hover,
+.modalButton:focus{
+    background: black;
+    opacity: 1;
+    color: white;
+    border: none;
+    /* outline gets rid of the blue border on selected item */
+    outline:0;
+}
+
+
+
