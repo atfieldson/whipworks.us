@@ -7,10 +7,12 @@ class ShippingInfo extends Component {
     state = {
         first_name: '',
         last_name: '',
+        email: '',
         shipping_street_address: '',
         shipping_city: '',
         shipping_country: '',
         shipping_zip: '',
+        phone_number: '',
         shipping_cost: 20,
         order_total: 0,
         order_notes: '',
@@ -54,6 +56,12 @@ class ShippingInfo extends Component {
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
+                        Email Address*
+                        <br></br>
+                        <input type="text" placeholder="Email Address" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.email} name='email'></input>
+                    </label>
+                    <br></br>
+                    <label className="shippingFormLabel">
                         Street Address*
                         <br></br>
                         <input type="text" placeholder="Street Address" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_street_address} name='shipping_street_address'></input>
@@ -75,6 +83,12 @@ class ShippingInfo extends Component {
                         Zip Code*
                         <br></br>
                         <input type="number" placeholder="Zip Code" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_zip} name='shipping_zip'></input>
+                    </label>
+                    <br></br>
+                    <label className="shippingFormLabel">
+                        Phone Number
+                        <br></br>
+                        <input type="text" placeholder="Last Name" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.phone_number} name='phone_number'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">

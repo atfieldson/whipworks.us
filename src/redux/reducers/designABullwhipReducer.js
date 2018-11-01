@@ -61,6 +61,17 @@ const designABullwhipReducer = (state = {
         ...state,
         total: total,
       }
+    case 'RESET_DESIGN_A_BULLWHIP':
+      return {
+        color1: { name: '', url: '', unwaxedurl: '', id: '', spool_url: '' },
+        color2: { name: '', url: '', unwaxedurl: '', id: '', spool_url: '' },
+        waxed: 'yes',
+        pattern: { name: '', id: '' },
+        whipLength: { name: '', cost: '0', waxed_cost: '0', id: '' },
+        handleLength: { name: '', cost: '0', id: '' },
+        concho: { name: '', cost: '0', id: '' },
+        total: 0,
+      }
     default:
       return state;
   }
@@ -88,6 +99,8 @@ const cartReducer = (state = [], action) => {
       let newArray = state.slice(0);
       newArray.splice(action.payload, 1)
       return newArray;
+    case 'RESET_CART_REDUCER':
+      return [];
     default:
       return state;
   }
@@ -99,9 +112,22 @@ const orderTotalReducer = (state = 0, action) => {
       return action.payload;
     case 'SUBTRACT_FROM_TOTAL':
       return state - action.payload;
+    case 'RESET_TOTAL_REDUCER':
+      return 0;
     default:
       return state;
   };
+}
+
+const orderPlacedReducer = (state = 'no', action) => {
+  switch (action.type) {
+    case 'COMPLETED_ORDER':
+      return 'yes';
+    case 'LEFT_COMPLETED_PAGE':
+      return 'no';
+    default:
+      return state;
+  }
 }
 
 const shippingAddressReducer = (state = {
@@ -118,6 +144,18 @@ const shippingAddressReducer = (state = {
   switch (action.type) {
     case 'UPDATE_SHIPPING_INFO':
       return action.payload;
+    case 'RESET_SHIPPING_ADDRESS_REDUCER':
+      return {
+        first_name: '',
+        last_name: '',
+        shipping_street_address: '',
+        shipping_city: '',
+        shipping_country: '',
+        shipping_zip: '',
+        shipping_cost: 20,
+        order_total: 0,
+        order_notes: '',
+      }
     default:
       return state;
   };
@@ -179,4 +217,5 @@ export default combineReducers({
   orderTotalReducer,
   shippingAddressReducer,
   renderCanvas,
+  orderPlacedReducer,
 })

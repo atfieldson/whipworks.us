@@ -91,6 +91,7 @@ class CheckoutForm extends Component {
       if (this.state.stripeToken === '' ||
         this.props.state.bullwhip.shippingAddressReducer.first_name === '' ||
         this.props.state.bullwhip.shippingAddressReducer.last_name === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.email === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_street_address === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_city === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_country === '' ||
@@ -112,10 +113,12 @@ class CheckoutForm extends Component {
       stripe: {token: this.state.stripeToken, amount: newAmount},
       order: {first_name: this.props.state.bullwhip.shippingAddressReducer.first_name,
               last_name: this.props.state.bullwhip.shippingAddressReducer.last_name,
+              email: this.props.state.bullwhip.shippingAddressReducer.email,
               shipping_street_address: this.props.state.bullwhip.shippingAddressReducer.shipping_street_address,
               shipping_city: this.props.state.bullwhip.shippingAddressReducer.shipping_city,
               shipping_country: this.props.state.bullwhip.shippingAddressReducer.shipping_country,
               shipping_zip: this.props.state.bullwhip.shippingAddressReducer.shipping_zip,
+              phone_number: this.props.state.bullwhip.shippingAddressReducer.phone_number,
               shipping_cost: 20,
               order_total: this.props.state.bullwhip.orderTotalReducer,
               order_notes: this.props.state.bullwhip.shippingAddressReducer.order_notes,
@@ -123,22 +126,8 @@ class CheckoutForm extends Component {
       bullwhips: this.props.state.bullwhip.cartReducer,
       }
     })//end dispatch
+    this.props.dispatch({type: 'COMPLETED_ORDER'})
   }
-
-  // submit = async () => {
-  //   let newAmount = this.props.state.bullwhip.orderTotalReducer * 100
-  //   try {
-  //     let { token } = await this.props.stripe.createToken({ name: "Name" });
-  //     let response = await axios.post('/charge', {
-  //       token: token.id,
-  //       amount: newAmount,
-  //     })
-  //     console.log('posted token to stripe:', response)
-  //   }
-  //   catch (error) {
-  //     console.log('error posting to stripe:', error)
-  //   }
-  // }
 
   render() {
     return (

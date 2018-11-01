@@ -23,13 +23,29 @@ class Checkout extends Component {
         })
     }
 
+    componentWillUnmount(){
+        if (this.props.state.bullwhip.orderPlacedReducer === 'yes') {
+            this.props.dispatch({type: 'RESET_DESIGN_A_BULLWHIP'});
+            this.props.dispatch({type: 'RESET_CART_REDUCER'});
+            this.props.dispatch({type: 'RESET_TOTAL_REDUCER'});
+            this.props.dispatch({type: 'RESET_SHIPPING_ADDRESS_REDUCER'});
+            this.props.dispatch({type: 'LEFT_COMPLETED_PAGE'})
+        } else {
+        this.props.dispatch({type: 'LEFT_COMPLETED_PAGE'})
+        }
+    }
+
     render() {
-        return (
-            <div className="checkoutComponent">
-                <h1>
-                    Checkout
-                </h1>
-                {this.props.state.bullwhip.cartReducer.length === 0
+        return (  
+            <div>
+                {
+                this.props.state.bullwhip.orderPlacedReducer === "no"
+                ?
+                <div className="checkoutComponent">
+                    <h1>
+                        Checkout
+                    </h1>
+                    {this.props.state.bullwhip.cartReducer.length === 0
                     ?
                     <div className="incompleteContainer">
                         <div className="incomplete">
@@ -37,7 +53,7 @@ class Checkout extends Component {
                             <h4>Head over to Design a Bullwhip to make your perfect Bullwhip!</h4>
                             <button onClick={() => this.props.history.push("/bullwhip")} className="checkoutButtons">
                                 Design a Bullwhip
-                        </button>
+                            </button>
                         </div>
                     </div>
                     :
@@ -48,10 +64,17 @@ class Checkout extends Component {
                         </div >
                         <Cart />
                     </div>
-                }
-                <button onClick={this.addDummyItem}>
+                    }
+                    <button onClick={this.addDummyItem}>
                     Add Dummy Item
-                </button>
+                    </button>
+                </div>
+                :
+                <div className="checkoutComponent">
+                    <h1>Thanks for your Order!</h1>
+                    <p>The shopowner Adam will be getting in touch with you shortly!</p>
+                </div>
+                }
             </div>
         );
     }
