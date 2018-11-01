@@ -1,7 +1,22 @@
 const express = require('express');
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const pool = require('../modules/pool');
 
 const router = express.Router();
+
+router.post("/placeorder", async (req, res) => {
+  try {
+    let response = await stripe.charges.create({
+      amount: req.body.amount,
+      currency: "usd",
+      description: "An example charge",
+      source: req.body.token
+    });
+    res.json(response);
+  } catch (err) {
+    res.status(500).end();
+  }
+});
 
 router.post('/address', (req, res, next) => {  
     const first_name = req.body.first_name;
@@ -20,4 +35,5 @@ router.post('/address', (req, res, next) => {
       .catch((err) => { next(err); });
   });
 
+  
 module.exports = router;

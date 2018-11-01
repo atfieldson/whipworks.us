@@ -8,7 +8,7 @@ CREATE TABLE "bullwhips" (
     "color2_id" INT NOT NULL,
     "handle_design_id" INT NOT NULL,
     "concho_id" INT NOT NULL,
-    "waxed" BOOLEAN NOT NULL,
+    "waxed" TEXT NOT NULL,
     "indy" BOOLEAN DEFAULT 'false',
     "catwhip" BOOLEAN DEFAULT 'false',
     "saberwhip" BOOLEAN DEFAULT 'false',
@@ -21,6 +21,10 @@ CREATE TABLE "bullwhips" (
 	"img_extra_wide" TEXT,
 	"review" TEXT
 );
+
+INSERT INTO "bullwhips" (
+
+)
 
 CREATE TABLE "whip_lengths" (
 	"id" SERIAL PRIMARY KEY,

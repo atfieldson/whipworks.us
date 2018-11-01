@@ -11,68 +11,135 @@ class CheckoutForm extends Component {
     errorModal: false,
     placeOrderModal: false,
     fullNameOnCard: '',
+    stripeToken: '',
   }
 
-  // constructor(props) {
-  //   super(props);
-  //   this.submit = this.submit.bind(this);
-  //   this.openErrorModal = this.openErrorModal.bind(this);
-  //   this.openPlaceOrderModal = this.openPlaceOrderModal.bind(this);
-  //   this.placeOrderModal = false;
-  //   this.errorModal = false;
-  //   this.fullNameOnCard = '';
-  // }
+  handleFullName = (event) => {
+    this.setState({
+      fullNameOnCard: event.target.value,
+    })
+  }
 
+
+  //-----------------MODALS---------------------//
+  //Place Order Modal
   openPlaceOrderModal = () => {
     this.setState({
       ...this.state,
-      errorModal: true,
+      placeOrderModal: true,
     })
-    window.addEventListener('click', this.exitErrorModal, true);
+    window.addEventListener('click', this.exitPlaceOrderModal, true);
     console.log('place order modal:', this.state.placeOrderModal);
   }
 
+  exitPlaceOrderModal = (event) => {
+    if (event.target.classList.contains('placeOrderModal')) {
+      this.triggerPlaceOrderExit();
+    }
+    // else if (event.target.classList.contains('submitChangeButton')) {
+    //   this.dispatchEditItem(event)
+    //   this.triggerPlaceOrderExit();
+    // }
+  }
+
+  triggerPlaceOrderExit = () => {
+    this.setState({
+      placeOrderModal: false,
+    })
+    window.removeEventListener('click', this.exitPlaceOrderModal, true)
+    console.log("in exit modal", this.state);
+  }
+  //End Place order Modal
+
+  //Error Modal, Form incomplete modal
   openErrorModal = () => {
     this.setState({
       ...this.state,
       errorModal: true,
     })
-    debugger;
-    console.log('error modal:', this.state.errorModal); 
+    window.addEventListener('click', this.exitErrorModal, true);
+    console.log('error modal:', this.state.errorModal);
   }
 
   exitErrorModal = (event) => {
-    if (event.target.classList.contains('errorModal')){
-      this.triggerExit();
-    } else if (event.target.classList.contains('submitChangeButton')){
-      this.dispatchEditItem(event)
-      this.triggerExit();
+    if (event.target.classList.contains('errorModal')) {
+      this.triggerErrorExit();
     }
+    // else if (event.target.classList.contains('submitChangeButton')) {
+    //   this.dispatchEditItem(event)
+    //   this.triggerErrorExit();
+    // }
   }
 
-  triggerExit = () => {
+  triggerErrorExit = () => {
     this.setState({
       errorModal: false,
     })
     window.removeEventListener('click', this.exitErrorModal, true)
-    console.log("in exit modal", this.state); 
+    console.log("in exit modal", this.state);
+  }
+  //end Error Modal
+
+  checkForm = async () => {
+    //If stripe token isn't succesfully created, or one of the fields is empty, error modal will open,
+    //else, success modal will open
+    try {
+      let { token } = await this.props.stripe.createToken({ name: this.state.fullNameOnCard });
+      this.setState({
+        stripeToken: token.id,
+      })
+      if (this.state.stripeToken === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.first_name === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.last_name === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.shipping_street_address === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.shipping_city === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.shipping_country === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.shipping_zip === '' ||
+        this.fullNameOnCard === ''
+      ) {
+        this.openErrorModal()
+      } else {
+        this.openPlaceOrderModal()
+      }
+    } catch (error) {
+      this.openErrorModal()
+    }
   }
 
-  submit = async () => {
+  submitOrder = () => {
     let newAmount = this.props.state.bullwhip.orderTotalReducer * 100
-    try {
-      let { token } = await this.props.stripe.createToken({ name: "Name" });
-      debugger;
-      let response = await axios.post('/charge', {
-        token: token.id,
-        amount: newAmount,
-      })
-      console.log('posted token to stripe:', response)
-    }
-    catch (error) {
-      console.log('error posting to stripe:', error)
-    }
+    this.props.dispatch({type: 'PLACE_ORDER', payload: {
+      stripe: {token: this.state.stripeToken, amount: newAmount},
+      order: {first_name: this.props.state.bullwhip.shippingAddressReducer.first_name,
+              last_name: this.props.state.bullwhip.shippingAddressReducer.last_name,
+              shipping_street_address: this.props.state.bullwhip.shippingAddressReducer.shipping_street_address,
+              shipping_city: this.props.state.bullwhip.shippingAddressReducer.shipping_city,
+              shipping_country: this.props.state.bullwhip.shippingAddressReducer.shipping_country,
+              shipping_zip: this.props.state.bullwhip.shippingAddressReducer.shipping_zip,
+              shipping_cost: 20,
+              order_total: this.props.state.bullwhip.orderTotalReducer,
+              order_notes: this.props.state.bullwhip.shippingAddressReducer.order_notes,
+              },
+      bullwhip: this.props.state.bullwhip.cartReducer,
+      }
+    })//end dispatch
   }
+
+  // submit = async () => {
+  //   let newAmount = this.props.state.bullwhip.orderTotalReducer * 100
+  //   try {
+  //     let { token } = await this.props.stripe.createToken({ name: "Name" });
+  //     debugger;
+  //     let response = await axios.post('/charge', {
+  //       token: token.id,
+  //       amount: newAmount,
+  //     })
+  //     console.log('posted token to stripe:', response)
+  //   }
+  //   catch (error) {
+  //     console.log('error posting to stripe:', error)
+  //   }
+  // }
 
   render() {
     return (
@@ -81,43 +148,54 @@ class CheckoutForm extends Component {
           <label className="fullNameInput">
             Full Name on Card*
           <br></br>
-            <input placeholder="Full Name on Card" className="fullNameInput"></input>
+            <input placeholder="Full Name on Card" className="fullNameInput" onChange={this.handleFullName}></input>
           </label>
           <CardElement />
         </div>
         <div className="checkoutButtonsParent">
-          <button
-            className="checkoutButtons"
-            onClick = {
-              this.props.state.bullwhip.shippingAddressReducer.first_name === '' ||
-              this.props.state.bullwhip.shippingAddressReducer.last_name === '' ||
-              this.props.state.bullwhip.shippingAddressReducer.shipping_street_address === '' ||
-              this.props.state.bullwhip.shippingAddressReducer.shipping_city === '' ||
-              this.props.state.bullwhip.shippingAddressReducer.shipping_country === '' ||
-              this.props.state.bullwhip.shippingAddressReducer.shipping_zip === '' ||
-              this.fullNameOnCard === ''
-              ?
-              () => this.openErrorModal()
-              :
-              () => this.openPlaceOrderModal()
-            }>
+          <button className="checkoutButtons" onClick={this.checkForm}>
             Place Order
         </button>
         </div>
         {
-        this.state.errorModal
-        ?
-        <div className="errorModal">
-          <div className="errorModalContent">
-            <div className="errorModalContainer">
-              <img src={require('../DesignABullwhip/images/backgrounds/ww.jpg')} alt='WhipWorks' className='modalLogo' />
-              <h3>Please complete all required fields (*)</h3>
-              <button onClick={this.triggerExit} className="modalButton">Complete Fields</button>
+          this.state.errorModal
+            ?
+            <div className="errorModal">
+              <div className="errorModalContent">
+                <div className="errorModalContainer">
+                  <img src={require('../DesignABullwhip/images/backgrounds/ww.jpg')} alt='WhipWorks' className='modalLogo' />
+                  <h3>Please complete all required fields (*)</h3>
+                  <h4>Be sure to double check out Card information</h4>
+                  <button onClick={this.triggerErrorExit} className="modalButton">Complete Fields</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        :
-        undefined
+            :
+            undefined
+        }
+        {
+          this.state.placeOrderModal
+            ?
+            <div className="placeOrderModal">
+              <div className="placeOrderModalContent">
+                <div className="placeOrderModalContainer">
+                  <img src={require('../DesignABullwhip/images/backgrounds/ww.jpg')} alt='WhipWorks' className='modalLogo' />
+                  <h3>Please double check your information:</h3>
+                  <p>First Name: {this.props.state.bullwhip.shippingAddressReducer.first_name}</p>
+                  <p>Last Name: {this.props.state.bullwhip.shippingAddressReducer.last_name}</p>
+                  <p>Street Address: {this.props.state.bullwhip.shippingAddressReducer.shipping_street_address}</p>
+                  <p>City: {this.props.state.bullwhip.shippingAddressReducer.shipping_city}</p>
+                  <p>Country: {this.props.state.bullwhip.shippingAddressReducer.shipping_country}</p>
+                  <p>Zip Code: {this.props.state.bullwhip.shippingAddressReducer.shipping_zip}</p>
+                  <p>Full Name on Card: {this.state.fullNameOnCard}</p>
+                  <p>Card Verified</p>
+                  <button onClick={this.triggerPlaceOrderExit} className="modalButton">Edit Information</button>
+                  <button onClick={this.submitOrder} className="modalButton">Place Order</button>
+                </div>
+              </div>
+            </div>
+            :
+            undefined
         }
       </div>
     );

@@ -16,8 +16,30 @@ function* postAddress(action) {
       } 
 }
 
+function* placeOrder(action) {
+  try {
+    debugger;
+    yield
+    axios({
+      method: 'POST',
+      url: '/order/placeorder',
+      data: action.payload.stripe
+    })
+    debugger;
+    yield
+    axios({
+      method: 'POST',
+      url: '/order/address',
+      data: action.payload.order,
+    });
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 function* orderSaga() {
   yield takeLatest('POST_ADDRESS', postAddress);
+  yield takeLatest('PLACE_ORDER', placeOrder);
 }
 
 export default orderSaga;
