@@ -18,19 +18,17 @@ function* postAddress(action) {
 
 function* placeOrder(action) {
   try {
-    debugger;
     yield
     axios({
       method: 'POST',
       url: '/order/placeorder',
       data: action.payload.stripe
     })
-    debugger;
     yield
     axios({
       method: 'POST',
       url: '/order/address',
-      data: action.payload.order,
+      data: action.payload,
     });
   } catch (error) {
     console.log(error)

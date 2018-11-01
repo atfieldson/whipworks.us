@@ -120,7 +120,7 @@ class CheckoutForm extends Component {
               order_total: this.props.state.bullwhip.orderTotalReducer,
               order_notes: this.props.state.bullwhip.shippingAddressReducer.order_notes,
               },
-      bullwhip: this.props.state.bullwhip.cartReducer,
+      bullwhips: this.props.state.bullwhip.cartReducer,
       }
     })//end dispatch
   }
@@ -129,7 +129,6 @@ class CheckoutForm extends Component {
   //   let newAmount = this.props.state.bullwhip.orderTotalReducer * 100
   //   try {
   //     let { token } = await this.props.stripe.createToken({ name: "Name" });
-  //     debugger;
   //     let response = await axios.post('/charge', {
   //       token: token.id,
   //       amount: newAmount,

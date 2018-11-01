@@ -1,6 +1,6 @@
 CREATE TABLE "bullwhips" (
     "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR (80) UNIQUE NOT NULL,
+    "name" VARCHAR (80) UNIQUE,
     "order_id" INT,
     "whip_length_id" INT NOT NULL,
     "handle_length_id" INT NOT NULL,
@@ -22,9 +22,9 @@ CREATE TABLE "bullwhips" (
 	"review" TEXT
 );
 
-INSERT INTO "bullwhips" (
+INSERT INTO "bullwhips" ("order_id", "whip_length_id", "handle_length_id", "color1_id", "color2_id", "handle_design_id", "concho_id", "waxed")   
+VALUES ( 1, 1, 1, 1, 1, 1, 1, 'yes');
 
-)
 
 CREATE TABLE "whip_lengths" (
 	"id" SERIAL PRIMARY KEY,
