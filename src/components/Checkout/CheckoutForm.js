@@ -65,10 +65,6 @@ class CheckoutForm extends Component {
     if (event.target.classList.contains('errorModal')) {
       this.triggerErrorExit();
     }
-    // else if (event.target.classList.contains('submitChangeButton')) {
-    //   this.dispatchEditItem(event)
-    //   this.triggerErrorExit();
-    // }
   }
 
   triggerErrorExit = () => {

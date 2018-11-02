@@ -28,3 +28,33 @@
     /* outline gets rid of the blue border on selected item */
     outline:0; 
 } 
+
+/* Modal CSS  */
+.addedBullwhipModal {
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0, .7);
+}
+
+.addedBullwhipModalContent {
+    border: 5px solid black;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+    /* margin: auto; */
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.addedBullwhipModalContainer {
+   
+}

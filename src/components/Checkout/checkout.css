@@ -60,6 +60,7 @@
 
 .cartItem{
     border: 5px solid black;
+    margin-bottom: 8px;
 }
 
 ul{
