@@ -9,8 +9,7 @@
 }
 
 .imageGalleryContainer {
-    width: 30vw;
-    border: 5px solid black
+    width: 35vw;
 }
 
 .aboutWWContainer{
@@ -18,4 +17,8 @@
     border: 5px solid black;
     width: 30vw;
 
+}
+
+.imageGallery{
+    border: none;
 }

@@ -193,6 +193,7 @@ CREATE TABLE "orders" (
 	"email" TEXT NOT NULL,
 	"shipping_street_address" TEXT NOT NULL,
 	"shipping_city" TEXT NOT NULL,
+	"shipping_state" TEXT NOT NULL,
 	"shipping_country" TEXT NOT NULL,
 	"shipping_zip" INT NOT NULL,
 	"phone_number" TEXT,

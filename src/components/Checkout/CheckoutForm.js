@@ -94,6 +94,7 @@ class CheckoutForm extends Component {
         this.props.state.bullwhip.shippingAddressReducer.email === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_street_address === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_city === '' ||
+        this.props.state.bullwhip.shippingAddressReducer.shipping_state === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_country === '' ||
         this.props.state.bullwhip.shippingAddressReducer.shipping_zip === '' ||
         this.fullNameOnCard === ''
@@ -117,6 +118,7 @@ class CheckoutForm extends Component {
               email: this.props.state.bullwhip.shippingAddressReducer.email,
               shipping_street_address: this.props.state.bullwhip.shippingAddressReducer.shipping_street_address,
               shipping_city: this.props.state.bullwhip.shippingAddressReducer.shipping_city,
+              shipping_state: this.props.state.bullwhip.shippingAddressReducer.shipping_state,
               shipping_country: this.props.state.bullwhip.shippingAddressReducer.shipping_country,
               shipping_zip: this.props.state.bullwhip.shippingAddressReducer.shipping_zip,
               phone_number: this.props.state.bullwhip.shippingAddressReducer.phone_number,
@@ -155,7 +157,7 @@ class CheckoutForm extends Component {
                 <div className="errorModalContainer">
                   <img src={require('../DesignABullwhip/images/backgrounds/ww.jpg')} alt='WhipWorks' className='modalLogo' />
                   <h3>Please complete all required fields (*)</h3>
-                  <h4>Be sure to double check out Card information</h4>
+                  <h4>Be sure to double check Card information</h4>
                   <button onClick={this.triggerErrorExit} className="modalButton">Complete Fields</button>
                 </div>
               </div>
@@ -175,6 +177,7 @@ class CheckoutForm extends Component {
                   <p>Last Name: {this.props.state.bullwhip.shippingAddressReducer.last_name}</p>
                   <p>Street Address: {this.props.state.bullwhip.shippingAddressReducer.shipping_street_address}</p>
                   <p>City: {this.props.state.bullwhip.shippingAddressReducer.shipping_city}</p>
+                  <p>State: {this.props.state.bullwhip.shippingAddressReducer.shipping_state}</p>
                   <p>Country: {this.props.state.bullwhip.shippingAddressReducer.shipping_country}</p>
                   <p>Zip Code: {this.props.state.bullwhip.shippingAddressReducer.shipping_zip}</p>
                   <p>Full Name on Card: {this.state.fullNameOnCard}</p>

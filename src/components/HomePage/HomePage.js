@@ -76,11 +76,11 @@ class HomePage extends Component {
         </div>
         <div className="homePageContentContainer">
           <div className="imageGalleryContainer">
-            <ImageGallery items={this.images}/>
+            <ImageGallery className="imageGallery" items={this.images}/>
           </div>
           <div className="aboutWWContainer">
-            <h3>About WhipWorks</h3>
-            <p>Adam is a Whip Maker bassed in the beautiful Twin Cities, MN.  He would like to thank his beautiful cohort for their wonderful company!</p>
+            <h1>UNDER</h1>
+            <h1>CONSTRUCTION</h1>
           </div>
         </div>
       </div>

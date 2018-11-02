@@ -26,6 +26,7 @@ router.post('/address', (req, res, next) => {
     const email = req.body.order.email;
     const shipping_street_address = req.body.order.shipping_street_address;
     const shipping_city = req.body.order.shipping_city;
+    const shipping_state = req.body.order.shipping_state;
     const shipping_country = req.body.order.shipping_country;
     const shipping_zip = req.body.order.shipping_zip;
     const phone_number = req.body.order.phone_number;
@@ -33,8 +34,8 @@ router.post('/address', (req, res, next) => {
     const order_total = req.body.order.order_total;
     const order_notes = req.body.order.order_notes;
 
-    const queryText = 'INSERT INTO "orders" ("first_name", "last_name", "email", "shipping_street_address", "shipping_city", "shipping_country", "shipping_zip", "phone_number", "shipping_cost", "order_total", "order_notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id";';
-    pool.query(queryText, [first_name, last_name, email, shipping_street_address, shipping_city, shipping_country, shipping_zip, phone_number, shipping_cost, order_total, order_notes])
+    const queryText = 'INSERT INTO "orders" ("first_name", "last_name", "email", "shipping_street_address", "shipping_state", "shipping_city", "shipping_country", "shipping_zip", "phone_number", "shipping_cost", "order_total", "order_notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id";';
+    pool.query(queryText, [first_name, last_name, email, shipping_street_address, shipping_city, shipping_state, shipping_country, shipping_zip, phone_number, shipping_cost, order_total, order_notes])
       .then((response) => { res.sendStatus(200), console.log(response.rows[0].id)
         req.body.bullwhips.map(bullwhip => {
           //this maps through all of the bullwhip items in the bullwhip array and sends a post request for each

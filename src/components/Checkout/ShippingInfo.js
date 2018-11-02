@@ -10,6 +10,7 @@ class ShippingInfo extends Component {
         email: '',
         shipping_street_address: '',
         shipping_city: '',
+        shipping_state: '',
         shipping_country: '',
         shipping_zip: '',
         phone_number: '',
@@ -71,6 +72,12 @@ class ShippingInfo extends Component {
                         City*
                         <br></br>
                         <input type="text" placeholder="City" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_city} name='shipping_city'></input>
+                    </label>
+                    <br></br>
+                    <label className="shippingFormLabel">
+                        State*
+                        <br></br>
+                        <input type="text" placeholder="State" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_state} name='shipping_state'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
