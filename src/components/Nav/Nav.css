@@ -3,15 +3,21 @@
   /* overflow: hidden; */
   background-color: white;
   border-bottom: 4px solid black;
-  height: 120px;
+  height: 100px;
   
 }
 
 .wwBanner {
-  height: 100px;
+  height: 80px;
   position: absolute;
   left: 5vw;
   max-width: 950px;
+}
+
+@media (max-width: 1150px) {
+  .wwBanner {
+      height: 5%;
+  }
 }
 
 .nav-title {
@@ -37,7 +43,7 @@
 .nav-link-container {
   position: absolute;
   right: 5px;
-  top: 25px;
+  top: 35px;
 }
 
 .nav-link {
