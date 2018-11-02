@@ -199,7 +199,8 @@
     display: inline-block;
     height: 60px;
     width: 160px;
-    margin: 0;
+    margin: 2px;
+    margin-bottom: 10px;
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -208,7 +209,6 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 1px solid black;
-    margin: 2px;
     outline:0;
     opacity: 1;
     font-size: 20px;

@@ -30,6 +30,27 @@ class WhipLengthChooser extends Component {
         }
     }
 
+    determineLengthText = (length) => {
+        if (length === 4 ){
+            return 'These short whips are incredibly fast!  They require more finesse to crack than longer whips though, making them not great options for beginners.'
+        } else if (length === 5) {
+            return 'The shortest whip I could recommend to a beginner.  Fast and lightweight, these whips are fun!  I recommend 5 footers for 2 handed cracking routines.'
+        } else if ( length === 6 ) {
+            return '6 footers are the bread and butter of bullwhips in my opinion.  They are a great length to learn how to crack with and are long enough to be enjoyable for target work.  6 footers are also great for 2 handed cracking routines.'
+        } else if ( length === 7 ) {
+            return '7 feet long is where whips begin to get more heavy duty.  You can really get a good pop out of this length! They are great for beginners as well.  Target work with 7 footers is really fun.'
+        } else if ( length === 8 ) {
+            return 'The 8 footer is an iconic length to me.  They are big and loud and a ton of fun!  This is the longest whip I would recommend to a beginner. '
+        } else if ( length === 10 ) {
+            return `You'd be surprised how long 10 feet actually is.  It's long length makes it extremely loud but more difficult to handle.` 
+        } else if ( length === 12 ) {
+            return `And here it is, the longest whip I carry!  12 footers are truly beasts.  Incredibly long but very hard to handle.  Cracking sessions with these whips may be short lived because of fore arm fatigue, but they are a blast!`
+        }
+        else {
+            return 'WhipWorks'
+        }
+    } 
+
     componentDidMount() {
         this.getWhipLengths()
     }
@@ -43,6 +64,8 @@ class WhipLengthChooser extends Component {
                 <div className="buttonsContainer">
                     {this.props.state.bullwhip.whipLengthsReducer.map(length => {
                         return <div className="buttonDiv" key={length.id}>
+                        <div className="tooltiplength">
+                        <span className="tooltiptextlength">{this.determineLengthText(length.length)}</span>
                         <button 
                         className = "lengthButton"
                         value={length.cost} 
@@ -53,6 +76,7 @@ class WhipLengthChooser extends Component {
                         >                        
                         {length.length} Feet
                         </button>
+                        </div>
                         <p className={this.determineHighlight('no', length.length)}>${length.cost}</p>
                         <p className={this.determineHighlight('yes', length.length)}>${length.waxed_cost + length.cost}*</p>
                         </div>

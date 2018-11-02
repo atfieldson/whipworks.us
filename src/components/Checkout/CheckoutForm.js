@@ -125,7 +125,7 @@ class CheckoutForm extends Component {
       bullwhips: this.props.state.bullwhip.cartReducer,
       } 
     })//end dispatch 
-    this.props.dispatch({type: 'COMPLETED_ORDER'})
+    // this.props.dispatch({type: 'COMPLETED_ORDER'})
   } 
   
 
