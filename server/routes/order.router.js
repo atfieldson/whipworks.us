@@ -42,7 +42,7 @@ router.post('/address', (req, res, next) => {
           INSERT INTO "bullwhips" ("order_id", "whip_length_id", "handle_length_id", "color1_id", "color2_id", "handle_design_id", "concho_id", "waxed")
           VALUES ( $1, $2, $3, $4, $5, $6, $7, $8);`, [response.rows[0].id, bullwhip.item.whipLength.id, bullwhip.item.handleLength.id, bullwhip.item.color1.id, bullwhip.item.color2.id, bullwhip.item.pattern.id, bullwhip.item.concho.id, bullwhip.item.waxed]) 
         })
-        })
+      })
       .catch((err) => { next(err); });
   });
 

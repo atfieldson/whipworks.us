@@ -72,7 +72,7 @@ class Checkout extends Component {
                 :
                 <div className="checkoutComponent">
                     <h1>Thanks for your Order!</h1>
-                    <p>The shopowner Adam will be getting in touch with you shortly!</p>
+                    <p>The shopowner Adam will be getting in touch with you shortly</p>
                 </div>
                 }
             </div>

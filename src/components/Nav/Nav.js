@@ -6,19 +6,22 @@ import './Nav.css';
 
 const Nav = (props) => (
   <div className="nav">
-    <img src={require('./wwBanner.jpg')} className="wwBanner" alt="WhipWorks" />
-    <img src={require("./ww.jpg")} className="WWLogo" alt="WhipWorks" />
     <Link to="/home">
+    <img className="nav-title" src={require('./wwBanner.jpg')} className="wwBanner" alt="WhipWorks" />
+    </Link>
+    {/* <img src={require("./ww.jpg")} className="WWLogo" alt="WhipWorks" /> */}
+    {/* <Link to="/home">
       <h2 className="nav-title">Home</h2>
-    </Link>
-    <Link to="/login">
+    </Link> */}
+    {/* <Link to="/login">
       <h2 className="nav-title">Login</h2>
-    </Link>
+    </Link>  */}
+
     <div className="nav-link-container">
-      <Link className="nav-link" to="/bullwhip">
+      <Link className="nav-title" to="/bullwhip">
         Design A Bullwhip
       </Link>
-      <Link className="nav-link" to="/specialty">
+      {/* <Link className="nav-link" to="/specialty">
         Specialty Whips
       </Link>
       <Link className="nav-link" to="/gallery">
@@ -29,8 +32,8 @@ const Nav = (props) => (
       </Link>
       <Link className="nav-link" to="/video">
         Video
-      </Link>
-      <Link className="nav-link" to="/checkout">
+      </Link> */}
+      <Link className="nav-title" to="/checkout">
         Checkout
       </Link>
     </div>

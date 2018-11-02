@@ -1,19 +1,16 @@
 .nav {
   font-family: 'BioRhyme', serif;
-  /* background-image: url("./wwBanner.jpg");
-  background-position: center;
-  background-size: 800px 100px;
-  background-repeat: no-repeat; */
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: white;
   border-bottom: 4px solid black;
   height: 120px;
+  
 }
 
 .wwBanner {
   height: 100px;
   position: absolute;
-  right: 10vw;
+  left: 5vw;
   max-width: 950px;
 }
 
@@ -23,10 +20,7 @@
     display: inline-block;
     color: black;
     padding: 5px;
-    position: relative;
-    top: -25px;
-    margin-right: 3vw;
-    margin-left: 3vw;
+    margin-right: 5px;
 
 }
 
@@ -41,10 +35,9 @@
 }
 
 .nav-link-container {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  bottom: 38px;
+  position: absolute;
+  right: 5px;
+  top: 25px;
 }
 
 .nav-link {

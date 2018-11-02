@@ -1,6 +1,7 @@
 .checkoutComponent {
     text-align: center;
     font-family: 'BioRhyme', serif;
+    min-height: 100vh;
 }
 
 .checkout{

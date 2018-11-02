@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, put } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* postAddress(action) {
@@ -30,6 +30,8 @@ function* placeOrder(action) {
       url: '/order/address',
       data: action.payload,
     });
+    yield 
+    put({ type: 'COMPLETED_ORDER' });
   } catch (error) {
     console.log(error)
   }
