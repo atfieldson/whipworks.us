@@ -81,7 +81,7 @@ class HomePage extends Component {
             <div className="aboutPicContainer" >
               <div className="picContainer">
                 <img src={require("./images/about/idolPic.jpg")} className="idolPic" />
-                <p>Performing at a Gala in 2018</p>
+                <p>Performing at a non-profit Gala in 2018</p>
               </div>
               <div className="picContainer">
                 <img src={require("./images/about/picWithJenniferChoi.jpg")} className="jenPic" />
