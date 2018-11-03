@@ -75,6 +75,11 @@ text-align: center;
     margin: 2px;
 }
 
+.designContainer h3 {
+    padding: 5px;
+}
+
+
 .buttonsContainer{
     display: flex;
     justify-content: center;
