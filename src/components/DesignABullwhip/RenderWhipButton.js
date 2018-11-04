@@ -16,7 +16,7 @@ class RenderWhipButton extends Component {
                     this.props.state.bullwhip.designABullwhipReducer.pattern.name === ''
                     ?
                     <div className='tooltipRender'>
-                        <span className="inactiveRenderButtonToolTip">Choose you Color1, Color2 and Handle Pattern to see your bullwhip!</span>
+                        <span className="inactiveRenderButtonToolTip">Choose you Color1, Color2 and Handle Pattern to see your bullwhip</span>
                         <button onClick={this.triggerRender} className='inactiveRenderButton'>Click here to see your Bullwhip Handle</button>
                     </div>
                     // <h3></h3>

@@ -46,6 +46,7 @@ class ConchoChooser extends Component {
                 <h2>
                     Concho
                 </h2>
+                <p>A Concho is applied to the heel of every handle, giving your Bullwhip a distinct look</p>
                 <div className="buttonsContainer conchoContainer">
                     {this.props.state.bullwhip.conchosReducer.map(concho => {
                         return <div className = "buttonDiv" key={concho.id}>

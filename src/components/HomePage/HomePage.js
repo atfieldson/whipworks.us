@@ -113,6 +113,17 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
+        <div className="aboutBullwhipContainer" >
+          <h2>Some Frequently Asked Questions</h2>
+          <h3>Why Whips?</h3>
+          <p>Whips are the first human made tool to break the sound barrier.  It is incredibly satisfying to be outside with a whip in hand and literally make sonic booms!</p>
+          <h3>What is paracord?</h3>
+          <p>Paracord is a nylon sheath wrapped around strands of cotton string.  It was used in WW2 as suspension line in parachutes, and has become a popular material for camping and other outdoor activities due to it’s incredible durability and water resistant traits. </p>
+          <h3>How long does a Bullwhip take to make?</h3>
+          <p>There are a lot of factors to consider here.  A 4 or 5 foot whip with a simple handle design could take 7-9 hours.  A 12 footer with an intricate handle design could take up to 14 hours.  It is truly a labor of love though and I enjoy every minute.</p>
+          <h3>How did you get into whip making?</h3>
+          <p>When I was in elementary school, my family lived in Melbourne Australia for a couple of years.  During our time there, my mom purchased an inexpensive 4 plait stockwhip at a tack shop as a souvenir.  I spent hours cracking that thing and a life-long passion for whips was born.  In college, I attempted to make my first whip.  Several years and some terrible whips later, WhipWorks was born.</p>
+        </div>
       </div>
     );
   }

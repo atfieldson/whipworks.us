@@ -127,4 +127,9 @@
 .yourWhipPlaceholderBig {
     margin-top: 30px;
     height: 140px;
+    text-align: center;
 }
+
+/* .yourWhipPlaceholderBig p{
+    width: 180px;
+} */

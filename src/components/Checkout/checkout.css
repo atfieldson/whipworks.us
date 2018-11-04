@@ -281,5 +281,12 @@ input:-webkit-autofill {
     outline:0;
 }
 
+.currentWaitContainer {
+    text-align: center;
+    margin: 4px;
+    border: 5px solid black;
+    max-width: 400px;
+}
+
 
 

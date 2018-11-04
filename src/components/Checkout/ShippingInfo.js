@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './checkout.css'
+import CurrentWait from './CurrentWait';
 
 class ShippingInfo extends Component {
 
@@ -42,6 +43,7 @@ class ShippingInfo extends Component {
         return (
             <div>
             <h3>Shipping and Payment Information</h3>
+            <CurrentWait />
             < div className="shippingContainer">
                 <form className="shippingForm">
                     <label className="shippingFormLabel">

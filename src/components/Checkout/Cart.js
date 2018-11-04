@@ -41,8 +41,12 @@ class Cart extends Component {
                                         <li className="capitalize">Color 1: {item.item.color1.name}</li>
                                         <li className="capitalize">Color 2: {item.item.color2.name}</li>
                                         <li className="capitalize">Handle Pattern: {item.item.pattern.name}</li>
-                                        <li className="capitalize">Waxed: {item.item.waxed}
-                                            ( +${item.item.whipLength.waxed_cost} )</li>
+                                        {item.item.waxed === 'yes'
+                                        ?
+                                        <li className="capitalize">>Waxed: {item.item.waxed}( +${item.item.whipLength.waxed_cost} )</li>
+                                        :
+                                        <li className="capitalize"> Waxed: {item.item.waxed}</li>
+                                        }
                                         <li className="capitalize">Whip Length: {item.item.whipLength.name} Feet
                                             ( +${item.item.whipLength.cost} )</li>
                                         <li className="capitalize">Handle Length: {item.item.handleLength.name} Inches
