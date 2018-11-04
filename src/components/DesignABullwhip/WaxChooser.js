@@ -22,7 +22,7 @@ class WaxChooser extends Component {
                     Waxed Options
                 </h2>
                 <div className='tooltipwax'>
-                <span className="tooltiptextwax">Waxed bullwhips are dipped in liquid paraffin wax after completion.  The wax fills the small air pockets in your whip, making it much more water resistant.  It also gives a professional, matte aesthetic to your Bullwhip! (There is a small extra fee for waxing your whip)</span>
+                <span className="tooltiptextwax">Your Bullwhip is submerged in liquid paraffin wax, filling the small air pockets in your whip making it much more water resistant.  It also gives a professional, matte aesthetic to your Bullwhip! (There is a small extra fee for waxing your whip)</span>
                 <button value="yes" onClick={this.updateWaxed}
                 className={this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes'
                 ?

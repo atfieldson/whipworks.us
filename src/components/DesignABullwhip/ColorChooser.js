@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
 import './spools.css';
+import './WaxChooser.css';
 
 class ColorChooser extends Component {
 
@@ -98,30 +99,37 @@ class ColorChooser extends Component {
                         </button>
                     })}
                 </div>
-                <h3>Currently Selecting: Color {this.state.colorChooser}</h3>
-                <button value="1" 
-                onClick={this.setColorChooser} 
-                className={this.state.colorChooser === "1" 
-                ?
-                "highlightedBig"
-                :
-                "colorChooserButton"
-                }
-                >
-                Color 1
-                </button>
-                <button value="2" 
-                onClick={this.setColorChooser} 
-                className={this.state.colorChooser === "2" 
-                ?
-                "highlightedBig"
-                :
-                "colorChooserButton"
-                }
-                >
-                Color 2
-                </button>
-            </div>
+                    <div className="colorChooserContainer">
+                        <div className='tooltipwax'>
+                            <span className="tooltiptextwax">Currently Selecting: <h3>Color {this.state.colorChooser}</h3></span>
+                            <button value="1" 
+                            onClick={this.setColorChooser} 
+                            className={this.state.colorChooser === "1" 
+                            ?
+                            "highlightedBig"
+                            :
+                            "colorChooserButton"
+                            }
+                            >
+                            Color 1
+                            </button>
+                        </div>
+                        <div className='tooltipwax'>
+                            <span className="tooltiptextwax">Currently Selecting: <h3>Color {this.state.colorChooser}</h3></span>
+                            <button value="2" 
+                            onClick={this.setColorChooser} 
+                            className={this.state.colorChooser === "2" 
+                            ?
+                            "highlightedBig"
+                            :
+                            "colorChooserButton"
+                            }
+                            >
+                            Color 2
+                            </button>
+                        </div>
+                    </div>
+                </div>
         );
     }
 }
