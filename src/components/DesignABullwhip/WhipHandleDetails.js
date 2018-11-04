@@ -53,12 +53,12 @@ class WhipHandleDetails extends Component {
                     </p>  
                     </div>   
                     }
-                <h4>Waxed or Unwaxed?</h4>
+                    <h4>Waxed Option</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes'
                     ?
-                    <p>Waxed</p>
+                    <h3 className="waxedSelection">Waxed</h3>
                     :
-                    <p>Unwaxed</p>
+                    <h3 className="waxedSelection">Unwaxed</h3>
                     }
                 <h4>Handle Pattern:</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.pattern.name === ''

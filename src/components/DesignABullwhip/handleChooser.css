@@ -26,6 +26,10 @@
     background-image: url("./images/handles/verticalStrip.jpg")
 }
 
+.handleButtonsContainer{
+    margin-bottom: 12px;
+}
+
 .handleButton {
     border-radius: 5px;
     font-family: 'BioRhyme', serif;
@@ -86,4 +90,12 @@
 .handleDetailsPattern p {
     margin-top: 58px;
     color: black;
+}
+
+.waxedSelection {
+    border-radius: 5px;
+    width: 60%;
+    margin-left: 18%;
+    color: white;
+    background-color: black;
 }

@@ -19,7 +19,7 @@ class WaxChooser extends Component {
         return (
             <div className="designContainer">
                 <h2>
-                    Waxed or Unwaxed?
+                    Waxed Options
                 </h2>
                 <div className='tooltipwax'>
                 <span className="tooltiptextwax">Waxed bullwhips are dipped in liquid paraffin wax after completion.  The wax fills the small air pockets in your whip, making it much more water resistant.  It also gives a professional, matte aesthetic to your Bullwhip! (There is a small extra fee for waxing your whip)</span>

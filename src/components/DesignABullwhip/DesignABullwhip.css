@@ -26,6 +26,7 @@ text-align: center;
 
 .renderWhip {
     flex: 1;
+    position: relative;
 }
 
 .rendering {
@@ -139,13 +140,23 @@ text-align: center;
     text-transform: capitalize;
 }
 
+/* Render Button css */
+.renderButtonContainer{
+    font-family: 'BioRhyme', serif;
+    border: 5px solid black;
+    text-align: center;
+    margin: 2px;
+    flex: 1;
+    /* position: relative; */
+}
+
 .renderButton{
     background-color: black;
     border-radius: 5px;
     font-family: 'BioRhyme', serif;
     display: inline-block;
-    height: 70%;
-    width: 160px;
+    height: 100%;
+    width: 100%;
     margin: 0;
     text-decoration: none;
     color: #ffffff;
@@ -169,6 +180,64 @@ text-align: center;
     /* outline gets rid of the blue border on selected item */
     outline:0; 
 } 
+
+.inactiveRenderButton{
+    background-color: black;
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    outline:0;
+    opacity: .8;
+    font-size: 20px;
+}
+
+.inactiveRenderButtonToolTip {
+
+}
+
+.tooltipRender {
+    width: 80%;
+    height: 80%;
+    /* centering in container */
+    position: relative;
+    top: 10%;
+    left: 10%;
+}
+
+.tooltipRender .inactiveRenderButtonToolTip {
+    visibility: hidden;
+    width: 120%;
+    background-color: RGB(51 51 51);
+    border: 3px solid black;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    bottom: 108%;
+    left: -14%;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipRender:hover .inactiveRenderButtonToolTip {
+    visibility: visible;
+    padding: 8px;
+}
+
+
 
 
 

@@ -227,13 +227,12 @@ input:-webkit-autofill {
 }
 
 .placeOrderModalContent {
-    border: 5px solid black;
+    position: absolute;
+    top: 10%;
+    left: 25%;
     width: 50%;
     background-color: white;
-    /* margin: auto; */
-    position: absolute;
-    top: 15%;
-    left: 25%;
+    border: 5px solid black;
     display: flex;
     justify-content: center;
     flex-direction: column;

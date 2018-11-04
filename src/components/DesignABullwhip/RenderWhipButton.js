@@ -10,15 +10,20 @@ class RenderWhipButton extends Component {
 
     render() {
         return (
-            <div className="designContainer renderWhip">
-                <h3>Render Your Whip</h3>
+            <div className="renderButtonContainer">
                 {this.props.state.bullwhip.designABullwhipReducer.color1.name === '' ||
-                this.props.state.bullwhip.designABullwhipReducer.color2.name === '' ||
-                this.props.state.bullwhip.designABullwhipReducer.pattern.name === '' 
-                ?
-                <h3>Choose you Color1, Color2 and Handle Pattern to see your bullwhip!</h3>
-                :
-                <button onClick={this.triggerRender} className='renderButton'>Click here to see your Bullwhip Handle</button>
+                    this.props.state.bullwhip.designABullwhipReducer.color2.name === '' ||
+                    this.props.state.bullwhip.designABullwhipReducer.pattern.name === ''
+                    ?
+                    <div className='tooltipRender'>
+                        <span className="inactiveRenderButtonToolTip">Choose you Color1, Color2 and Handle Pattern to see your bullwhip!</span>
+                        <button onClick={this.triggerRender} className='inactiveRenderButton'>Click here to see your Bullwhip Handle</button>
+                    </div>
+                    // <h3></h3>
+                    :
+                    <div className="tooltipRender">
+                        <button onClick={this.triggerRender} className='renderButton'>Click here to see your Bullwhip Handle</button>
+                    </div>
                 }
             </div>
         )
