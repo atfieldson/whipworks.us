@@ -42,7 +42,7 @@
 }
 
 .addedBullwhipModalContent {
-    border: 5px solid black;
+    /* border: 5px solid black; */
     height: 50%;
     width: 50%;
     background-color: white;
