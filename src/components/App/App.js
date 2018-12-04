@@ -5,6 +5,7 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
+import '../../stylesheets/main.css';
 
 import { connect } from 'react-redux';
 
@@ -21,8 +22,6 @@ import Gallery from '../Gallery/Gallery';
 import WhipmakingMaterials from '../WhipmakingMaterials/WhipmakingMaterials';
 import Video from '../Video/Video';
 import Checkout from '../Checkout/Checkout';
-
-import './App.css';
 
 class App extends Component {
   componentDidMount() {
