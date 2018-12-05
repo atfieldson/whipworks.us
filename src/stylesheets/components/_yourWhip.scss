@@ -1,0 +1,20 @@
+.conchoDetails {
+    border-radius: 5px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.conchoDetails p {
+    color: black;
+    margin-top: 100px;
+}
+
+.highlighted {
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+}

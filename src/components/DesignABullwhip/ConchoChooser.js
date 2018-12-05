@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './DesignABullwhip.css';
-import './ConchoChooser.css';
 
 class ConchoChooser extends Component {
 

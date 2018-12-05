@@ -1,0 +1,40 @@
+.handleDetailsSpool{
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    p{
+        color: white;
+        max-width: 100px;
+    }
+}
+
+.handleDetailsSpoolWhite{
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    p {
+        color: black;
+        max-width: 100px;
+    }
+}
+
+.emptyDetailsSpool{
+    height: 75px;
+    text-align: center;
+    display: inline-block;
+}

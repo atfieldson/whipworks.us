@@ -1,0 +1,15 @@
+.conchoContainer p {
+    margin: 0;
+}
+
+.conchoButton {
+    @include button(100px, 100px, 10px);
+    background-size: cover;
+    &:hover {
+        opacity: 1;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
