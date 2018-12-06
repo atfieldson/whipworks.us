@@ -199,6 +199,7 @@ CREATE TABLE "orders" (
 	"phone_number" TEXT,
 	"shipping_cost" INT NOT NULL,
 	"order_total" INT NOT NULL,
+	"stripe_charge" TEXT NOT NULL,
 	"order_notes" TEXT,
 	"complete" BOOLEAN DEFAULT 'false'
 );

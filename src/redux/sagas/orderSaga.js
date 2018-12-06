@@ -21,13 +21,8 @@ function* placeOrder(action) {
     yield axios({
       method: 'POST',
       url: '/order/placeorder',
-      data: action.payload.stripe
+      data: action.payload
     })
-    yield axios({
-      method: 'POST',
-      url: '/order/address',
-      data: action.payload,
-    });
     yield put({ type: 'COMPLETED_ORDER' });
   } catch (error) {
     console.log(error)
