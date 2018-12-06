@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Nav from '../../components/Nav/Nav';
-import './handleChooser.css';
-import './DesignABullwhip.css';
-import './YourWhip.css';
 
 
 class YourWhip extends Component {

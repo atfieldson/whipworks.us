@@ -11,9 +11,6 @@ import HandleLengthChooser from './HandleLengthChooser';
 import ConchoChooser from './ConchoChooser';
 import YourWhip from './YourWhip';
 
-
-import './DesignABullwhip.css';
-
 class DesignABullwhip extends Component {
   render() {
     return (

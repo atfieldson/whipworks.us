@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DesignABullwhip.css';
-import './WaxChooser.css';
 
 class WaxChooser extends Component {
 

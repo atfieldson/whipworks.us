@@ -1,3 +1,8 @@
+.colorButtonsContainer {
+    @include flexRow(space-between);
+    flex-wrap: wrap;
+}
+
 .colorButton {
     border-radius: 5px;
     font-family: 'BioRhyme', serif;
@@ -64,5 +69,20 @@
     &Highlighted {
         @include buttonHighlighted(60px, 160px, 20px)
     }
+}
+
+.tooltipwax {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltipwax .tooltiptextwax {
+    @include toolTip(240px, 80px, -44px);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipwax:hover .tooltiptextwax {
+    visibility: visible;
 }
 

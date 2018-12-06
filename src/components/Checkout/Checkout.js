@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import ShippingInfo from './ShippingInfo';
 import PaymentInfo from './PaymentInfo';
 import Cart from './Cart';
-import './checkout.css'
 
 class Checkout extends Component {
 

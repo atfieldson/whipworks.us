@@ -1,0 +1,22 @@
+@mixin toolTip($width, $bottom, $left) {
+    width: $width;
+    bottom: $bottom;
+    left: $left;
+    padding: 8px;
+    visibility: hidden;
+    background-color: RGB(51 51 51);
+    border: 3px solid black;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    &:hover {
+        visibility: visible;
+        // padding: 8px;
+    }
+}
+

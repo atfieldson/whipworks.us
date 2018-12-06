@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DesignABullwhip.css';
-import './handleChooser.css';
 
 class WhipHandleDetails extends Component {
 

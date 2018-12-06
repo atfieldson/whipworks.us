@@ -6,15 +6,104 @@
     background-size: cover;
     border: 1px solid black;
     margin: 2px;
-}
 
-.conchoDetails p {
-    color: black;
-    margin-top: 100px;
+    p {
+        color: black;
+        margin-top: 100px;
+    }
 }
 
 .highlighted {
     background-color: black;
     color: white;
     border-radius: 4px;
+}
+
+.yourWhipButtons {
+    @include button(60px, 160px, 20px);
+}
+
+.tooltipAddToCart {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltipAddToCart .tooltiptextAddToCart {
+    @include toolTip(220px, 80px, -40px)
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipAddToCart:hover .tooltiptextAddToCart {
+    visibility: visible;
+}
+
+.addedBullwhipModal {
+    z-index: 3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0, .7);
+}
+
+.addedBullwhipModalContent {
+    /* border: 5px solid black; */
+    height: 50%;
+    width: 50%;
+    background-color: white;
+    /* margin: auto; */
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.yourWhipButtonsInactive{
+    background-color: black;
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 60px;
+    width: 160px;
+    margin: 0;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    margin: 2px;
+    outline:0;
+    opacity: .8;
+    font-size: 20px;
+}
+
+.yourWhipPlaceholder{
+    height: 100px;
+}
+
+.yourWhipPlaceholderXSmall{
+    margin-top: 50px;
+    height: 60px;
+    margin-bottom: -20px;
+}
+.yourWhipPlaceholderSmall{
+    height: 80px;
+}
+.yourWhipPlaceholderSmall h4{
+    margin: 2px;
+    font-size: 18px;
+}
+
+.yourWhipPlaceholderBig {
+    margin-top: 30px;
+    height: 140px;
+    text-align: center;
 }
