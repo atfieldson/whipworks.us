@@ -20,7 +20,7 @@ router.post("/placeorder", async (req, res) => {
   const order_notes = req.body.order.order_notes;
 
   const queryText = 
-  'INSERT INTO "orders" ("first_name", "last_name", "email", "shipping_street_address", "shipping_city", "shipping_state", "shipping_country", "shipping_zip", "phone_number", "shipping_cost", "order_total", "order_notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id";';
+  'INSERT INTO "orders" ("first_name", "last_name", "email", "shipping_street_address", "shipping_city", "shipping_state", "shipping_country", "shipping_zip", "phone_number", "shipping_cost", "order_total", "stripe_charge", "order_notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id";';
 
   try {
     let response = await stripe.charges.create({
@@ -29,11 +29,11 @@ router.post("/placeorder", async (req, res) => {
       description: "An example charge",
       source: req.body.stripe.token
     });
-    res.sendStatus(200); //delete this line
+    res.send(console.log(response.id)); //delete this line
     //
     try {
     //insert address and order pool query here
-    let responseID = await pool.query(queryText, [first_name, last_name, email, shipping_street_address, shipping_city, shipping_state, shipping_country, shipping_zip, phone_number, shipping_cost, order_total, order_notes])
+    let responseID = await pool.query(queryText, [first_name, last_name, email, shipping_street_address, shipping_city, shipping_state, shipping_country, shipping_zip, phone_number, shipping_cost, order_total, response.id, order_notes])
       try {
         req.body.bullwhips.map(bullwhip => {
           //this maps through all of the bullwhip items in the bullwhip array and sends a post request for each
@@ -43,15 +43,18 @@ router.post("/placeorder", async (req, res) => {
         })
       }
       catch (err){
-        res.sendStatus(err, 500);
+        console.log('error:', err)
+        res.send(err, "couldn't add bullwhips:", 500);
       }
     }
     catch (err) {
     //if db insert doesn't work
     //log on fail here so that I could still fulfill the order
-        res.sendStatus(err, 500);
+    console.log('error:', err)
+        res.send(err, "couldn't add order", 500);
     }
   } catch (err) {
+    console.log('error:', err)
     res.sendStatus(500);
   }
 });
