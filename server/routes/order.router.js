@@ -29,7 +29,7 @@ router.post("/placeorder", async (req, res) => {
       description: "An example charge",
       source: req.body.stripe.token
     });
-    res.send(console.log(response.id)); //delete this line
+    // res.send(console.log(response.id)); //delete this line
     //
     try {
     //insert address and order pool query here
