@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DesignABullwhip.css';
-import './spools.css';
-import './WaxChooser.css';
 
 class ColorChooser extends Component {
 
@@ -15,7 +12,13 @@ class ColorChooser extends Component {
 //takes in a name of a color and returns a string without spaces, the class
         let name = color.replace(/\s/g, '')
 
-        return `colorButton capitalize ${name}`
+        // return `colorButton capitalize ${name}`
+
+        if (color === 'white' || color === 'turquoise' || color === 'silver' || color === 'yellow'){
+            return `colorButtonWhite capitalize ${name}`
+        } else{
+            return `colorButton capitalize ${name}`
+        } 
     }
 
     setColorChooser = (event) => {
@@ -106,7 +109,7 @@ class ColorChooser extends Component {
                             onClick={this.setColorChooser} 
                             className={this.state.colorChooser === "1" 
                             ?
-                            "highlightedBig"
+                            "colorChooserButtonHighlighted"
                             :
                             "colorChooserButton"
                             }
@@ -120,7 +123,7 @@ class ColorChooser extends Component {
                             onClick={this.setColorChooser} 
                             className={this.state.colorChooser === "2" 
                             ?
-                            "highlightedBig"
+                            "colorChooserButtonHighlighted"
                             :
                             "colorChooserButton"
                             }

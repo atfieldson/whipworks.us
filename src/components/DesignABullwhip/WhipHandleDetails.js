@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DesignABullwhip.css';
-import './handleChooser.css';
 
 class WhipHandleDetails extends Component {
 
     createBackgroundClass = (color) => {
         //removes spaces
         let name = color.replace(/\s/g, '')
-
         if (color === 'white' || color === 'turquoise' || color === 'silver' || color === 'yellow'){
             return `capitalize handleDetailsSpoolWhite ${name}`
         } else{
-        let name = color.replace(/\s/g, '')
             return `capitalize handleDetailsSpool ${name}`
         } 
     }

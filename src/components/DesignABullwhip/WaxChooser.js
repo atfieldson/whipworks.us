@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './DesignABullwhip.css';
-import './spools.css';
-import './WaxChooser.css';
 
 class WaxChooser extends Component {
 
@@ -26,7 +23,7 @@ class WaxChooser extends Component {
                 <button value="yes" onClick={this.updateWaxed}
                 className={this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes'
                 ?
-                'highlightedBig'
+                'colorChooserButtonHighlighted'
                 :
                 'colorChooserButton'
                 }>
@@ -38,7 +35,7 @@ class WaxChooser extends Component {
                 <button value="no" onClick={this.updateWaxed}
                 className={this.props.state.bullwhip.designABullwhipReducer.waxed === 'no'
                 ?
-                'highlightedBig'
+                'colorChooserButtonHighlighted'
                 :
                 'colorChooserButton'}>
                     Unwaxed

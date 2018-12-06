@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ImageGallery from 'react-image-gallery';
-import './homePage.css';
 import "react-image-gallery/styles/css/image-gallery.css";
 
 
@@ -79,12 +78,12 @@ class HomePage extends Component {
             <h2>About the Whipmaker</h2>
             <p>Adam Fieldson here, owner and sole whipmaker at WhipWorks, LLC. I love making whips.  The fact that so many people have taken interest in my work gives me great pride.  I strive to make the best product for my clients.  My goal is to create a whip that is durable, easy to crack, and beautiful.  I like to think of my bullwhips as art, art that can break the sound barrier!</p>
             <div className="aboutPicContainer" >
-              <div className="picContainer">
-                <img src={require("./images/about/idolPic.jpg")} className="idolPic" />
+              <div>
+                <img src={require("./images/about/idolPic.jpg")} />
                 <p>Performing at a non-profit Gala in 2018</p>
               </div>
-              <div className="picContainer">
-                <img src={require("./images/about/picWithJenniferChoi.jpg")} className="jenPic" />
+              <div>
+                <img src={require("./images/about/picWithJenniferChoi.jpg")}/>
                 <p>I had the pleasure of meeting the famous whip performer April Jennifer Choi</p>
               </div>
             </div>

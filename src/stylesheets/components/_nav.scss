@@ -1,0 +1,51 @@
+.nav {
+    border-bottom: 4px solid black;
+    height: 100px;
+}
+
+.nav-link-container {
+    position: absolute;
+    right: 5px;
+    top: 25px;
+}
+
+.nav-title {
+    font-size: 26px;
+    font-weight: 700;
+    display: inline-block;
+    color: black;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.wwBanner {
+    height: 80px;
+    position: absolute;
+    left: 5vw;
+    max-width: 950px;
+}
+
+.nav-title:hover {
+  background-color: black;
+  color: grey;
+}
+
+@media (max-width: $medium) {
+    .nav-link-container {
+        top: 50px;
+    }
+
+    .wwBanner {
+        height: 50px;
+    }
+}
+
+@media (max-width: $small) {
+    .nav-link-container {
+        top: 60px;
+    }
+
+    .nav-title {
+        font-size: 20px;
+    }
+}

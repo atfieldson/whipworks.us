@@ -1,0 +1,94 @@
+.homePage{
+    @include flexColumn(center)
+}
+
+.homePageContentContainer{
+    @include flexRow(space-evenly);
+    margin: auto;
+    margin-top: 40px;
+    max-width: 1200px;
+}
+
+.imageGalleryContainer {
+    // width: 35vw;
+    width: 480px; 
+    margin: 10px;
+}
+
+.aboutWWContainer{
+    text-align: center;
+    width: 40%;
+    margin: 10px;
+    p {
+        padding: 6px;
+    }
+}
+
+.aboutBullwhipContainer {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    p {
+        padding: 5px;
+    }
+}
+
+.aboutBullwhipContainerPicContainer {
+    @include flexRow(space-evenly);
+}
+
+.makingPicContainer{
+    @include flexColumn(top);
+    width: 22%;
+    p {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    img {
+        width: 100%;
+        margin-bottom: 6px;
+    }
+}
+
+.aboutPicContainer {
+    @include flexRow(space-around);
+    div {
+        width:40%;
+        p {
+            font-size: 14px;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        img {
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: $medium){
+    .homePageContentContainer{
+        @include flexColumn(space-evenly)
+    }
+    .imageGalleryContainer {
+        width: 460px;
+        margin: auto;
+    } 
+    .aboutWWContainer{
+        width: 80%;
+        margin: auto;
+        p {
+            padding: 6px;
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .imageGalleryContainer {
+        width: 300px;
+        margin: auto;
+    }
+}

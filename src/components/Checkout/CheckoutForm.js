@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import './checkout.css';
 
 class CheckoutForm extends Component {
 

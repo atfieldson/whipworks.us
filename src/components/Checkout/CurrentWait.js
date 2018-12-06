@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './checkout.css'
 
 class CurrentWait extends Component {
 

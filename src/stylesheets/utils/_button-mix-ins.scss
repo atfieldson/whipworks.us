@@ -1,0 +1,49 @@
+@mixin button($height, $width, $fontSize) {
+    height: $height;
+    width: $width;
+    font-size: $fontSize;
+    font-family: 'BioRhyme', serif;
+    background-color: black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    outline:0;
+    opacity: .8;
+
+    &:hover {
+        opacity: 1;
+        outline:0; 
+    }
+}
+
+@mixin buttonHighlighted($height, $width, $fontSize) {
+    height: $height;
+    width: $width;
+    font-size: $fontSize;
+    font-family: 'BioRhyme', serif;
+    background-color: black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    outline:0;
+}

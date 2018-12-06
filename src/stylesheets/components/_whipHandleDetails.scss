@@ -1,0 +1,104 @@
+.handleDetailsSpool{
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    p{
+        color: white;
+        max-width: 100px;
+    }
+}
+
+.handleDetailsSpoolWhite{
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    p {
+        color: black;
+        max-width: 100px;
+    }
+}
+
+.emptyDetailsSpool{
+    height: 75px;
+    text-align: center;
+    display: inline-block;
+}
+
+.handleDetailsPattern{
+    //could us @include button here if you really wanted to 
+    border-radius: 5px;
+    display: inline-block;
+    height: 60px;
+    width: 240px;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background-size: cover;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+    margin: 2px;
+    p{
+        margin-top: 58px;
+        color: black;
+    }
+}
+
+.waxedSelection {
+    border-radius: 5px;
+    width: 60%;
+    margin-left: 18%;
+    color: white;
+    background-color: black;
+}
+
+.tooltipRender {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    top: 10%;
+    left: 10%; 
+}
+
+.tooltipRender .inactiveRenderButtonToolTip {
+    @include toolTip(100%, 104%, -2%);
+    // visibility: hidden;
+    // width: 100%;
+    // background-color: RGB(51 51 51);
+    // border: 3px solid black;
+    // color: black;
+    // background-color: whitesmoke;
+    // text-align: center;
+    // padding: 5px 0;
+    // border-radius: 6px;
+    // /* Position the tooltip text - see examples below! */
+    // position: absolute;
+    // bottom: 108%;
+    // left: -5%;
+    // z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipRender:hover .inactiveRenderButtonToolTip {
+    visibility: visible;
+}

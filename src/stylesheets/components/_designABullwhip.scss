@@ -1,0 +1,110 @@
+.designHeader {
+    text-align: center;
+}
+
+.designYourBullwhipContainer {
+    @include flexRow(space-evenly);
+}
+
+.waxedColorPatternColumn{
+    @include flexColumn(space-evenly);
+    flex: 2;
+}
+
+.detailsRenderColumn{
+    @include flexColumn(space-evenly);
+    flex: 1;
+}
+
+.whipHandleDetails {
+    flex: 2;
+    border: 2px solid black;   
+    border-radius: 2px; 
+}
+
+.renderWhip {
+    flex: 1;
+}
+
+.rendering {
+    @include flexColumn(center);
+    flex: 2;
+    max-width: 400px;
+    background-color: black;
+}
+
+.purchaseWhipContainer{
+    @include flexRow(center);
+}
+
+.lengthConchoContainer{
+    @include flexColumn(space-evenly);
+    flex: 3;
+}
+
+.yourWhipContainer{
+    @include flexColumn(space-evenly);
+    flex: 1;
+}
+
+.yourWhip{
+    flex: 1;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.handleContainer {
+    flex: 1;
+}
+
+.myCanvas {
+    max-width: 400px;
+    height: 800px;
+}
+
+.designContainer {
+    text-align: center;
+    margin: 2px;
+    h3 {
+        padding: 5px;
+    }
+}
+
+.buttonsContainer{
+    @include flexRow(center);
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.buttonDiv {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+    top: 0
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.renderButtonContainer{
+    text-align: center;
+    margin: 2px;
+    flex: 1;
+}
+
+.renderButton{
+    @include button(100%, 100%, 20px);
+}
+
+.inactiveRenderButton{
+    @include button(100%, 100%, 20px);
+    cursor: default;
+    &:hover {
+        opacity: .7;
+    }
+}

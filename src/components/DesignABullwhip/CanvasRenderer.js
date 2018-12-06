@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as THREE from 'three';
 
-
-import './DesignABullwhip.css';
-
 class CanvasRenderer extends Component {
 
     constructor(state) {

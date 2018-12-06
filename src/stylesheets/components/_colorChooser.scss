@@ -1,0 +1,88 @@
+.colorButtonsContainer {
+    @include flexRow(space-between);
+    flex-wrap: wrap;
+}
+
+.colorButton {
+    border-radius: 5px;
+    font-family: 'BioRhyme', serif;
+    display: inline-block;
+    height: 60px;
+    width: 100px;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background-size: cover;
+    background-position: 0px -8px;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:hover {
+    background: black;
+    color: white;
+    border: none;
+    }
+    &:focus{
+        /* outline gets rid of the blue border on selected item */
+        outline:0;
+    }
+    //for black text on lighter spools
+    &White {
+        border-radius: 5px;
+        font-family: 'BioRhyme', serif;
+        display: inline-block;
+        height: 60px;
+        width: 100px;
+        border: none;
+        margin: 0;
+        text-decoration: none;
+        background-size: cover;
+        background-position: 0px -8px;
+        color: black;
+        cursor: pointer;
+        text-align: center;
+        transition: background 250ms ease-in-out,
+                    transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &:focus{
+            outline:0;
+        }
+        &:hover {
+            background: black;
+            color: white;
+            border: none;
+        }
+    }
+}
+
+.colorChooserContainer{
+    margin-top: 12px;
+}
+
+.colorChooserButton {
+    @include button(60px, 160px, 20px);
+    &Highlighted {
+        @include buttonHighlighted(60px, 160px, 20px)
+    }
+}
+
+.tooltipwax {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltipwax .tooltiptextwax {
+    @include toolTip(240px, 80px, -44px);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipwax:hover .tooltiptextwax {
+    visibility: visible;
+}
+

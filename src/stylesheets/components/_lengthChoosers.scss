@@ -1,0 +1,17 @@
+.lengthButton {
+    @include button(60px, 100px, 16px)
+}
+
+.tooltiplength {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiplength .tooltiptextlength {
+    @include toolTip(220px, 80px, -60px)
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltiplength:hover .tooltiptextlength {
+    visibility: visible;
+}
