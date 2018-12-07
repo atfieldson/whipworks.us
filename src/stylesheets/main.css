@@ -82,8 +82,8 @@
   background-image: url("../components/DesignABullwhip/images/handles/emerald.jpg");
 }
 
-.new {
-  background-image: url("../components/DesignABullwhip/images/handles/new.jpg");
+.neoceltic {
+  background-image: url("../components/DesignABullwhip/images/handles/neoCeltic.jpg");
 }
 
 .verticalstrip {
@@ -833,9 +833,9 @@ input:-webkit-autofill {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .waxedColorPatternColumn {
@@ -1482,8 +1482,8 @@ input:-webkit-autofill {
 .handleDetailsPattern {
   border-radius: 5px;
   display: inline-block;
-  height: 60px;
-  width: 240px;
+  width: 90%;
+  height: 60%;
   border: none;
   margin: 0;
   text-decoration: none;

@@ -94,7 +94,7 @@ class ColorChooser extends Component {
     render() {
 
         return (
-            <div className="colorContainer designContainer">
+            <div className="designContainer">
                 <h2>
                     Choose Your Colors
                 </h2>

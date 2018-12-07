@@ -19,16 +19,19 @@ class DesignABullwhip extends Component {
           <h1>Design A Bullwhip</h1>
         </div>
         <div className="designYourBullwhipContainer">
+        <div className="yourWhipContainer">
+            <YourWhip />
+        </div>
           <div className="waxedColorPatternColumn">
             <ColorChooser />
             <WaxChooser />
             <HandleChooser />
           </div>
-          <div className="detailsRenderColumn">
+          {/* <div className="detailsRenderColumn"> */}
             {/* <WhipHandleDetails />
             <RenderWhipButton /> */}
             
-          </div>
+          {/* </div> */}
           <CanvasRenderer />
         </div>
 
@@ -38,9 +41,6 @@ class DesignABullwhip extends Component {
             <WhipLengthChooser />
             <HandleLengthChooser />
             <ConchoChooser />
-          </div>
-          <div className="yourWhipContainer">
-            <YourWhip />
           </div>
         </div>
         {/* <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p> */}

@@ -22,6 +22,9 @@ class HandleChooser extends Component {
             handle: event.target.value,
         })
         this.props.dispatch({type: 'SET_WHIP_HANDLE_PATTERN', payload: {name: event.target.value, id: event.target.id}})
+        //Wait 50 ms before executing triggerRender, a temporary fix until I can figure out
+        //how to make this.props.dispatch return a promise so that I can trigger this.triggerRender
+        //after redux state has been updated
         setTimeout(function(){
             this.triggerRender();
         }.bind(this), 50);

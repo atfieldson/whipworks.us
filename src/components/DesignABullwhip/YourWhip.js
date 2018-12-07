@@ -174,7 +174,7 @@ class YourWhip extends Component {
                                 <div className="yourWhipPlaceholderXSmall">
                                 </div>
                                 <span className="tooltiptextAddToCart">Select all the above options to add this Bullwhip to your cart</span>
-                                <button onClick={this.addBullwhipToCart} className="yourWhipButtonsInactive">
+                                <button className="yourWhipButtonsInactive">
                                     Add Bullwhip to Cart
                                 </button>
                             </div>

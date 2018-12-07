@@ -3,7 +3,7 @@
 }
 
 .designYourBullwhipContainer {
-    @include flexRow(space-evenly);
+    @include flexRow(center);
 }
 
 .waxedColorPatternColumn{
