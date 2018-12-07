@@ -25,8 +25,8 @@ class DesignABullwhip extends Component {
             <HandleChooser />
           </div>
           <div className="detailsRenderColumn">
-            <WhipHandleDetails />
-            <RenderWhipButton />
+            {/* <WhipHandleDetails />
+            <RenderWhipButton /> */}
             
           </div>
           <CanvasRenderer />

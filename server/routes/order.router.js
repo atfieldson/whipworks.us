@@ -1,8 +1,9 @@
 const express = require('express');
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const pool = require('../modules/pool');
-
 const router = express.Router();
+
+
 
 router.post("/placeorder", async (req, res) => {
   //order constants
@@ -17,6 +18,7 @@ router.post("/placeorder", async (req, res) => {
   const phone_number = req.body.order.phone_number;
   const shipping_cost = req.body.order.shipping_cost;
   const order_total = req.body.order.order_total;
+  //stripe charge is a promise from first try
   const order_notes = req.body.order.order_notes;
 
   const queryText = 
@@ -30,7 +32,6 @@ router.post("/placeorder", async (req, res) => {
       source: req.body.stripe.token
     });
     // res.send(console.log(response.id)); //delete this line
-    //
     try {
     //insert address and order pool query here
     let responseID = await pool.query(queryText, [first_name, last_name, email, shipping_street_address, shipping_city, shipping_state, shipping_country, shipping_zip, phone_number, shipping_cost, order_total, response.id, order_notes])
@@ -40,18 +41,19 @@ router.post("/placeorder", async (req, res) => {
           pool.query(`
             INSERT INTO "bullwhips" ("order_id", "whip_length_id", "handle_length_id", "color1_id", "color2_id", "handle_design_id", "concho_id", "waxed")
             VALUES ( $1, $2, $3, $4, $5, $6, $7, $8);`, [responseID.rows[0].id, bullwhip.item.whipLength.id, bullwhip.item.handleLength.id, bullwhip.item.color1.id, bullwhip.item.color2.id, bullwhip.item.pattern.id, bullwhip.item.concho.id, bullwhip.item.waxed])
-        })
+        });
+        res.sendStatus(200);
       }
       catch (err){
         console.log('error:', err)
-        res.send(err, "couldn't add bullwhips:", 500);
+        res.sendStatus(500);
       }
     }
     catch (err) {
     //if db insert doesn't work
     //log on fail here so that I could still fulfill the order
     console.log('error:', err)
-        res.send(err, "couldn't add order", 500);
+        res.sendStatus(500);
     }
   } catch (err) {
     console.log('error:', err)

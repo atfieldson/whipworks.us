@@ -886,7 +886,7 @@ class CanvasRenderer extends Component {
 
 
     componentDidUpdate() {
-        if (this.props.state.bullwhip.renderCanvas.renderHandle === true) {
+        if (this.props.state.bullwhip.renderCanvas.renderHandle === true ) {
             this.triggerRenderHandle();
         }
     }
@@ -898,10 +898,20 @@ class CanvasRenderer extends Component {
     render() {
         return (
             <div className="rendering designContainer">
+                    {this.props.state.bullwhip.designABullwhipReducer.color1.name === '' ||
+                    this.props.state.bullwhip.designABullwhipReducer.color2.name === '' ||
+                    this.props.state.bullwhip.designABullwhipReducer.pattern.name === ''
+                    ?
+                    <div className="handleRendererIncompleteMessage">
+                        <h1>Choose your <br></br>Color 1, <br></br>Color 2 and <br></br>Handle Pattern<br></br> to see your <br></br>Bullwhip!</h1>
+                    </div>
+                    :
+                    undefined
+                    }
                 <div ref={(mount) => { this.mount = mount }} className="myCanvas" width="400" height="800" ></div>
                 <canvas ref={(canvas) => { this.canvas = canvas }} width="400" height="1600" className="hidden"></canvas>
                 <div>
-                    {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings            */}
+                    {/* This is to avoid an error where it cannot get the url, as this.state.color1 and 2 were empty strings */}
                     {this.props.state.bullwhip.designABullwhipReducer.color1.url !== ''
                         && this.props.state.bullwhip.designABullwhipReducer.color2.url !== ''
                         && this.props.state.bullwhip.designABullwhipReducer.waxed === "yes"

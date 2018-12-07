@@ -7,12 +7,24 @@ class HandleChooser extends Component {
         handle: ''
     }
 
+
+    triggerRender = () => {
+        if (this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' &&
+            this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' &&
+            this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '') {
+            this.props.dispatch({ type: 'RENDER_HANDLE', payload: true });
+        }
+    }
+
     updateHandle = (event) => {
         this.setState({
             ...this.state,
             handle: event.target.value,
         })
         this.props.dispatch({type: 'SET_WHIP_HANDLE_PATTERN', payload: {name: event.target.value, id: event.target.id}})
+        setTimeout(function(){
+            this.triggerRender();
+        }.bind(this), 50);
     }
 
     getHandleClasses = (handle) => {

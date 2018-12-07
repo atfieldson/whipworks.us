@@ -9,16 +9,24 @@ class ColorChooser extends Component {
     }
 
     getSpool = (color) => {
-//takes in a name of a color and returns a string without spaces, the class
+        //takes in a name of a color and returns a string without spaces, the class
         let name = color.replace(/\s/g, '')
 
         // return `colorButton capitalize ${name}`
 
-        if (color === 'white' || color === 'turquoise' || color === 'silver' || color === 'yellow'){
+        if (color === 'white' || color === 'turquoise' || color === 'silver' || color === 'yellow') {
             return `colorButtonWhite capitalize ${name}`
-        } else{
+        } else {
             return `colorButton capitalize ${name}`
-        } 
+        }
+    }
+
+    triggerRender = () => {
+        if (this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' &&
+            this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' &&
+            this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '') {
+            this.props.dispatch({ type: 'RENDER_HANDLE', payload: true });
+        }
     }
 
     setColorChooser = (event) => {
@@ -33,15 +41,23 @@ class ColorChooser extends Component {
             ...this.state,
             color1: event.target.name,
         })
-        this.props.dispatch({ 
-            type: 'SET_WHIP_COLOR1', 
-            payload: { 
-                name: event.target.name, 
-                url: event.target.value, 
-                unwaxedurl: event.target.title, 
-                id: event.target.id, 
+        this.props.dispatch({
+            type: 'SET_WHIP_COLOR1',
+            payload: {
+                name: event.target.name,
+                url: event.target.value,
+                unwaxedurl: event.target.title,
+                id: event.target.id,
                 // dataset allows you to create custom data attributes, look at data-spool={color.img_spool} in jsx
-                spool_url: event.target.dataset.spool} })
+                spool_url: event.target.dataset.spool
+            }
+        });
+        //Wait 50 ms before executing triggerRender, a temporary fix until I can figure out
+        //how to make this.props.dispatch return a promise so that I can trigger this.triggerRender
+        //after redux state has been updated
+        setTimeout(function(){
+            this.triggerRender();
+        }.bind(this), 50);
     }
 
     updateColor2 = (event) => {
@@ -49,15 +65,22 @@ class ColorChooser extends Component {
             ...this.state,
             color2: event.target.name,
         })
-        this.props.dispatch({ 
-            type: 'SET_WHIP_COLOR2', 
-            payload: { 
-                name: event.target.name, 
-                url: event.target.value, 
-                unwaxedurl: event.target.title, 
+        this.props.dispatch({
+            type: 'SET_WHIP_COLOR2',
+            payload: {
+                name: event.target.name,
+                url: event.target.value,
+                unwaxedurl: event.target.title,
                 id: event.target.id,
                 spool_url: event.target.dataset.spool,
-            } })
+            }
+        })
+        //Wait 50 ms before executing triggerRender, a temporary fix until I can figure out
+        //how to make this.props.dispatch return a promise so that I can trigger this.triggerRender
+        //after redux state has been updated
+        setTimeout(function(){
+            this.triggerRender();
+        }.bind(this), 50);
     }
 
     getColors = () => {
@@ -97,42 +120,42 @@ class ColorChooser extends Component {
                                 ? color.img_right
                                 : color.img_left
                             }
-                            >
+                        >
                             {color.color}
                         </button>
                     })}
                 </div>
-                    <div className="colorChooserContainer">
-                        <div className='tooltipwax'>
-                            <span className="tooltiptextwax">Currently Selecting: <h3>Color {this.state.colorChooser}</h3></span>
-                            <button value="1" 
-                            onClick={this.setColorChooser} 
-                            className={this.state.colorChooser === "1" 
-                            ?
-                            "colorChooserButtonHighlighted"
-                            :
-                            "colorChooserButton"
+                <div className="colorChooserContainer">
+                    <div className='tooltipwax'>
+                        <span className="tooltiptextwax">Currently Selecting: <h3>Color {this.state.colorChooser}</h3></span>
+                        <button value="1"
+                            onClick={this.setColorChooser}
+                            className={this.state.colorChooser === "1"
+                                ?
+                                "colorChooserButtonHighlighted"
+                                :
+                                "colorChooserButton"
                             }
-                            >
+                        >
                             Color 1
                             </button>
-                        </div>
-                        <div className='tooltipwax'>
-                            <span className="tooltiptextwax">Currently Selecting: <h3>Color {this.state.colorChooser}</h3></span>
-                            <button value="2" 
-                            onClick={this.setColorChooser} 
-                            className={this.state.colorChooser === "2" 
-                            ?
-                            "colorChooserButtonHighlighted"
-                            :
-                            "colorChooserButton"
+                    </div>
+                    <div className='tooltipwax'>
+                        <span className="tooltiptextwax">Currently Selecting: <h3>Color {this.state.colorChooser}</h3></span>
+                        <button value="2"
+                            onClick={this.setColorChooser}
+                            className={this.state.colorChooser === "2"
+                                ?
+                                "colorChooserButtonHighlighted"
+                                :
+                                "colorChooserButton"
                             }
-                            >
+                        >
                             Color 2
                             </button>
-                        </div>
                     </div>
                 </div>
+            </div>
         );
     }
 }

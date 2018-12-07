@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class RenderWhipButton extends Component {
 
     triggerRender = () => {
-        this.props.dispatch({ type: 'RENDER_HANLE', payload: true });
+        this.props.dispatch({ type: 'RENDER_HANDLE', payload: true });
     }
 
     render() {
