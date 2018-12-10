@@ -1,5 +1,7 @@
 .colorButtonsContainer {
-    @include flexRow(space-between);
+    @include flexRow(space-evenly);
+    padding-left: 10px;
+    padding-right: 10px;
     flex-wrap: wrap;
 }
 
@@ -15,16 +17,17 @@
     background-size: cover;
     background-position: 0px -8px;
     color: #ffffff;
+    font-size: 12px;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out,
                 transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+    border: 2px solid white;
     &:hover {
-    background: black;
+    border: 2px solid black;
     color: white;
-    border: none;
     }
     &:focus{
         /* outline gets rid of the blue border on selected item */
@@ -43,19 +46,20 @@
         background-size: cover;
         background-position: 0px -8px;
         color: black;
+        font-size: 12px;
         cursor: pointer;
         text-align: center;
         transition: background 250ms ease-in-out,
                     transform 150ms ease;
         -webkit-appearance: none;
         -moz-appearance: none;
+        border: 2px solid white;
         &:focus{
             outline:0;
         }
         &:hover {
-            background: black;
-            color: white;
-            border: none;
+            border: 2px solid black;
+            color: black;
         }
     }
 }

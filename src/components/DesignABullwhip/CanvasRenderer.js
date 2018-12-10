@@ -870,7 +870,7 @@ class CanvasRenderer extends Component {
             this.emeraldPattern();
         } else if (pattern === 'vertical strip') {
             this.verticalStripPattern();
-        } else if (pattern === 'new') {
+        } else if (pattern === 'neo celtic') {
             this.newPattern();
         } else {
             return false

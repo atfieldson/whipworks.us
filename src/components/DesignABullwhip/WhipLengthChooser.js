@@ -80,7 +80,7 @@ class WhipLengthChooser extends Component {
                         </div>
                     })}
                 </div>
-                <p>( * Additional Cost for Waxed Whip, different per length )</p>
+                <p>* Additional Cost for Waxed Whip, different per length</p>
                 
             </div>
         );

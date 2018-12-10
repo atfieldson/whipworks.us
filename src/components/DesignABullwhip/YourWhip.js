@@ -65,31 +65,40 @@ class YourWhip extends Component {
         return (
             <div className="designContainer yourWhip">
                 <h2>
-                    Complete all fields and buy your Bullwhip
+                    Your Bullwhip
                 </h2>
                 <div>
-                    <h4>Color 1:</h4>
+                    <h4>Color 1: <span className = "capitalize">{this.props.state.bullwhip.designABullwhipReducer.color1.name}</span></h4>
                     {this.props.state.bullwhip.designABullwhipReducer.color1.name !== ''
                         ?
-                        <div className={this.createBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.color1.name)}>
-                            <p>
-                                {this.props.state.bullwhip.designABullwhipReducer.color1.name}
-                            </p>
-                        </div>
+                        <div className={this.createBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.color1.name)}></div>
                         :
-                        <p>Please Choose Your Whip's Color 1</p>
+                        <div className = "emptyDetailsSpool">
+                        <p>Please Choose a Color 1</p>
+                        </div>
                     }
-                    <h4>Color 2:</h4>
+                    <h4>Color 2:  <span className = "capitalize">{this.props.state.bullwhip.designABullwhipReducer.color2.name}</span></h4>
                     {this.props.state.bullwhip.designABullwhipReducer.color2.name !== ''
                         ?
-                        <div className={this.createBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.color2.name)}>
-                            <p>
-                                {this.props.state.bullwhip.designABullwhipReducer.color2.name}
-                            </p>
+                        <div className={this.createBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.color2.name)}></div>
+                        :
+                        <div className = "emptyDetailsSpool">
+                        <p>Please Choose a Color 2</p>
+                        </div>
+                    }
+                    <h4>Handle Pattern: <span className="capitalize">{this.props.state.bullwhip.designABullwhipReducer.pattern.name}</span></h4>
+                    {this.props.state.bullwhip.designABullwhipReducer.pattern.name !== ''
+                        ?
+                        <div className="yourWhipPlaceholder">
+                        <div className={this.createHandleBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.pattern.name)}>
+                        </div>
                         </div>
                         :
-                        <p>Please Choose Your Whip's Color 2</p>
+                        <div className="yourWhipPlaceholder">
+                        <p>Please Choose a Handle Pattern</p>
+                        </div>
                     }
+                    <div className = "yourWhipPlaceholderSmall">
                     <h4>Waxed Option:</h4>
                     {this.props.state.bullwhip.designABullwhipReducer.waxed === 'yes'
                         ?
@@ -97,59 +106,41 @@ class YourWhip extends Component {
                         :
                         <h3 className="waxedSelection">Unwaxed</h3>
                     }
-                    <h4>Handle Pattern:</h4>
-                    {this.props.state.bullwhip.designABullwhipReducer.pattern.name !== ''
-                        ?
-                        <div className="yourWhipPlaceholder">
-                        <div className={this.createHandleBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.pattern.name)}>
-                            <p>
-                                {this.props.state.bullwhip.designABullwhipReducer.pattern.name}
-                            </p>
-                        </div>
-                        </div>
-                        :
-                        <div className="yourWhipPlaceholder">
-                        <p>Please Choose Your Whip's Handle Pattern</p>
-                        </div>
-                    }
+                    </div>
                     {this.props.state.bullwhip.designABullwhipReducer.whipLength.name !== ''
                         ?
                         <div className="yourWhipPlaceholderSmall">
                         <h4 className="capitalize">Whip Length: </h4>
-                        <h4>{this.props.state.bullwhip.designABullwhipReducer.whipLength.name} Feet</h4>
+                        <h3 className = "waxedSelection">{this.props.state.bullwhip.designABullwhipReducer.whipLength.name} Feet</h3>
                         </div>
                         :
                         <div className="yourWhipPlaceholderSmall">
                         <h4>Whip Length: </h4>
-                        <p>Please Choose Your Whip's Length</p>
+                        <p>Please Choose a Whip Length</p>
                         </div>
                     }
                     {this.props.state.bullwhip.designABullwhipReducer.handleLength.name !== ''
                         ?
                         <div className="yourWhipPlaceholderSmall">
-                        <h4>Handle Length: </h4>
-                        <h4>{this.props.state.bullwhip.designABullwhipReducer.handleLength.name} Inches</h4>
+                        <h4>Handle Length:</h4>
+                        <h3 className="waxedSelection">{this.props.state.bullwhip.designABullwhipReducer.handleLength.name} Inches</h3>
                         </div>
                         :
                         <div className="yourWhipPlaceholderSmall">
                         <h4>Handle Length: </h4>
-                        <p>Please Choose Your Whip's Handle Length</p>
+                        <p>Please Choose a Handle Length</p>
                         </div>
                     }
                     {this.props.state.bullwhip.designABullwhipReducer.concho.name !== ''
                         ?
-                        <div className="yourWhipPlaceholderBig">
-                            <h4>Concho: </h4>
-                            <div className={this.createConchoBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.concho.name)}>
-                                <p>
-                                    {this.props.state.bullwhip.designABullwhipReducer.concho.name}
-                                </p>
-                            </div>
+                        <div className="yourWhipPlaceholderSmall">
+                            <h4 className="capitalize">Concho: {this.props.state.bullwhip.designABullwhipReducer.concho.name}</h4>
+                            <div className={this.createConchoBackgroundClass(this.props.state.bullwhip.designABullwhipReducer.concho.name)}></div>
                         </div>
                         :
-                        <div className="yourWhipPlaceholderBig">
+                        <div className="yourWhipPlaceholderSmall">
                             <h4>Concho: </h4>
-                            <p>Please Choose Your Whip's Concho</p>
+                            <p>Please Choose a Concho</p>
                         </div>
                     }
 

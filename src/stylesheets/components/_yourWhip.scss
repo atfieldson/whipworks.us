@@ -1,22 +1,21 @@
 .conchoDetails {
     border-radius: 5px;
-    display: inline-block;
     height: 100px;
     width: 100px;
     background-size: cover;
-    border: 1px solid black;
-    margin: 2px;
-
-    p {
-        color: black;
-        margin-top: 100px;
-    }
+    margin: auto;
 }
 
 .highlighted {
     background-color: black;
     color: white;
     border-radius: 4px;
+}
+
+.yourWhip{
+    h2 {
+        text-align: center;
+    }
 }
 
 .yourWhipButtons {
@@ -86,7 +85,7 @@
 }
 
 .yourWhipPlaceholder{
-    height: 100px;
+    height: 50px;
 }
 
 .yourWhipPlaceholderXSmall{
@@ -95,15 +94,83 @@
     margin-bottom: -20px;
 }
 .yourWhipPlaceholderSmall{
+    margin-top: 10px;
     height: 80px;
-}
-.yourWhipPlaceholderSmall h4{
-    margin: 2px;
-    font-size: 18px;
+    h4 {
+        margin: 2px;
+    }
 }
 
 .yourWhipPlaceholderBig {
     margin-top: 30px;
     height: 140px;
     text-align: center;
+}
+
+.handleDetailsSpool{
+    background-position: center;
+    background-size: cover;
+    height: 60px;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    p{
+        color: white;
+        max-width: 100px;
+    }
+}
+
+.handleDetailsSpoolWhite{
+    background-position: center;
+    background-size: cover;
+    height: 60px;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    p {
+        color: black;
+        max-width: 100px;
+    }
+}
+
+.emptyDetailsSpool{
+    height: 60px;
+    max-height: 60px;
+    text-align: center;
+    display: inline-block;
+    p {
+        margin: 0;
+    }
+}
+
+.handleDetailsPattern{
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    text-decoration: none;
+    background-size: cover;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.waxedSelection {
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 150px;
+    // margin-left: 18%;
+    color: white;
+    background-color: black;
 }

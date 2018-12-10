@@ -24,25 +24,23 @@ class DesignABullwhip extends Component {
         </div>
           <div className="waxedColorPatternColumn">
             <ColorChooser />
-            <WaxChooser />
             <HandleChooser />
+            <WaxChooser />
+            <WhipLengthChooser />
+            <HandleLengthChooser />
+            <ConchoChooser />
           </div>
-          {/* <div className="detailsRenderColumn"> */}
-            {/* <WhipHandleDetails />
-            <RenderWhipButton /> */}
-            
-          {/* </div> */}
           <CanvasRenderer />
         </div>
 
 
-        <div className="purchaseWhipContainer">
+        {/* <div className="purchaseWhipContainer">
           <div className="lengthConchoContainer">
             <WhipLengthChooser />
             <HandleLengthChooser />
             <ConchoChooser />
           </div>
-        </div>
+        </div> */}
         {/* <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p> */}
       </div >
     )
