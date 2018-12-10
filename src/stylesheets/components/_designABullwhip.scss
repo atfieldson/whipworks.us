@@ -4,12 +4,13 @@
 }
 
 .designYourBullwhipContainer {
-    @include flexRow(center);
+    @include flexRow(space-around);
 }
 
 .waxedColorPatternColumn{
     @include flexColumn(space-evenly);
-    flex: 2;
+    max-width: 640px;
+    // flex: 2;
 }
 
 .detailsRenderColumn{
@@ -29,16 +30,19 @@
 
 .rendering {
     @include flexColumn(center);
-    flex: 2;
-    max-width: 400px;
-    max-height: 800px;
+    position: relative;
+    // flex: 2;
+    width: 400px;
+    height: 800px;
     background-color: black;
 }
+
+
 
 .designContainer {
     position: relative;
     text-align: center;
-    margin-top: 10px;
+    margin-bottom: 10px;
     h2 {
         margin-bottom: 2px;
     }
@@ -56,13 +60,40 @@
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.75);
-    
     top: 0;
     @include flexColumn(center);
     h1 {
         font-size: 50px;
         color: black;
         opacity: 1;
+    }
+}
+
+@media (max-width: $small) {
+    .rendering {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+        position: absolute;
+    }
+    .handleRendererIncompleteMessage{
+        h1 {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .rendering {
+        width: 200px;
+        height: 400px;
+        margin-top: 4px;
+    }
+    .handleRendererIncompleteMessage{
+        margin-top: -4px;
+        h1 {
+            font-size: 20px;
+        }
     }
 }
 
@@ -77,14 +108,16 @@
 
 .yourWhipContainer{
     @include flexColumn(space-evenly);
-    flex: 1;
+    
 }
 
 .yourWhip{
     text-align: left;
     padding: 10px;
+    padding-left: 0;
+    width: 200px;
+    min-width: 200px;
     height: 100%;
-    flex: 1;
     border-right: 2px solid black;
     border-radius: 2px;
 }

@@ -810,6 +810,7 @@ input:-webkit-autofill {
   outline: 0;
   opacity: .8;
   background-size: cover;
+  margin-bottom: 0;
 }
 
 .conchoButton:hover {
@@ -838,9 +839,8 @@ input:-webkit-autofill {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .waxedColorPatternColumn {
@@ -854,9 +854,7 @@ input:-webkit-autofill {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  max-width: 640px;
 }
 
 .detailsRenderColumn {
@@ -900,18 +898,16 @@ input:-webkit-autofill {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  max-width: 400px;
-  max-height: 800px;
+  position: relative;
+  width: 400px;
+  height: 800px;
   background-color: black;
 }
 
 .designContainer {
   position: relative;
   text-align: center;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .designContainer h2 {
@@ -949,6 +945,32 @@ input:-webkit-autofill {
   font-size: 50px;
   color: black;
   opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .rendering {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    position: absolute;
+  }
+  .handleRendererIncompleteMessage h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .rendering {
+    width: 200px;
+    height: 400px;
+    margin-top: 4px;
+  }
+  .handleRendererIncompleteMessage {
+    margin-top: -4px;
+  }
+  .handleRendererIncompleteMessage h1 {
+    font-size: 20px;
+  }
 }
 
 .purchaseWhipContainer {
@@ -991,18 +1013,15 @@ input:-webkit-autofill {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .yourWhip {
   text-align: left;
   padding: 10px;
+  padding-left: 0;
+  width: 200px;
+  min-width: 200px;
   height: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   border-right: 2px solid black;
   border-radius: 2px;
 }

@@ -5,6 +5,7 @@
 .conchoButton {
     @include button(100px, 100px, 10px);
     background-size: cover;
+    margin-bottom: 0;
     &:hover {
         opacity: 1;
     }
