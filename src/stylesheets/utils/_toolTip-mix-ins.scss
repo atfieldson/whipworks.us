@@ -1,4 +1,5 @@
 @mixin toolTip($width, $bottom, $left) {
+    font-family: 'Montserrat';
     width: $width;
     bottom: $bottom;
     left: $left;

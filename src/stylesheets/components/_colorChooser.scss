@@ -69,6 +69,7 @@
 }
 
 .colorChooserButton {
+    font-family: 'Montserrat';
     @include button(60px, 160px, 20px);
     &Highlighted {
         @include buttonHighlighted(60px, 160px, 20px)

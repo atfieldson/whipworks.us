@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
 
@@ -122,6 +123,11 @@ class HomePage extends Component {
           <p>There are a lot of factors to consider here.  A 4 or 5 foot whip with a simple handle design could take 7-9 hours.  A 12 footer with an intricate handle design could take up to 14 hours.  It is truly a labor of love though and I enjoy every minute.</p>
           <h3>How did you get into whip making?</h3>
           <p>When I was in elementary school, my family lived in Melbourne Australia for a couple of years.  During our time there, my mom purchased an inexpensive 4 plait stockwhip at a tack shop as a souvenir.  I spent hours cracking that thing and a life-long passion for whips was born.  In college, I attempted to make my first whip.  Several years and some terrible whips later, WhipWorks was born.</p>
+        </div>
+        <div className = "aboutBullwhipContainer">
+          <button onClick={() => this.props.history.push("/bullwhip")} className = "colorChooserButton">
+            Design a Bullwhip
+          </button>
         </div>
       </div>
     );

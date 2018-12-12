@@ -10,6 +10,9 @@
 .waxedColorPatternColumn{
     @include flexColumn(space-evenly);
     max-width: 640px;
+    h2{
+        font-family: 'BioRhyme', serif;
+    }
     // flex: 2;
 }
 
@@ -55,6 +58,7 @@
 }
 
 .handleRendererIncompleteMessage {
+    font-family: 'Montserrat';
     position: absolute;
     z-index: 2;
     width: 100%;

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import WaxChooser from './WaxChooser';
 import ColorChooser from './ColorChooser';
-import WhipHandleDetails from './WhipHandleDetails';
-import RenderWhipButton from './RenderWhipButton';
 import HandleChooser from './HandleChooser';
 import CanvasRenderer from './CanvasRenderer';
 import WhipLengthChooser from './WhipLengthChooser';
@@ -12,6 +10,11 @@ import ConchoChooser from './ConchoChooser';
 import YourWhip from './YourWhip';
 
 class DesignABullwhip extends Component {
+
+  componentDidMount() {
+      window.scrollTo(0, 0) 
+  }
+  
   render() {
     return (
       <div>
