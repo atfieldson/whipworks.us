@@ -39,6 +39,7 @@
 
 .addedBullwhipModal {
     z-index: 3;
+    text-align: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -173,4 +174,8 @@
     // margin-left: 18%;
     color: white;
     background-color: black;
+}
+
+.costBreakdownTable {
+    margin-top: 50px;
 }

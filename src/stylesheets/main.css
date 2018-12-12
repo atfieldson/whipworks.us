@@ -247,6 +247,18 @@ body {
   background-color: white;
 }
 
+p {
+  font-family: 'Montserrat';
+}
+
+button {
+  font-family: 'Montserrat';
+}
+
+table {
+  font-family: 'Montserrat';
+}
+
 .checkoutComponent {
   text-align: center;
   font-family: 'BioRhyme', serif;
@@ -626,7 +638,7 @@ input:-webkit-autofill {
 
 .colorButton {
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -660,7 +672,7 @@ input:-webkit-autofill {
 
 .colorButtonWhite {
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -1185,6 +1197,7 @@ input:-webkit-autofill {
   border: 1px solid black;
   outline: 0;
   opacity: .8;
+  font-family: 'Montserrat';
   opacity: 1;
   background-size: cover;
   border: 2px solid white;
@@ -1584,6 +1597,7 @@ input:-webkit-autofill {
 
 .addedBullwhipModal {
   z-index: 3;
+  text-align: center;
   position: fixed;
   left: 0;
   top: 0;
@@ -1744,5 +1758,9 @@ input:-webkit-autofill {
   width: 150px;
   color: white;
   background-color: black;
+}
+
+.costBreakdownTable {
+  margin-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,6 @@
 .handleButton {
     @include button(50px, 200px, 1rem);
+    font-family: 'Montserrat';
     opacity: 1;
     background-size: cover;  
     border: 2px solid white;
