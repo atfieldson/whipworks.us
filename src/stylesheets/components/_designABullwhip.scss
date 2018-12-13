@@ -1,14 +1,19 @@
 .designHeader {
     text-align: center;
+    border-bottom: 2px solid black;
 }
 
 .designYourBullwhipContainer {
-    @include flexRow(space-evenly);
+    @include flexRow(space-around);
 }
 
 .waxedColorPatternColumn{
     @include flexColumn(space-evenly);
-    flex: 2;
+    max-width: 640px;
+    h2{
+        font-family: 'BioRhyme', serif;
+    }
+    // flex: 2;
 }
 
 .detailsRenderColumn{
@@ -28,9 +33,73 @@
 
 .rendering {
     @include flexColumn(center);
-    flex: 2;
-    max-width: 400px;
+    position: relative;
+    // flex: 2;
+    width: 400px;
+    height: 800px;
     background-color: black;
+}
+
+
+
+.designContainer {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+    h2 {
+        margin-bottom: 2px;
+    }
+    h3 {
+        padding: 5px;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.handleRendererIncompleteMessage {
+    font-family: 'Montserrat';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    top: 0;
+    @include flexColumn(center);
+    h1 {
+        font-size: 50px;
+        color: black;
+        opacity: 1;
+        font-family: 'Montserrat';
+    }
+}
+
+@media (max-width: $small) {
+    .rendering {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+        position: absolute;
+    }
+    .handleRendererIncompleteMessage{
+        h1 {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .rendering {
+        width: 200px;
+        height: 400px;
+        margin-top: 4px;
+    }
+    .handleRendererIncompleteMessage{
+        margin-top: -4px;
+        h1 {
+            font-size: 20px;
+        }
+    }
 }
 
 .purchaseWhipContainer{
@@ -44,12 +113,17 @@
 
 .yourWhipContainer{
     @include flexColumn(space-evenly);
-    flex: 1;
+    
 }
 
 .yourWhip{
-    flex: 1;
-    border: 2px solid black;
+    text-align: left;
+    padding: 10px;
+    padding-left: 0;
+    width: 200px;
+    min-width: 200px;
+    height: 100%;
+    border-right: 2px solid black;
     border-radius: 2px;
 }
 
@@ -62,14 +136,6 @@
     height: 800px;
 }
 
-.designContainer {
-    text-align: center;
-    margin: 2px;
-    h3 {
-        padding: 5px;
-    }
-}
-
 .buttonsContainer{
     @include flexRow(center);
     flex-wrap: wrap;
@@ -79,6 +145,9 @@
 .buttonDiv {
     margin-right: 2px;
     margin-left: 2px;
+    p {
+        margin: 0;
+    }
 }
 
 .hidden {

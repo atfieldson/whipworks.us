@@ -79,7 +79,7 @@ const designABullwhipReducer = (state = {
 
 const renderCanvas = (state = { renderHandle: false }, action) => {
   switch (action.type) {
-    case 'RENDER_HANLE':
+    case 'RENDER_HANDLE':
       return { renderHandle: action.payload }
     default:
       return state

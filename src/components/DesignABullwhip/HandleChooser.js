@@ -7,12 +7,27 @@ class HandleChooser extends Component {
         handle: ''
     }
 
+
+    triggerRender = () => {
+        if (this.props.state.bullwhip.designABullwhipReducer.color1.name !== '' &&
+            this.props.state.bullwhip.designABullwhipReducer.color2.name !== '' &&
+            this.props.state.bullwhip.designABullwhipReducer.pattern.name !== '') {
+            this.props.dispatch({ type: 'RENDER_HANDLE', payload: true });
+        }
+    }
+
     updateHandle = (event) => {
         this.setState({
             ...this.state,
             handle: event.target.value,
         })
         this.props.dispatch({type: 'SET_WHIP_HANDLE_PATTERN', payload: {name: event.target.value, id: event.target.id}})
+        //Wait 50 ms before executing triggerRender, a temporary fix until I can figure out
+        //how to make this.props.dispatch return a promise so that I can trigger this.triggerRender
+        //after redux state has been updated
+        setTimeout(function(){
+            this.triggerRender();
+        }.bind(this), 50);
     }
 
     getHandleClasses = (handle) => {

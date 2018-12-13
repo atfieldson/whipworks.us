@@ -26,12 +26,12 @@
   background-image: url("../components/DesignABullwhip/images/conchos/dragonSilver.jpg");
 }
 
-.elktwo {
-  background-image: url("../components/DesignABullwhip/images/conchos/elk2Silver.jpg");
-}
-
 .elk {
   background-image: url("../components/DesignABullwhip/images/conchos/elkSilver.jpg");
+}
+
+.buck {
+  background-image: url("../components/DesignABullwhip/images/conchos/buckSilver.jpg");
 }
 
 .flamingskull {
@@ -82,8 +82,8 @@
   background-image: url("../components/DesignABullwhip/images/handles/emerald.jpg");
 }
 
-.new {
-  background-image: url("../components/DesignABullwhip/images/handles/new.jpg");
+.neoceltic {
+  background-image: url("../components/DesignABullwhip/images/handles/neoCeltic.jpg");
 }
 
 .verticalstrip {
@@ -243,8 +243,20 @@
 }
 
 body {
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: white;
+}
+
+a {
+  font-family: 'BioRhyme', serif;
+}
+
+h1 {
+  font-family: 'BioRhyme', serif;
+}
+
+.montserrat {
+  font-family: 'Montserrat';
 }
 
 .checkoutComponent {
@@ -272,6 +284,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: 'Montserrat';
 }
 
 .incomplete {
@@ -292,6 +305,7 @@ body {
 }
 
 .shippingForm {
+  font-family: 'Montserrat';
   width: 80%;
 }
 
@@ -333,6 +347,7 @@ body {
 }
 
 .cartItem {
+  font-family: 'Montserrat';
   border: 2px solid black;
   border-radius: 2px;
   margin-bottom: 8px;
@@ -351,7 +366,6 @@ ul {
 .shippingContainer {
   margin: 4px;
   max-width: 400px;
-  height: 550px;
 }
 
 .shippingForm {
@@ -362,7 +376,7 @@ ul {
 }
 
 .shippingFormInput {
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   margin: 0;
   width: 100%;
   max-width: 100%;
@@ -373,7 +387,6 @@ ul {
 .fullNameInput {
   width: 100%;
   max-width: 100%;
-  margin-left: 10%;
   font-size: 14px;
 }
 
@@ -398,7 +411,6 @@ input:-webkit-autofill {
   max-width: 300px;
   width: 100%;
   margin-bottom: 5px;
-  margin-left: 5%;
 }
 
 .StripeElement--focus {
@@ -442,9 +454,9 @@ input:-webkit-autofill {
 }
 
 .checkoutButtons {
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
   display: inline-block;
   height: 60px;
   /* width: 120px; */
@@ -522,7 +534,9 @@ input:-webkit-autofill {
 
 .placeOrderModalContent {
   position: absolute;
-  top: 10%;
+  height: 670px;
+  top: 50%;
+  margin-top: -335px;
   left: 25%;
   width: 50%;
   background-color: white;
@@ -539,6 +553,10 @@ input:-webkit-autofill {
           flex-direction: column;
 }
 
+.placeOrderModalContainer {
+  font-family: 'Montserrat';
+}
+
 .modalLogo {
   width: 200px;
   height: 200px;
@@ -546,7 +564,7 @@ input:-webkit-autofill {
 
 .modalButton {
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -581,10 +599,15 @@ input:-webkit-autofill {
 }
 
 .currentWaitContainer {
+  font-family: 'Montserrat';
   text-align: center;
   margin: 4px;
   /* border: 5px solid black; */
   max-width: 400px;
+}
+
+.monsterrat {
+  font-family: 'Montserrat';
 }
 
 .thanksImageContainer {
@@ -615,16 +638,18 @@ input:-webkit-autofill {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-left: 10px;
+  padding-right: 10px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .colorButton {
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -634,6 +659,7 @@ input:-webkit-autofill {
   background-size: cover;
   background-position: 0px -8px;
   color: #ffffff;
+  font-size: 12px;
   cursor: pointer;
   text-align: center;
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
@@ -642,12 +668,12 @@ input:-webkit-autofill {
   transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  border: 2px solid white;
 }
 
 .colorButton:hover {
-  background: black;
+  border: 2px solid black;
   color: white;
-  border: none;
 }
 
 .colorButton:focus {
@@ -657,7 +683,7 @@ input:-webkit-autofill {
 
 .colorButtonWhite {
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -667,6 +693,7 @@ input:-webkit-autofill {
   background-size: cover;
   background-position: 0px -8px;
   color: black;
+  font-size: 12px;
   cursor: pointer;
   text-align: center;
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
@@ -675,6 +702,7 @@ input:-webkit-autofill {
   transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+  border: 2px solid white;
 }
 
 .colorButtonWhite:focus {
@@ -682,9 +710,8 @@ input:-webkit-autofill {
 }
 
 .colorButtonWhite:hover {
-  background: black;
-  color: white;
-  border: none;
+  border: 2px solid black;
+  color: black;
 }
 
 .colorChooserContainer {
@@ -692,10 +719,11 @@ input:-webkit-autofill {
 }
 
 .colorChooserButton {
+  font-family: 'Montserrat';
   height: 60px;
   width: 160px;
   font-size: 20px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -725,7 +753,7 @@ input:-webkit-autofill {
   height: 60px;
   width: 160px;
   font-size: 20px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -752,6 +780,7 @@ input:-webkit-autofill {
 
 /* Tooltip text */
 .tooltipwax .tooltiptextwax {
+  font-family: 'Montserrat';
   width: 240px;
   bottom: 80px;
   left: -44px;
@@ -786,7 +815,7 @@ input:-webkit-autofill {
   height: 100px;
   width: 100px;
   font-size: 10px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -806,6 +835,7 @@ input:-webkit-autofill {
   outline: 0;
   opacity: .8;
   background-size: cover;
+  margin-bottom: 0;
 }
 
 .conchoButton:hover {
@@ -823,6 +853,7 @@ input:-webkit-autofill {
 
 .designHeader {
   text-align: center;
+  border-bottom: 2px solid black;
 }
 
 .designYourBullwhipContainer {
@@ -833,9 +864,8 @@ input:-webkit-autofill {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .waxedColorPatternColumn {
@@ -849,9 +879,11 @@ input:-webkit-autofill {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  max-width: 640px;
+}
+
+.waxedColorPatternColumn h2 {
+  font-family: 'BioRhyme', serif;
 }
 
 .detailsRenderColumn {
@@ -895,11 +927,81 @@ input:-webkit-autofill {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  max-width: 400px;
+  position: relative;
+  width: 400px;
+  height: 800px;
   background-color: black;
+}
+
+.designContainer {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.designContainer h2 {
+  margin-bottom: 2px;
+}
+
+.designContainer h3 {
+  padding: 5px;
+}
+
+.designContainer p {
+  margin: 0;
+}
+
+.handleRendererIncompleteMessage {
+  font-family: 'Montserrat';
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.handleRendererIncompleteMessage h1 {
+  font-size: 50px;
+  color: black;
+  opacity: 1;
+  font-family: 'Montserrat';
+}
+
+@media (max-width: 500px) {
+  .rendering {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    position: absolute;
+  }
+  .handleRendererIncompleteMessage h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .rendering {
+    width: 200px;
+    height: 400px;
+    margin-top: 4px;
+  }
+  .handleRendererIncompleteMessage {
+    margin-top: -4px;
+  }
+  .handleRendererIncompleteMessage h1 {
+    font-size: 20px;
+  }
 }
 
 .purchaseWhipContainer {
@@ -942,16 +1044,16 @@ input:-webkit-autofill {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 .yourWhip {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border: 2px solid black;
+  text-align: left;
+  padding: 10px;
+  padding-left: 0;
+  width: 200px;
+  min-width: 200px;
+  height: 100%;
+  border-right: 2px solid black;
   border-radius: 2px;
 }
 
@@ -964,15 +1066,6 @@ input:-webkit-autofill {
 .myCanvas {
   max-width: 400px;
   height: 800px;
-}
-
-.designContainer {
-  text-align: center;
-  margin: 2px;
-}
-
-.designContainer h3 {
-  padding: 5px;
 }
 
 .buttonsContainer {
@@ -994,6 +1087,10 @@ input:-webkit-autofill {
 .buttonDiv {
   margin-right: 2px;
   margin-left: 2px;
+}
+
+.buttonDiv p {
+  margin: 0;
 }
 
 .hidden {
@@ -1018,7 +1115,7 @@ input:-webkit-autofill {
   height: 100%;
   width: 100%;
   font-size: 20px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1048,7 +1145,7 @@ input:-webkit-autofill {
   height: 100%;
   width: 100%;
   font-size: 20px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1100,7 +1197,7 @@ input:-webkit-autofill {
   height: 50px;
   width: 200px;
   font-size: 1rem;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1119,8 +1216,10 @@ input:-webkit-autofill {
   border: 1px solid black;
   outline: 0;
   opacity: .8;
+  font-family: 'Montserrat';
   opacity: 1;
   background-size: cover;
+  border: 2px solid white;
 }
 
 .handleButton:hover {
@@ -1129,8 +1228,8 @@ input:-webkit-autofill {
 }
 
 .handleButton:hover {
-  background: black;
   font-size: 1rem;
+  border: 2px solid black;
 }
 
 .homePage {
@@ -1182,10 +1281,17 @@ input:-webkit-autofill {
   margin: auto;
   text-align: center;
   margin-top: 20px;
+  font-family: 'Montserrat';
 }
 
 .aboutBullwhipContainer p {
   padding: 5px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.aboutBullwhipContainer h2 {
+  font-family: 'BioRhyme', serif;
 }
 
 .aboutBullwhipContainerPicContainer {
@@ -1291,7 +1397,7 @@ input:-webkit-autofill {
   height: 60px;
   width: 100px;
   font-size: 16px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1323,6 +1429,7 @@ input:-webkit-autofill {
 }
 
 .tooltiplength .tooltiptextlength {
+  font-family: 'Montserrat';
   width: 220px;
   bottom: 80px;
   left: -60px;
@@ -1399,95 +1506,6 @@ input:-webkit-autofill {
   }
 }
 
-.handleDetailsSpool {
-  background-position: center;
-  background-size: cover;
-  height: 75px;
-  width: 120px;
-  text-align: center;
-  display: inline-block;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: auto;
-}
-
-.handleDetailsSpool p {
-  color: white;
-  max-width: 100px;
-}
-
-.handleDetailsSpoolWhite {
-  background-position: center;
-  background-size: cover;
-  height: 75px;
-  width: 120px;
-  text-align: center;
-  display: inline-block;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: auto;
-}
-
-.handleDetailsSpoolWhite p {
-  color: black;
-  max-width: 100px;
-}
-
-.emptyDetailsSpool {
-  height: 75px;
-  text-align: center;
-  display: inline-block;
-}
-
-.handleDetailsPattern {
-  border-radius: 5px;
-  display: inline-block;
-  height: 60px;
-  width: 240px;
-  border: none;
-  margin: 0;
-  text-decoration: none;
-  background-size: cover;
-  color: #ffffff;
-  cursor: pointer;
-  text-align: center;
-  -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 1px solid black;
-  margin: 2px;
-}
-
-.handleDetailsPattern p {
-  margin-top: 58px;
-  color: black;
-}
-
-.waxedSelection {
-  border-radius: 5px;
-  width: 60%;
-  margin-left: 18%;
-  color: white;
-  background-color: black;
-}
-
 .tooltipRender {
   width: 80%;
   height: 80%;
@@ -1497,6 +1515,7 @@ input:-webkit-autofill {
 }
 
 .tooltipRender .inactiveRenderButtonToolTip {
+  font-family: 'Montserrat';
   width: 100%;
   bottom: 104%;
   left: -2%;
@@ -1525,17 +1544,10 @@ input:-webkit-autofill {
 
 .conchoDetails {
   border-radius: 5px;
-  display: inline-block;
   height: 100px;
   width: 100px;
   background-size: cover;
-  border: 1px solid black;
-  margin: 2px;
-}
-
-.conchoDetails p {
-  color: black;
-  margin-top: 100px;
+  margin: auto;
 }
 
 .highlighted {
@@ -1544,11 +1556,15 @@ input:-webkit-autofill {
   border-radius: 4px;
 }
 
+.yourWhip h2 {
+  font-family: 'BioRhyme', serif;
+}
+
 .yourWhipButtons {
   height: 60px;
   width: 160px;
   font-size: 20px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1581,6 +1597,7 @@ input:-webkit-autofill {
 
 /* Tooltip text */
 .tooltipAddToCart .tooltiptextAddToCart {
+  font-family: 'Montserrat';
   width: 220px;
   bottom: 80px;
   left: -40px;
@@ -1609,6 +1626,7 @@ input:-webkit-autofill {
 
 .addedBullwhipModal {
   z-index: 3;
+  text-align: center;
   position: fixed;
   left: 0;
   top: 0;
@@ -1642,7 +1660,7 @@ input:-webkit-autofill {
 .yourWhipButtonsInactive {
   background-color: black;
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 160px;
@@ -1664,7 +1682,7 @@ input:-webkit-autofill {
 }
 
 .yourWhipPlaceholder {
-  height: 100px;
+  height: 50px;
 }
 
 .yourWhipPlaceholderXSmall {
@@ -1674,17 +1692,104 @@ input:-webkit-autofill {
 }
 
 .yourWhipPlaceholderSmall {
+  margin-top: 10px;
   height: 80px;
 }
 
 .yourWhipPlaceholderSmall h4 {
   margin: 2px;
-  font-size: 18px;
 }
 
 .yourWhipPlaceholderBig {
   margin-top: 30px;
   height: 140px;
   text-align: center;
+}
+
+.handleDetailsSpool {
+  background-position: center;
+  background-size: cover;
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.handleDetailsSpool p {
+  color: white;
+  max-width: 100px;
+}
+
+.handleDetailsSpoolWhite {
+  background-position: center;
+  background-size: cover;
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.handleDetailsSpoolWhite p {
+  color: black;
+  max-width: 100px;
+}
+
+.emptyDetailsSpool {
+  height: 60px;
+  max-height: 60px;
+  text-align: center;
+  display: inline-block;
+}
+
+.emptyDetailsSpool p {
+  margin: 0;
+}
+
+.handleDetailsPattern {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  text-decoration: none;
+  background-size: cover;
+  -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.waxedSelection {
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  width: 150px;
+  color: white;
+  background-color: black;
+}
+
+.costBreakdownTable {
+  margin-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */

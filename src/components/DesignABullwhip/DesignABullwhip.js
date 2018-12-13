@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import WaxChooser from './WaxChooser';
 import ColorChooser from './ColorChooser';
-import WhipHandleDetails from './WhipHandleDetails';
-import RenderWhipButton from './RenderWhipButton';
 import HandleChooser from './HandleChooser';
 import CanvasRenderer from './CanvasRenderer';
 import WhipLengthChooser from './WhipLengthChooser';
@@ -12,6 +10,11 @@ import ConchoChooser from './ConchoChooser';
 import YourWhip from './YourWhip';
 
 class DesignABullwhip extends Component {
+
+  componentDidMount() {
+      window.scrollTo(0, 0) 
+  }
+  
   render() {
     return (
       <div>
@@ -19,30 +22,28 @@ class DesignABullwhip extends Component {
           <h1>Design A Bullwhip</h1>
         </div>
         <div className="designYourBullwhipContainer">
+        <div className="yourWhipContainer">
+            <YourWhip />
+        </div>
           <div className="waxedColorPatternColumn">
             <ColorChooser />
-            <WaxChooser />
             <HandleChooser />
-          </div>
-          <div className="detailsRenderColumn">
-            <WhipHandleDetails />
-            <RenderWhipButton />
-            
+            <WaxChooser />
+            <WhipLengthChooser />
+            <HandleLengthChooser />
+            <ConchoChooser />
           </div>
           <CanvasRenderer />
         </div>
 
 
-        <div className="purchaseWhipContainer">
+        {/* <div className="purchaseWhipContainer">
           <div className="lengthConchoContainer">
             <WhipLengthChooser />
             <HandleLengthChooser />
             <ConchoChooser />
           </div>
-          <div className="yourWhipContainer">
-            <YourWhip />
-          </div>
-        </div>
+        </div> */}
         {/* <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p> */}
       </div >
     )
