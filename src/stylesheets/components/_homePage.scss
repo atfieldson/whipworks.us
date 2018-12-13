@@ -29,11 +29,14 @@
     margin: auto;
     text-align: center;
     margin-top: 20px;
+    font-family: 'Montserrat';
     p {
         padding: 5px;
+        max-width: 500px;
+        margin: auto;
     }
-    h3 {
-        font-family: 'Montserrat';
+    h2 {
+        font-family: 'BioRhyme', serif;
     }
 }
 

@@ -66,10 +66,10 @@ class Cart extends Component {
                             }
                         </div>
                     </div>
-                    <div>
+                    <div className="montserrat">
                         <p>Total: ${this.props.state.bullwhip.orderTotalReducer}</p>
                         <p>Flat rate domestic shipping: $20</p>
-                        <h3 className="montserrat">Order Total: ${this.props.state.bullwhip.orderTotalReducer + 20}</h3>
+                        <h3>Order Total: ${this.props.state.bullwhip.orderTotalReducer + 20}</h3>
                     </div>
                 </div>
 

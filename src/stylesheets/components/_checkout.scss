@@ -76,7 +76,6 @@ ul{
 .shippingContainer{
     margin: 4px;
     max-width: 400px;
-    height: 550px;
 }
 
 .shippingForm{
@@ -99,7 +98,6 @@ ul{
 .fullNameInput {
     width: 100%;
     max-width: 100%;
-    margin-left: 10%;
     font-size: 14px;
 }
 
@@ -109,6 +107,7 @@ input:-webkit-autofill {
 
 /* default css for stripe CardElement  */
 .StripeElement {
+
     background-color: white;
     height: 30px;
     padding: 10px 12px;
@@ -120,7 +119,6 @@ input:-webkit-autofill {
     max-width: 300px;
     width: 100%;
     margin-bottom: 5px;
-    margin-left: 5%;
   }
   
   .StripeElement--focus {
@@ -224,7 +222,9 @@ input:-webkit-autofill {
 
 .placeOrderModalContent {
     position: absolute;
-    top: 10%;
+    height: 670px;
+    top: 50%;
+    margin-top: -335px;
     left: 25%;
     width: 50%;
     background-color: white;
@@ -235,7 +235,7 @@ input:-webkit-autofill {
 }
 
 .placeOrderModalContainer {
-   
+    font-family: 'Montserrat';
 }
 
 .modalLogo {
@@ -245,7 +245,7 @@ input:-webkit-autofill {
 
 .modalButton {
     border-radius: 5px;
-    font-family: 'BioRhyme', serif;
+    font-family: 'Montserrat';
     display: inline-block;
     height: 60px;
     width: 100px;

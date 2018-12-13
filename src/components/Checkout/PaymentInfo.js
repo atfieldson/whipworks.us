@@ -9,7 +9,7 @@ class PaymentInfo extends Component {
         return (
 
             <div className="paymentContainer">
-                <h3>Payment Information</h3>
+                <h3 className="montserrat">Payment Information</h3>
                 <StripeProvider apiKey={"pk_test_JRb8f197Xg9h1XrLvDc6HAoh"}>
                     <Elements>
                         <CheckoutForm />

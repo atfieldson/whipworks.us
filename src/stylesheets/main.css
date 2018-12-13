@@ -255,6 +255,10 @@ h1 {
   font-family: 'BioRhyme', serif;
 }
 
+.montserrat {
+  font-family: 'Montserrat';
+}
+
 .checkoutComponent {
   text-align: center;
   font-family: 'BioRhyme', serif;
@@ -362,7 +366,6 @@ ul {
 .shippingContainer {
   margin: 4px;
   max-width: 400px;
-  height: 550px;
 }
 
 .shippingForm {
@@ -384,7 +387,6 @@ ul {
 .fullNameInput {
   width: 100%;
   max-width: 100%;
-  margin-left: 10%;
   font-size: 14px;
 }
 
@@ -409,7 +411,6 @@ input:-webkit-autofill {
   max-width: 300px;
   width: 100%;
   margin-bottom: 5px;
-  margin-left: 5%;
 }
 
 .StripeElement--focus {
@@ -533,7 +534,9 @@ input:-webkit-autofill {
 
 .placeOrderModalContent {
   position: absolute;
-  top: 10%;
+  height: 670px;
+  top: 50%;
+  margin-top: -335px;
   left: 25%;
   width: 50%;
   background-color: white;
@@ -550,6 +553,10 @@ input:-webkit-autofill {
           flex-direction: column;
 }
 
+.placeOrderModalContainer {
+  font-family: 'Montserrat';
+}
+
 .modalLogo {
   width: 200px;
   height: 200px;
@@ -557,7 +564,7 @@ input:-webkit-autofill {
 
 .modalButton {
   border-radius: 5px;
-  font-family: 'BioRhyme', serif;
+  font-family: 'Montserrat';
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -968,6 +975,7 @@ input:-webkit-autofill {
   font-size: 50px;
   color: black;
   opacity: 1;
+  font-family: 'Montserrat';
 }
 
 @media (max-width: 500px) {
@@ -1273,14 +1281,17 @@ input:-webkit-autofill {
   margin: auto;
   text-align: center;
   margin-top: 20px;
+  font-family: 'Montserrat';
 }
 
 .aboutBullwhipContainer p {
   padding: 5px;
+  max-width: 500px;
+  margin: auto;
 }
 
-.aboutBullwhipContainer h3 {
-  font-family: 'Montserrat';
+.aboutBullwhipContainer h2 {
+  font-family: 'BioRhyme', serif;
 }
 
 .aboutBullwhipContainerPicContainer {
