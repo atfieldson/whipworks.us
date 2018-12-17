@@ -64,4 +64,7 @@ typings/
 # ignore package-lock as it complicates merging
 package-lock.json
 
-.LukesCode
+LukesCode.md
+
+WhipWorks.sql
+
