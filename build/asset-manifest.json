@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.65963355.chunk.css",
-  "main.js": "/static/js/main.5b6759b8.chunk.js",
-  "main.js.map": "/static/js/main.5b6759b8.chunk.js.map",
+  "main.js": "/static/js/main.cc8a3538.chunk.js",
+  "main.js.map": "/static/js/main.cc8a3538.chunk.js.map",
   "static/css/1.5f618fd1.chunk.css": "/static/css/1.5f618fd1.chunk.css",
   "static/js/1.72919480.chunk.js": "/static/js/1.72919480.chunk.js",
   "static/js/1.72919480.chunk.js.map": "/static/js/1.72919480.chunk.js.map",
@@ -9,7 +9,7 @@
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/BW117Chart.jpg": "/static/media/BW117Chart.8cd73a13.jpg",
   "static/media/ww.jpg": "/static/media/ww.eaee2a30.jpg",
-  "static/media/main.css": "/static/media/celticBrass.252ce6c2.jpg",
+  "static/media/main.css": "/static/media/celticCopper.cb870805.jpg",
   "static/media/wwBanner.jpg": "/static/media/wwBanner.61c1a0fc.jpg",
   "static/media/youtube.png": "/static/media/youtube.cf5be515.png",
   "static/media/BW118Chart.jpg": "/static/media/BW118Chart.02ace570.jpg",
@@ -48,6 +48,6 @@
   "static/css/main.65963355.chunk.css.map": "/static/css/main.65963355.chunk.css.map",
   "static/css/1.5f618fd1.chunk.css.map": "/static/css/1.5f618fd1.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.c15d7b8567da8f66e4c963ea6465153d.js": "/precache-manifest.c15d7b8567da8f66e4c963ea6465153d.js",
+  "precache-manifest.90539248cecd1a6da94c3589e0034e4b.js": "/precache-manifest.90539248cecd1a6da94c3589e0034e4b.js",
   "service-worker.js": "/service-worker.js"
 }
