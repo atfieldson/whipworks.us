@@ -165,26 +165,18 @@ class YourWhip extends Component {
                         </tr>
                         <tr>
                             <td>
-                                Concho:
+                                Waxed Cost:
                             </td>
                             <td>
-                                ${this.props.state.bullwhip.designABullwhipReducer.concho.cost}
+                                ${this.props.state.bullwhip.designABullwhipReducer.whipLength.waxed_cost}
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Shipping:
+                                Concho:
                             </td>
                             <td>
-                                {
-                                this.props.state.bullwhip.designABullwhipReducer.whipLength.cost !== "0" ||
-                                this.props.state.bullwhip.designABullwhipReducer.handleLength.cost !== "0" ||
-                                this.props.state.bullwhip.designABullwhipReducer.concho.cost !== "0"
-                                ?
-                                <td>$20</td>
-                                :
-                                <td>$0</td>
-                                }
+                                ${this.props.state.bullwhip.designABullwhipReducer.concho.cost}
                             </td>
                         </tr>
                         <tr>
