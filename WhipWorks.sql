@@ -22,26 +22,22 @@ CREATE TABLE "bullwhips" (
 	"review" TEXT
 );
 
-INSERT INTO "bullwhips" ("order_id", "whip_length_id", "handle_length_id", "color1_id", "color2_id", "handle_design_id", "concho_id", "waxed")   
-VALUES ( 1, 1, 1, 1, 1, 1, 1, 'yes');
-
-
 CREATE TABLE "whip_lengths" (
 	"id" SERIAL PRIMARY KEY,
 	"length" INT NOT NULL,
 	"cost" INT NOT NULL,
-    "waxed_cost" INT NOT NULL,
+    "waxed_cost" INT NOT NULL
 );
 
 INSERT INTO "whip_lengths" ("length", "cost", "waxed_cost")
 VALUES 
-(4, 200, 20), 
-(5, 225, 20), 
-(6, 250, 25), 
-(7, 275, 25), 
-(8, 300, 25), 
-(10, 400, 30), 
-(12, 500, 30)
+(4, 179, 20), 
+(5, 199, 20), 
+(6, 219, 25), 
+(7, 244, 25), 
+(8, 269, 25), 
+(10, 364, 30), 
+(12, 464, 30)
 ; 
 
 CREATE TABLE "handle_lengths" (
@@ -74,7 +70,7 @@ VALUES
 ('egyptian eye', 0, 'egyptianEye.jpg', '16p'),
 ('emerald', 0, 'emerald.jpg', '16p'),
 ('vertical strip', 0, 'verticalStrip.jpg', '16p'),
-('new', 0, 'new.jpg', '16p');
+('neo celtic', 0, 'neoCeltic.jpg', '16p');
 
 
 CREATE TABLE "conchos_and_pommels" (
@@ -103,7 +99,11 @@ VALUES
 ('flaming skull', 10, 'silver', 'flamingSkullSilver.jpg'),
 ('pirate skull', 10, 'silver', 'pirateSkullSilver.jpg'),
 ('ram', 10, 'silver', 'ramSilver.jpg'),
-('yin and yang', 10, 'silver', 'yinAndYangSilver.jpg');
+('yin and yang', 10, 'silver', 'yinAndYangSilver.jpg'),
+('dragon pommel', 70, 'silver', 'dragonPommel.jpg'),
+('wolf pommel', 70, 'silver', 'wolfPommel.jpg'),
+('cobra pommel', 70, 'silver', 'cobraPommel.jpg');
+
 
 
 
