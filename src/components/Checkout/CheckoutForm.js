@@ -133,7 +133,7 @@ class CheckoutForm extends Component {
           <label className="fullNameInput">
             Full Name on Card*
           <br></br>
-            <input placeholder="Full Name on Card" className="fullNameInput" onChange={this.handleFullName}></input>
+            <input className="fullNameInput" onChange={this.handleFullName}></input>
           </label>
           <CardElement />
         </div>

@@ -179,3 +179,9 @@
 .costBreakdownTable {
     margin-top: 50px;
 }
+
+.yourWhipSticky {
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 10px; 
+}
