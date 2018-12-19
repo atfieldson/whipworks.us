@@ -622,6 +622,17 @@ input:-webkit-autofill {
   font-family: 'Montserrat';
 }
 
+.paymentInfoContainer {
+  position: relative;
+}
+
+.stripeImage {
+  position: relative;
+  width: 150px;
+  left: -50%;
+  margin-left: 150px;
+}
+
 .thanksImageContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1654,12 +1665,13 @@ input:-webkit-autofill {
 
 .addedBullwhipModalContent {
   /* border: 5px solid black; */
-  height: 50%;
+  height: 450px;
   width: 50%;
   background-color: white;
   /* margin: auto; */
   position: absolute;
-  top: 25%;
+  top: 50%;
+  margin-top: -225px;
   left: 25%;
   display: -webkit-box;
   display: -ms-flexbox;

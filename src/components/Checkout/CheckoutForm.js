@@ -128,9 +128,12 @@ class CheckoutForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='paymentInfoContainer'>
+      <a target="_blank" href="https://stripe.com/us/customers" >
+        <img src={require("./images/stripe-payment-icon.png")} className='stripeImage' alt="Stripe"></img>
+        </a>
         <div className="shippingForm">
-          <label className="fullNameInput">
+          <label>
             Full Name on Card*
           <br></br>
             <input className="fullNameInput" onChange={this.handleFullName}></input>
