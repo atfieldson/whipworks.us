@@ -8,6 +8,8 @@ import WhipLengthChooser from './WhipLengthChooser';
 import HandleLengthChooser from './HandleLengthChooser';
 import ConchoChooser from './ConchoChooser';
 import YourWhip from './YourWhip';
+import { StickyContainer, Sticky } from 'react-sticky';
+
 
 class DesignABullwhip extends Component {
 
@@ -17,8 +19,8 @@ class DesignABullwhip extends Component {
   
   render() {
     return (
-      <div>
-        <div className="designHeader">
+      <StickyContainer>
+      <div className="designHeader">
           <h1>Design A Bullwhip</h1>
         </div>
         <div className="designYourBullwhipContainer">
@@ -45,7 +47,8 @@ class DesignABullwhip extends Component {
           </div>
         </div> */}
         {/* <p>{JSON.stringify(this.props.state.bullwhip.designABullwhipReducer)}</p> */}
-      </div >
+        </StickyContainer>
+
     )
   }
 }

@@ -11,6 +11,18 @@
     margin: auto;
 }
 
+@media (max-width: $small) {
+    .checkout {
+        flex-direction: column;
+    }
+    .orderContainer {
+        order: 1;
+    }
+    .checkoutContainer{
+        order: 2;
+    }
+}
+
 .incompleteContainer{
     width: 100vw;
     display: flex;
@@ -234,6 +246,25 @@ input:-webkit-autofill {
     flex-direction: column;
 }
 
+@media (max-width: $small) {
+    .placeOrderModalContent {
+        width: 70%;
+        left: 15%;
+        h3 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 12px;
+        }
+        .modalButton {
+            font-size: 14px;
+            width: 150px;
+            height: 50px;
+            margin: 6px;
+        }
+    }
+}
+
 .placeOrderModalContainer {
     font-family: 'Montserrat';
 }
@@ -287,6 +318,18 @@ input:-webkit-autofill {
 
 .monsterrat {
     font-family: 'Montserrat';    
+}
+
+.paymentInfoContainer {
+    position: relative;
+}
+
+.stripeImage {
+    position: relative;
+    width: 150px;
+    left: -50%;
+    margin-left: 150px;
+    // margin-bottom: 8px;
 }
 
 .thanksImageContainer {

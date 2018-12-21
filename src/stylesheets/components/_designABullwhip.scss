@@ -8,6 +8,7 @@
 }
 
 .waxedColorPatternColumn{
+    z-index: 0;
     @include flexColumn(space-evenly);
     max-width: 640px;
     h2{
@@ -74,6 +75,7 @@
     }
 }
 
+//Mobile friendly adjustments
 @media (max-width: $small) {
     .rendering {
         width: 0px;
@@ -84,6 +86,14 @@
     .handleRendererIncompleteMessage{
         h1 {
             font-size: 20px;
+        }
+    }
+    .waxedColorPatternColumn {
+        h2{ 
+            font-size: 18px;
+        }
+        p {
+            font-size: 12px;
         }
     }
 }
@@ -175,5 +185,15 @@
     cursor: default;
     &:hover {
         opacity: .7;
+    }
+}
+
+
+@media (max-width: $small) {
+    .designHeader{
+        height: 50px;
+        h1 {
+            font-size: 24px;
+        }
     }
 }

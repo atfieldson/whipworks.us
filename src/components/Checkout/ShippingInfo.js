@@ -48,61 +48,61 @@ class ShippingInfo extends Component {
                     <label className="shippingFormLabel">
                         First Name*
                         <br></br>
-                        <input type="text" placeholder="First Name" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.first_name} name='first_name'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.first_name} name='first_name'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Last Name*
                         <br></br>
-                        <input type="text" placeholder="Last Name" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.last_name} name='last_name'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.last_name} name='last_name'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Email Address*
                         <br></br>
-                        <input type="text" placeholder="Email Address" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.email} name='email'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.email} name='email'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Street Address*
                         <br></br>
-                        <input type="text" placeholder="Street Address" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_street_address} name='shipping_street_address'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_street_address} name='shipping_street_address'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         City*
                         <br></br>
-                        <input type="text" placeholder="City" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_city} name='shipping_city'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_city} name='shipping_city'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         State*
                         <br></br>
-                        <input type="text" placeholder="State" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_state} name='shipping_state'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_state} name='shipping_state'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Country*
                         <br></br>
-                        <input type="text" placeholder="Country" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_country} name='shipping_country'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_country} name='shipping_country'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Zip Code*
                         <br></br>
-                        <input type="number" placeholder="Zip Code" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_zip} name='shipping_zip'></input>
+                        <input type="number" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.shipping_zip} name='shipping_zip'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Phone Number
                         <br></br>
-                        <input type="text" placeholder="Last Name" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.phone_number} name='phone_number'></input>
+                        <input type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.phone_number} name='phone_number'></input>
                     </label>
                     <br></br>
                     <label className="shippingFormLabel">
                         Shipping Notes
                         <br></br>
-                        <textarea type="text" placeholder="Shipping Notes" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.order_notes} name='order_notes'></textarea>
+                        <textarea type="text" className= "shippingFormInput" onChange={this.handleState} onBlur={this.setReduxAddress} value={this.state.order_notes} name='order_notes'></textarea>
                     </label>
                 </form>
             </div>  

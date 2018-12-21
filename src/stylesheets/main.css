@@ -288,6 +288,25 @@ h1 {
   margin: auto;
 }
 
+@media (max-width: 500px) {
+  .checkout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .orderContainer {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .checkoutContainer {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
 .incompleteContainer {
   width: 100vw;
   display: -webkit-box;
@@ -565,6 +584,25 @@ input:-webkit-autofill {
           flex-direction: column;
 }
 
+@media (max-width: 500px) {
+  .placeOrderModalContent {
+    width: 70%;
+    left: 15%;
+  }
+  .placeOrderModalContent h3 {
+    font-size: 16px;
+  }
+  .placeOrderModalContent p {
+    font-size: 12px;
+  }
+  .placeOrderModalContent .modalButton {
+    font-size: 14px;
+    width: 150px;
+    height: 50px;
+    margin: 6px;
+  }
+}
+
 .placeOrderModalContainer {
   font-family: 'Montserrat';
 }
@@ -620,6 +658,17 @@ input:-webkit-autofill {
 
 .monsterrat {
   font-family: 'Montserrat';
+}
+
+.paymentInfoContainer {
+  position: relative;
+}
+
+.stripeImage {
+  position: relative;
+  width: 150px;
+  left: -50%;
+  margin-left: 150px;
 }
 
 .thanksImageContainer {
@@ -807,16 +856,66 @@ input:-webkit-autofill {
   border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: 1;
+  z-index: 4;
 }
 
 .tooltipwax .tooltiptextwax:hover {
   visibility: visible;
+  background-color: whitesmoke;
+  z-index: 99;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltipwax:hover .tooltiptextwax {
   visibility: visible;
+}
+
+@media (max-width: 500px) {
+  .colorButton {
+    width: 60px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 10px;
+    background-position: center;
+  }
+  .colorButton:focus {
+    /* outline gets rid of the blue border on selected item */
+    outline: 0;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButton:hover {
+    border: 2px solid black;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButtonWhite {
+    width: 60px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButtonWhite:focus {
+    /* outline gets rid of the blue border on selected item */
+    outline: 0;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButtonWhite:hover {
+    border: 2px solid black;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorChooserButton {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .colorChooserButtonHighlighted {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .lengthButton {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
 
 .conchoContainer p {
@@ -863,6 +962,16 @@ input:-webkit-autofill {
   outline: 0;
 }
 
+@media (max-width: 500px) {
+  .conchoButton {
+    width: 50px;
+    height: 50px;
+  }
+  .buttonDiv p {
+    font-size: 8px;
+  }
+}
+
 .designHeader {
   text-align: center;
   border-bottom: 2px solid black;
@@ -881,6 +990,7 @@ input:-webkit-autofill {
 }
 
 .waxedColorPatternColumn {
+  z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -999,6 +1109,12 @@ input:-webkit-autofill {
   }
   .handleRendererIncompleteMessage h1 {
     font-size: 20px;
+  }
+  .waxedColorPatternColumn h2 {
+    font-size: 18px;
+  }
+  .waxedColorPatternColumn p {
+    font-size: 12px;
   }
 }
 
@@ -1186,6 +1302,15 @@ input:-webkit-autofill {
 
 .inactiveRenderButton:hover {
   opacity: .7;
+}
+
+@media (max-width: 500px) {
+  .designHeader {
+    height: 50px;
+  }
+  .designHeader h1 {
+    font-size: 24px;
+  }
 }
 
 .footerContainer {
@@ -1460,16 +1585,26 @@ input:-webkit-autofill {
   border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: 1;
+  z-index: 4;
 }
 
 .tooltiplength .tooltiptextlength:hover {
   visibility: visible;
+  background-color: whitesmoke;
+  z-index: 99;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltiplength:hover .tooltiptextlength {
   visibility: visible;
+}
+
+@media (max-width: 500px) {
+  .lengthButton {
+    width: 80px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
 
 .nav {
@@ -1546,11 +1681,13 @@ input:-webkit-autofill {
   border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: 1;
+  z-index: 4;
 }
 
 .tooltipRender .inactiveRenderButtonToolTip:hover {
   visibility: visible;
+  background-color: whitesmoke;
+  z-index: 99;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -1614,9 +1751,9 @@ input:-webkit-autofill {
 /* Tooltip text */
 .tooltipAddToCart .tooltiptextAddToCart {
   font-family: 'Montserrat';
-  width: 220px;
-  bottom: 80px;
-  left: -40px;
+  width: 200px;
+  bottom: 65px;
+  left: 0px;
   padding: 8px;
   visibility: hidden;
   background-color: RGB(51 51 51);
@@ -1628,11 +1765,13 @@ input:-webkit-autofill {
   border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: 1;
+  z-index: 4;
 }
 
 .tooltipAddToCart .tooltiptextAddToCart:hover {
   visibility: visible;
+  background-color: whitesmoke;
+  z-index: 99;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -1654,12 +1793,13 @@ input:-webkit-autofill {
 
 .addedBullwhipModalContent {
   /* border: 5px solid black; */
-  height: 50%;
+  height: 450px;
   width: 50%;
   background-color: white;
   /* margin: auto; */
   position: absolute;
-  top: 25%;
+  top: 50%;
+  margin-top: -225px;
   left: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1677,10 +1817,8 @@ input:-webkit-autofill {
   background-color: black;
   border-radius: 5px;
   font-family: 'Montserrat';
-  display: inline-block;
   height: 60px;
   width: 160px;
-  margin: 0;
   text-decoration: none;
   color: #ffffff;
   text-align: center;
@@ -1691,8 +1829,8 @@ input:-webkit-autofill {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
-  margin: 2px;
   outline: 0;
+  margin: 2px;
   opacity: .8;
   font-size: 20px;
 }
@@ -1807,5 +1945,77 @@ input:-webkit-autofill {
 
 .costBreakdownTable {
   margin-top: 50px;
+}
+
+.yourWhipSticky {
+  position: -webkit-sticky;
+  /* Safari */
+  position: fixed;
+  top: 10px;
+}
+
+@media (max-width: 500px) {
+  .yourWhip {
+    min-width: 0px;
+    max-width: 100px;
+  }
+  .yourWhip h2 {
+    font-size: 14px;
+  }
+  .yourWhip h4 {
+    font-size: 12px;
+  }
+  .yourWhip p {
+    font-size: 12px;
+  }
+  .yourWhip .waxedSelection {
+    width: 80px;
+    font-size: 14px;
+  }
+  .yourWhip .handleDetailsSpool {
+    width: 80px;
+  }
+  .yourWhip .handleDetailsSpoolWhite {
+    width: 80px;
+  }
+  .yourWhip .handleDetailsPattern {
+    width: 100px;
+    height: 30px;
+  }
+  .yourWhip .yourWhipPlaceholderSmall {
+    height: 60px;
+  }
+  .yourWhip .yourWhipPlaceholder {
+    height: 40px;
+  }
+  .yourWhip .conchoDetails {
+    width: 60px;
+    height: 60px;
+  }
+  .yourWhip .costBreakdownTable {
+    font-size: 12px;
+  }
+  .yourWhip .yourWhipButtons {
+    width: 80px;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 4px;
+  }
+  .yourWhip .yourWhipButtonsInactive {
+    width: 80px;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 4px;
+  }
+  .addedBullwhipModal {
+    width: 100vw;
+    height: 100vh;
+  }
+  .addedBullwhipModal .addedBullwhipModalContainer {
+    width: 300px;
+    height: 100%;
+    margin-left: -50px;
+    background-color: white;
+  }
 }
 /*# sourceMappingURL=main.css.map */
