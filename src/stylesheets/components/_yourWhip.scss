@@ -29,7 +29,7 @@
 
 /* Tooltip text */
 .tooltipAddToCart .tooltiptextAddToCart {
-    @include toolTip(220px, 80px, -40px)
+    @include toolTip(200px, 65px, 0px);
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -68,10 +68,9 @@
     background-color: black;
     border-radius: 5px;
     font-family: 'Montserrat';
-    display: inline-block;
+    // display: inline-block;
     height: 60px;
     width: 160px;
-    margin: 0;
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -80,8 +79,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 1px solid black;
-    margin: 2px;
     outline:0;
+    margin: 2px;
     opacity: .8;
     font-size: 20px;
 }
@@ -185,4 +184,71 @@
     position: -webkit-sticky; /* Safari */
     position: fixed;
     top: 10px; 
+}
+
+
+//Mobile view adjustments
+@media (max-width: $small) {
+    .yourWhip {
+        min-width: 0px;
+        max-width: 100px;
+        h2{
+            font-size: 14px;
+        }
+        h4{
+            font-size: 12px;
+        }
+        p {
+            font-size: 12px;
+        }
+        .waxedSelection {
+            width: 80px;
+            font-size: 14px;
+        }
+        .handleDetailsSpool {
+            width: 80px;
+        }
+        .handleDetailsSpoolWhite {
+            width: 80px;
+        }
+        .handleDetailsPattern {
+            width: 100px;
+            height: 30px;
+        }
+        .yourWhipPlaceholderSmall {
+            height: 60px;
+        }
+        .yourWhipPlaceholder {
+            height: 40px;
+        }
+        .conchoDetails {
+            width: 60px;
+            height: 60px;
+        }
+        .costBreakdownTable {
+            font-size: 12px;
+        }
+        .yourWhipButtons {
+            width: 80px;
+            font-size: 12px;
+            margin-left: 10px;
+            margin-bottom: 4px;
+        }
+        .yourWhipButtonsInactive {
+            width: 80px;
+            font-size: 12px;
+            margin-left: 10px;
+            margin-bottom: 4px;
+        }
+    }
+    .addedBullwhipModal {
+        width: 100vw;
+        height: 100vh;
+        .addedBullwhipModalContainer {
+            width: 300px;
+            height: 100%; 
+            margin-left: -50px;
+            background-color: white;
+        }
+    }
 }
