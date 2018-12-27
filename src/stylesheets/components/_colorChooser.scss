@@ -92,6 +92,37 @@
 }
 
 //Mobile friendly adjustments
+@media (max-width: 900px){
+    .colorButton {
+        width: 60px;
+        height: 40px; 
+        color: rgba(255, 255, 255, 0);
+        &:focus{
+            /* outline gets rid of the blue border on selected item */
+            outline:0;
+            color: rgba(255, 255, 255, 0);
+        }
+        &:hover {
+            border: 2px solid black;
+            color: rgba(255, 255, 255, 0);
+        }
+    }
+    .colorButtonWhite{
+        width: 60px;
+        height: 40px; 
+        color: rgba(255, 255, 255, 0);
+        &:focus{
+            /* outline gets rid of the blue border on selected item */
+            outline:0;
+            color: rgba(255, 255, 255, 0);
+        }
+        &:hover {
+            border: 2px solid black;
+            color: rgba(255, 255, 255, 0);
+        }
+    }
+}
+
 @media (max-width: $small) {
     .colorButton {
         width: 60px;
@@ -129,11 +160,6 @@
         font-size: 14px;
     }
     .colorChooserButtonHighlighted {
-        width: 80px;
-        height: 40px;
-        font-size: 14px;
-    }
-    .lengthButton {
         width: 80px;
         height: 40px;
         font-size: 14px;

@@ -69,6 +69,7 @@ VALUES
 ('celtic', 0, 'celtic.jpg', '16p'),
 ('egyptian eye', 0, 'egyptianEye.jpg', '16p'),
 ('emerald', 0, 'emerald.jpg', '16p'),
+('valknut', 0, 'valknut.jpg', '16p'),
 ('vertical strip', 0, 'verticalStrip.jpg', '16p'),
 ('neo celtic', 0, 'neoCeltic.jpg', '16p');
 

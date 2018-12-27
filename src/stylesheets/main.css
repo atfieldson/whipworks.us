@@ -98,6 +98,10 @@
   background-image: url("../components/DesignABullwhip/images/handles/neoCeltic.jpg");
 }
 
+.valknut {
+  background-image: url("../components/DesignABullwhip/images/handles/valknut.jpg");
+}
+
 .verticalstrip {
   background-image: url("../components/DesignABullwhip/images/handles/verticalStrip.jpg");
 }
@@ -870,6 +874,37 @@ input:-webkit-autofill {
   visibility: visible;
 }
 
+@media (max-width: 900px) {
+  .colorButton {
+    width: 60px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButton:focus {
+    /* outline gets rid of the blue border on selected item */
+    outline: 0;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButton:hover {
+    border: 2px solid black;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButtonWhite {
+    width: 60px;
+    height: 40px;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButtonWhite:focus {
+    /* outline gets rid of the blue border on selected item */
+    outline: 0;
+    color: rgba(255, 255, 255, 0);
+  }
+  .colorButtonWhite:hover {
+    border: 2px solid black;
+    color: rgba(255, 255, 255, 0);
+  }
+}
+
 @media (max-width: 500px) {
   .colorButton {
     width: 60px;
@@ -907,11 +942,6 @@ input:-webkit-autofill {
     font-size: 14px;
   }
   .colorChooserButtonHighlighted {
-    width: 80px;
-    height: 40px;
-    font-size: 14px;
-  }
-  .lengthButton {
     width: 80px;
     height: 40px;
     font-size: 14px;
@@ -966,9 +996,6 @@ input:-webkit-autofill {
   .conchoButton {
     width: 50px;
     height: 50px;
-  }
-  .buttonDiv p {
-    font-size: 8px;
   }
 }
 
