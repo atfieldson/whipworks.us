@@ -5,7 +5,7 @@ const designABullwhipReducer = (state = {
   color2: { name: '', url: '', unwaxedurl: '', id: '', spool_url: '' },
   waxed: 'yes',
   pattern: { name: '', id: '' },
-  whipLength: { name: '', cost: '0', waxed_cost: '0', id: '' },
+  whipLength: { name: '', cost: '0', waxed_cost: '0', id: '', shipping_profile_id: '0' },
   handleLength: { name: '', cost: '0', id: '' },
   concho: { name: '', cost: '0', id: '' },
   total: 0,

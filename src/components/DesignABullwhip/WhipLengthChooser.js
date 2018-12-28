@@ -11,7 +11,7 @@ class WhipLengthChooser extends Component {
         this.setState({
             whipLength: event.target.name
         })
-        this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: { name: event.target.name, cost: event.target.value, waxed_cost: event.target.title, id: event.target.id }})
+        this.props.dispatch({type: 'SET_WHIP_LENGTH', payload: { name: event.target.name, cost: event.target.value, waxed_cost: event.target.title, id: event.target.id, shipping_profile_id: event.target.dataset.shipping }})
         this.props.dispatch({type: 'SET_WHIP_TOTAL'})
     }
 
@@ -71,6 +71,7 @@ class WhipLengthChooser extends Component {
                         onClick={this.updateWhipLength}
                         name={length.length}
                         title={length.waxed_cost}
+                        data-shipping={length.shipping_profile_id}
                         >                        
                         {length.length} Feet
                         </button>

@@ -22,22 +22,38 @@ CREATE TABLE "bullwhips" (
 	"review" TEXT
 );
 
+CREATE TABLE "shipping_profiles" (
+	"id" SERIAL PRIMARY KEY,
+	"name" VARCHAR (120) NOT NULL,
+	"domestic_cost" INT NOT NULL,
+	"domestic_additional" INT NOT NULL,
+	"international_cost" INT NOT NULL,
+	"international_additional" INT NOT NULL
+);
+
+INSERT INTO "shipping_profiles" ( "id", "name", "domestic_cost", "domestic_additional", "international_cost", "international_additional")
+VALUES
+(1, 'bullwhip', 13, 0, 38, 5),
+(2, 'accessory-light', 10, 0, 29, 2),
+(3, 'accessory-heavy', 10, 2, 34, 6);
+
 CREATE TABLE "whip_lengths" (
 	"id" SERIAL PRIMARY KEY,
 	"length" INT NOT NULL,
 	"cost" INT NOT NULL,
-    "waxed_cost" INT NOT NULL
+    "waxed_cost" INT NOT NULL,
+	"shipping_profile_id" INT NOT NULL
 );
 
-INSERT INTO "whip_lengths" ("length", "cost", "waxed_cost")
+INSERT INTO "whip_lengths" ("length", "cost", "waxed_cost", "shipping_profile_id")
 VALUES 
-(4, 179, 20), 
-(5, 199, 20), 
-(6, 219, 25), 
-(7, 244, 25), 
-(8, 269, 25), 
-(10, 364, 30), 
-(12, 464, 30)
+(4, 179, 20, 1), 
+(5, 199, 20, 1), 
+(6, 219, 25, 1), 
+(7, 244, 25, 1), 
+(8, 269, 25, 1), 
+(10, 364, 30, 1), 
+(12, 464, 30, 1)
 ; 
 
 CREATE TABLE "handle_lengths" (
@@ -105,10 +121,6 @@ VALUES
 ('wolf pommel', 70, 'silver', 'wolfPommel.jpg'),
 ('cobra pommel', 70, 'silver', 'cobraPommel.jpg');
 
-
-
-
-
 CREATE TABLE "colors" (
 	"id" SERIAL PRIMARY KEY,
 	"color" VARCHAR(255),
@@ -165,7 +177,8 @@ CREATE TABLE "products" (
 	"cost" INT NOT NULL,
 	"in_stock" INT,
 	"color_id" INT,
-	"img_url" TEXT
+	"img_url" TEXT,
+	"shipping_profile_id" INT NOT NULL
 );
 
 CREATE TABLE "order_products" (
