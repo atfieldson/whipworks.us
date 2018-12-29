@@ -103,7 +103,7 @@ class CheckoutForm extends Component {
 
   submitOrder = () => {
     //SHIPPING IS HARD CODED FOR NOW WITH FLAT RATE SHIPPING, TO BE CHANGED
-    let newAmount = (this.props.state.bullwhip.orderTotalReducer + 20)* 100
+    let newAmount = (this.props.state.bullwhip.orderTotalReducer + this.props.state.bullwhip.shippingTotal.total) * 100
     this.props.dispatch({type: 'PLACE_ORDER', payload: {
       stripe: {token: this.state.stripeToken, amount: newAmount},
       order: {first_name: this.props.state.bullwhip.shippingAddressReducer.first_name,

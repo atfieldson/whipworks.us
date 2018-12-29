@@ -11,7 +11,7 @@ class ShippingInfo extends Component {
         shipping_street_address: '',
         shipping_city: '',
         shipping_state: '',
-        shipping_country: '',
+        shipping_country: 'United States',
         shipping_zip: '',
         phone_number: '',
         shipping_cost: 20,
@@ -56,6 +56,18 @@ class ShippingInfo extends Component {
     submitAddress = (event) => {
         event.preventDefault()
         this.props.dispatch({ type: 'POST_ADDRESS', payload: { ...this.state, order_total: this.props.state.bullwhip.orderTotalReducer } })
+    }
+
+    componentDidMount(){
+        let cartShippingProfiles = []
+        for (let item of this.props.state.bullwhip.cartReducer) {
+            cartShippingProfiles.push(item.item.whipLength.shipping_profile_id)
+        }
+        if (this.state.shipping_country !== "United States") {
+            this.props.dispatch({ type: 'DETERMINE_SHIPPING', payload: {domestic: false, cartShippingProfiles: cartShippingProfiles} })
+        } else if (this.state.shipping_country === "United States") {
+            this.props.dispatch({ type: 'DETERMINE_SHIPPING', payload: {domestic: true, cartShippingProfiles: cartShippingProfiles} })
+        }
     }
 
     render() {
