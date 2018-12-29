@@ -129,7 +129,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -184,7 +183,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -250,7 +248,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -439,7 +436,6 @@ class CanvasRenderer extends Component {
         //row 5 is the else 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -509,7 +505,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -561,7 +556,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -632,7 +626,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);
@@ -898,7 +891,6 @@ class CanvasRenderer extends Component {
 
         for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
             for (let i = -b16 * 8; i <= bw * 2; i += b16) {
-                console.log('hello');
                 c.beginPath();
                 c.moveTo(i, i + j + 2 * b16);
                 c.lineTo(i - b16, i + j + b16);

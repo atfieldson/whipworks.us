@@ -31,7 +31,7 @@ router.post("/placeorder", async (req, res) => {
       description: "An example charge",
       source: req.body.stripe.token
     });
-    // res.send(console.log(response.id)); //delete this line
+    res.send(console.log(response.id)); //delete this line
     try {
     //insert address and order pool query here
     let responseID = await pool.query(queryText, [first_name, last_name, email, shipping_street_address, shipping_city, shipping_state, shipping_country, shipping_zip, phone_number, shipping_cost, order_total, response.id, order_notes])
