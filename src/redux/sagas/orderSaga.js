@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { takeLatest, put } from 'redux-saga/effects';
+import { takeLatest, put, call } from 'redux-saga/effects';
+
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* postAddress(action) {
@@ -14,6 +15,25 @@ function* postAddress(action) {
         // sets that the async request is finished
         console.log(error);
       } 
+}
+
+function* determineShipping(action) {
+  try {
+    const shipping = yield call(
+      axios.get, 'order/shipping'
+    )
+    yield put(
+      {type: 'SET_SHIPPING_PROFILES', payload: shipping.data}
+    )
+    yield put(
+      {type: 'SET_DOM_INT', payload: action.payload.domestic}
+    )
+    yield put(
+      {type: 'SET_SHIPPING_TOTAL', payload: action.payload.cartShippingProfiles}
+    )
+  } catch(error) {
+    console.log(error);
+  }
 }
 
 function* placeOrder(action) {
@@ -32,6 +52,7 @@ function* placeOrder(action) {
 function* orderSaga() {
   yield takeLatest('POST_ADDRESS', postAddress);
   yield takeLatest('PLACE_ORDER', placeOrder);
+  yield takeLatest('DETERMINE_SHIPPING', determineShipping)
 }
 
 export default orderSaga;

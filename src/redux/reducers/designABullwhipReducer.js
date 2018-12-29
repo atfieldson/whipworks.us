@@ -106,6 +106,68 @@ const cartReducer = (state = [], action) => {
   }
 }
 
+const shippingTotal = (state = { total: 0, domestic: true, cartShippingProfiles: [], shipping_profiles: [] }, action) => {
+  switch (action.type) {
+    case 'SET_SHIPPING_PROFILES':
+      return {
+        ...state,
+        shipping_profiles: action.payload
+      };
+    case 'SET_SHIPPING_TOTAL':
+      let shippingTotal = 0;
+      let initialShippingAdded = false;
+      for (let profile of action.payload) {
+        if (state.domestic === true) {
+          if (action.payload.length >= 2 && initialShippingAdded === false) {
+            shippingTotal += state.shipping_profiles[parseInt(profile) - 1].domestic_cost
+            initialShippingAdded = true
+          } else if (action.payload.length >= 2 && initialShippingAdded === true) {
+            shippingTotal += state.shipping_profiles[parseInt(profile) - 1].domestic_additional
+          } else {
+            shippingTotal += state.shipping_profiles[parseInt(profile) - 1].domestic_cost
+          }
+        } else if (state.domestic === false) {
+          if (action.payload.length >= 2 && initialShippingAdded === false) {
+            shippingTotal += state.shipping_profiles[parseInt(profile) - 1].international_cost
+            initialShippingAdded = true
+          } else if (action.payload.length >= 2 && initialShippingAdded === true){
+            shippingTotal += state.shipping_profiles[parseInt(profile) - 1].international_additional
+          } else {
+            shippingTotal += state.shipping_profiles[parseInt(profile) - 1].international_cost
+          }
+        }
+      }
+         // if (profile === '1' && action.payload.cartShippingProfiles.length < 2 && state.domestic === true) {
+    //   shippingTotal += state.shipping_profiles[0].domestic_cost
+    // } else if (profile === '1' && action.payload.cartShippingProfiles.length < 2 && state.domestic === true) {
+    //   shippingTotal += state.shipping_profiles[1].domestic_cost
+    // } else if (profile === '2' && action.payload.cartShippingProfiles.length < 2 && state.domestic === true) {
+    //   shippingTotal += state.shipping_profiles[2].domestic_cost
+    // } else if (profile === '0' && action.payload.cartShippingProfiles.length < 2 && state.domestic === false) {
+    //   shippingTotal += state.shipping_profiles[0].international_cost
+    // } else if (profile === '1' && action.payload.cartShippingProfiles.length < 2 && state.domestic === true) {
+    //   shippingTotal += state.shipping_profiles[1].international_cost
+    // } else if (profile === '2' && action.payload.cartShippingProfiles.length < 2 && state.domestic === true) {
+    //   shippingTotal += state.shipping_profiles[2].international_cost
+    // }
+        return {
+          ...state,
+          total: shippingTotal
+        }
+    case 'SET_DOM_INT':
+
+   
+  
+  return {
+    ...state,
+    total: shippingTotal,
+    domestic: action.payload,
+  };
+    default:
+return state
+  }
+}
+
 const orderTotalReducer = (state = 0, action) => {
   switch (action.type) {
     case 'SET_ORDER_TOTAL':
@@ -220,4 +282,5 @@ export default combineReducers({
   shippingAddressReducer,
   renderCanvas,
   orderPlacedReducer,
+  shippingTotal
 })

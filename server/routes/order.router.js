@@ -61,4 +61,14 @@ router.post("/placeorder", async (req, res) => {
   }
 });
 
+router.get('/shipping', (req, res) => {
+  pool.query(
+      `SELECT * FROM "shipping_profiles";`
+  ).then((result) => {
+      res.send(result.rows)
+  }).catch(error => {
+      console.log('error getting shipping profiles', error);
+  })
+});
+
 module.exports = router;
