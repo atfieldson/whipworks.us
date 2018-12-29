@@ -115,7 +115,7 @@ class CheckoutForm extends Component {
               shipping_country: this.props.state.bullwhip.shippingAddressReducer.shipping_country,
               shipping_zip: this.props.state.bullwhip.shippingAddressReducer.shipping_zip,
               phone_number: this.props.state.bullwhip.shippingAddressReducer.phone_number,
-              shipping_cost: 20,
+              shipping_cost: this.props.state.bullwhip.shippingTotal.total,
               order_total: this.props.state.bullwhip.orderTotalReducer,
               order_notes: this.props.state.bullwhip.shippingAddressReducer.order_notes,
               },

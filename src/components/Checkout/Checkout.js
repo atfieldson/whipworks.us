@@ -7,20 +7,20 @@ import Cart from './Cart';
 
 class Checkout extends Component {
 
-    addDummyItem = () => {
-        this.props.dispatch({
-            type: 'ADD_BULLWHIP_TO_CART', payload: {
-                color1: { name: 'orange', url: 'blackRightWaxed.jpg', unwaxedurl: 'blackRight.jpg', id: '3', spool_url: "black.jpg" },
-                color2: { name: 'green', url: 'whiteLeftWaxed.jpg', unwaxedurl: 'whiteLeft.jpg', id: '35', spool_url: "white.jpg" },
-                waxed: 'yes',
-                pattern: { name: "emerald", id: "5" },
-                whipLength: { name: "10", cost: "400", waxed_cost: "30", id: "8" },
-                handleLength: { name: "12", cost: "10", id: "3" },
-                concho: { name: "celtic silver", cost: "0", id: "1" },
-                total: 440,
-            }
-        })
-    }
+    // addDummyItem = () => {
+    //     this.props.dispatch({
+    //         type: 'ADD_BULLWHIP_TO_CART', payload: {
+    //             color1: { name: 'orange', url: 'blackRightWaxed.jpg', unwaxedurl: 'blackRight.jpg', id: '3', spool_url: "black.jpg" },
+    //             color2: { name: 'green', url: 'whiteLeftWaxed.jpg', unwaxedurl: 'whiteLeft.jpg', id: '35', spool_url: "white.jpg" },
+    //             waxed: 'yes',
+    //             pattern: { name: "emerald", id: "5" },
+    //             whipLength: { name: "10", cost: "400", waxed_cost: "30", id: "8" },
+    //             handleLength: { name: "12", cost: "10", id: "3" },
+    //             concho: { name: "celtic silver", cost: "0", id: "1" },
+    //             total: 440,
+    //         }
+    //     })
+    // }
 
     componentWillUnmount() {
         if (this.props.state.bullwhip.orderPlacedReducer === 'yes') {
