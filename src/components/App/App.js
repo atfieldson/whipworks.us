@@ -6,6 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import '../../stylesheets/main.css';
+import ReactGA from 'react-ga';
 
 import { connect } from 'react-redux';
 
@@ -23,10 +24,13 @@ import WhipmakingMaterials from '../WhipmakingMaterials/WhipmakingMaterials';
 import Video from '../Video/Video';
 import Checkout from '../Checkout/Checkout';
 
+ReactGA.initialize('UA-131520101-1');
+
 class App extends Component {
+
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_USER' })
-  }
+  };
 
   render() {
     return (

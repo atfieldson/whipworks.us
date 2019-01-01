@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as THREE from 'three';
+import ReactGA from 'react-ga';
 
 class CanvasRenderer extends Component {
 
@@ -1113,6 +1114,12 @@ class CanvasRenderer extends Component {
         let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern.name;
         let color1 = this.props.state.bullwhip.designABullwhipReducer.color1.name;
         let color2 = this.props.state.bullwhip.designABullwhipReducer.color2.name;
+
+        ReactGA.event({
+            category: 'Bullwhip',
+            action: 'RenderedHandle',
+            label: color1, color2, pattern,
+        })
 
         if (pattern === '' || color1 === '' || color2 === '') {
             this.initialPattern();
