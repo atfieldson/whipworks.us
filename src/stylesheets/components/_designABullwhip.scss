@@ -75,13 +75,25 @@
     }
 }
 
+.rowToColumnDesign{
+    @include flexRow(center)
+}
+
 //Mobile friendly adjustments
 @media (max-width: $small) {
+    .rowToColumnDesign {
+        @include flexColumn(center)
+    }
     .rendering {
-        width: 0px;
-        height: 0px;
-        visibility: hidden;
-        position: absolute;
+        width: 200px;
+        height: 400px;
+        order: 1;
+        margin: auto;
+        // visibility: hidden;
+        // position: absolute;
+    }
+    .waxedColorPatternColumn{
+        order: 2;
     }
     .handleRendererIncompleteMessage{
         h1 {
@@ -96,6 +108,7 @@
             font-size: 12px;
         }
     }
+    
 }
 
 @media (max-width: $medium) {

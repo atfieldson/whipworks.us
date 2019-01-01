@@ -27,6 +27,7 @@ class DesignABullwhip extends Component {
         <div className="yourWhipContainer">
             <YourWhip />
         </div>
+        <div className="rowToColumnDesign">
           <div className="waxedColorPatternColumn">
             <ColorChooser />
             <HandleChooser />
@@ -36,7 +37,9 @@ class DesignABullwhip extends Component {
             <ConchoChooser />
           </div>
           <CanvasRenderer />
+          </div>
         </div>
+
 
 
         {/* <div className="purchaseWhipContainer">
