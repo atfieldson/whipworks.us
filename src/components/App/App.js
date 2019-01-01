@@ -25,6 +25,7 @@ import Video from '../Video/Video';
 import Checkout from '../Checkout/Checkout';
 
 ReactGA.initialize('UA-131520101-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
 
