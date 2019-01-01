@@ -1118,7 +1118,7 @@ class CanvasRenderer extends Component {
         ReactGA.event({
             category: 'Bullwhip',
             action: 'RenderedHandle',
-            label: color1, color2, pattern,
+            label: color1 + " + " + color2 + " + " + pattern,
         })
 
         if (pattern === '' || color1 === '' || color2 === '') {
