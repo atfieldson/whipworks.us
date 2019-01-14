@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
-
+import ReactGA from 'react-ga';
 
 class HomePage extends Component {
   constructor() {
@@ -125,7 +125,15 @@ class HomePage extends Component {
           <p>When I was in elementary school, my family lived in Melbourne Australia for a couple of years.  During our time there, my mom purchased an inexpensive 4 plait stockwhip at a tack shop as a souvenir.  I spent hours cracking that thing and a life-long passion for whips was born.  In college, I attempted to make my first whip.  Several years and some terrible whips later, WhipWorks was born.</p>
         </div>
         <div className = "aboutBullwhipContainer">
-          <button onClick={() => this.props.history.push("/bullwhip")} className = "colorChooserButton">
+          <button onClick={() => {
+            ReactGA.event({
+              category: 'Navigation',
+              action: 'Home to DaB',
+              label: 'Bottom of Home'
+          })
+            this.props.history.push("/bullwhip")
+          }}
+           className = "colorChooserButton">
             Design a Bullwhip
           </button>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import ReactGA from 'react-ga';
 
 const Nav = (props) => (
   <div className="nav">
@@ -17,7 +17,13 @@ const Nav = (props) => (
     </Link>  */}
 
     <div className="nav-link-container">
-      <Link className="nav-title" to="/bullwhip">
+      <Link className="nav-title" to="/bullwhip" 
+      onClick = {() => 
+        ReactGA.event({
+              category: 'Navigation',
+              action: 'Home to DaB',
+              label: 'NavBar'
+          })}>
         Design A Bullwhip
       </Link>
       {/* <Link className="nav-link" to="/specialty">

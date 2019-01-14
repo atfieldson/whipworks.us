@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
 
 class CheckoutForm extends Component {
 
@@ -102,6 +103,7 @@ class CheckoutForm extends Component {
   }
 
   submitOrder = () => {
+
     let newAmount = (this.props.state.bullwhip.orderTotalReducer + this.props.state.bullwhip.shippingTotal.total) * 100
     this.props.dispatch({type: 'PLACE_ORDER', payload: {
       stripe: {token: this.state.stripeToken, amount: newAmount},
@@ -122,6 +124,14 @@ class CheckoutForm extends Component {
       } 
     })//end dispatch 
     // this.props.dispatch({type: 'COMPLETED_ORDER'})
+    let firstName = this.props.state.bullwhip.shippingAddressReducer.first_name
+    let lastName = this.props.state.bullwhip.shippingAddressReducer.last_name
+    let email = this.props.state.bullwhip.shippingAddressReducer.email
+    ReactGA.event({
+      category: 'Orders',
+      action: 'Placed order',
+      label: firstName + ' ' + lastName + ' ' + email + ' total:' + newAmount / 100
+    })
   } 
   
 

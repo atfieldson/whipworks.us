@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { StickyContainer, Sticky } from 'react-sticky';
+import ReactGA from 'react-ga';
 
 
 class YourWhip extends Component {
@@ -33,6 +34,19 @@ class YourWhip extends Component {
     }
 
     addBullwhipToCart = () => {
+
+        let color1 = this.props.state.bullwhip.designABullwhipReducer.color1.name;
+        let color2 = this.props.state.bullwhip.designABullwhipReducer.color2.name;
+        let pattern = this.props.state.bullwhip.designABullwhipReducer.pattern.name;
+        let whipLength = this.props.state.bullwhip.designABullwhipReducer.whipLength.name;
+        let handleLength = this.props.state.bullwhip.designABullwhipReducer.handleLength.name;
+
+        ReactGA.event({
+            category: 'Bullwhip',
+            action: 'AddedToCart',
+            label: color1 + " + " + color2 + " + " + pattern + " + WL" + whipLength + " + HL" + handleLength,
+        })
+
         this.props.dispatch({ type: 'ADD_BULLWHIP_TO_CART', payload: this.props.state.bullwhip.designABullwhipReducer })
         this.openBullwhipAddedModal();
     }
