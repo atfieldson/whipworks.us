@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import ShippingInfo from './ShippingInfo';
 import PaymentInfo from './PaymentInfo';
 import Cart from './Cart';
-import ReactGA from 'react-ga';
 
 
 class Checkout extends Component {
@@ -35,11 +34,7 @@ class Checkout extends Component {
             this.props.dispatch({ type: 'LEFT_COMPLETED_PAGE' })
         }
     }
-
-    componentDidMount() {
-        ReactGA.pageview('Checkout');
-    }
-
+    
     render() {
         return (
             <div>

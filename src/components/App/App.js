@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import '../../stylesheets/main.css';
 import ReactGA from 'react-ga';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 import { connect } from 'react-redux';
 
@@ -25,13 +26,21 @@ import Video from '../Video/Video';
 import Checkout from '../Checkout/Checkout';
 
 ReactGA.initialize('UA-131520101-1');
-ReactGA.pageview(window.location.pathname + window.location.hash);
+
+// ReactGA.pageview(window.location.pathname + window.location.hash);
+const history = createBrowserHistory();
+
+// const history = createHistory()
+history.listen(location => {
+	ReactGA.set({ page: location.pathname + location.hash })
+	ReactGA.pageview(location.pathname + location.hash)
+})
 
 class App extends Component {
 
+
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_USER' })
-    ReactGA.pageview('Homepage');
+    this.props.dispatch({ type: 'FETCH_USER' });
   };
 
   render() {
