@@ -126,11 +126,10 @@ class CheckoutForm extends Component {
     // this.props.dispatch({type: 'COMPLETED_ORDER'})
     let firstName = this.props.state.bullwhip.shippingAddressReducer.first_name
     let lastName = this.props.state.bullwhip.shippingAddressReducer.last_name
-    let email = this.props.state.bullwhip.shippingAddressReducer.email
     ReactGA.event({
       category: 'Orders',
       action: 'Placed order',
-      label: firstName + ' ' + lastName + ' ' + email + ' total:' + newAmount / 100
+      label: firstName + ' ' + lastName + ' ' + ' total:' + newAmount / 100
     })
   } 
   
