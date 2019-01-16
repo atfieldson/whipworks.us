@@ -9,12 +9,15 @@ import HandleLengthChooser from './HandleLengthChooser';
 import ConchoChooser from './ConchoChooser';
 import YourWhip from './YourWhip';
 import { StickyContainer, Sticky } from 'react-sticky';
+import ReactGA from 'react-ga';
 
 
 class DesignABullwhip extends Component {
 
   componentDidMount() {
       window.scrollTo(0, 0);
+      ReactGA.pageview('Design a Bullwhip');
+
   }
   
   render() {
