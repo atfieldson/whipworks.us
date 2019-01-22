@@ -186,7 +186,7 @@ const orderPlacedReducer = (state = 'no', action) => {
     case 'COMPLETED_ORDER':
       return 'yes';
     case 'ORDER_FAILURE':
-      return 'failed';
+      return 'failure';
     case 'LEFT_COMPLETED_PAGE':
       return 'no';
     default:

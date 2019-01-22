@@ -68,7 +68,15 @@ class Checkout extends Component {
                     Add Dummy Item
                     </button> */}
                         </div>
-                        :
+                :
+                this.props.state.bullwhip.orderPlacedReducer === "failure"
+                ?
+                <p>Oh no!  Something went wrong.
+                    <br/>
+                    Please email me at <a href='mailto:atfieldson@gmail.com'>atfieldson@gmail.com</a>
+                </p>
+                :
+                        
                         <div className="checkoutComponent">
                             <div className="aboutBullwhipContainer" >
                                 <h2>Thank you for your order!</h2>
@@ -84,7 +92,7 @@ class Checkout extends Component {
                                 </div>
                             </div>
                         </div>
-                }
+                     }
             </div>
         );
     }
