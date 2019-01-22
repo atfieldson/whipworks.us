@@ -5,6 +5,7 @@ import ShippingInfo from './ShippingInfo';
 import PaymentInfo from './PaymentInfo';
 import Cart from './Cart';
 
+
 class Checkout extends Component {
 
     // addDummyItem = () => {
@@ -33,7 +34,7 @@ class Checkout extends Component {
             this.props.dispatch({ type: 'LEFT_COMPLETED_PAGE' })
         }
     }
-
+    
     render() {
         return (
             <div>

@@ -5,11 +5,13 @@
   "static/css/1.8e24f7c3.chunk.css": "/static/css/1.8e24f7c3.chunk.css",
   "static/js/1.39686c12.chunk.js": "/static/js/1.39686c12.chunk.js",
   "static/js/1.39686c12.chunk.js.map": "/static/js/1.39686c12.chunk.js.map",
+
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/BW117Chart.jpg": "/static/media/BW117Chart.8cd73a13.jpg",
   "static/media/ww.jpg": "/static/media/ww.eaee2a30.jpg",
   "static/media/main.css": "/static/media/celticCopper.cb870805.jpg",
+
   "static/media/wwBanner.jpg": "/static/media/wwBanner.61c1a0fc.jpg",
   "static/media/youtube.png": "/static/media/youtube.cf5be515.png",
   "static/media/BW118Chart.jpg": "/static/media/BW118Chart.02ace570.jpg",
@@ -46,9 +48,10 @@
   "static/media/BW133FullThumb.jpg": "/static/media/BW133FullThumb.f80c1067.jpg",
   "static/media/BW138FullThumb.jpg": "/static/media/BW138FullThumb.1ebfee60.jpg",
   "static/media/BW136FullThumb.jpg": "/static/media/BW136FullThumb.19f7998d.jpg",
-  "static/css/main.a6476902.chunk.css.map": "/static/css/main.a6476902.chunk.css.map",
-  "static/css/1.8e24f7c3.chunk.css.map": "/static/css/1.8e24f7c3.chunk.css.map",
+  "static/css/main.9f10902c.chunk.css.map": "/static/css/main.9f10902c.chunk.css.map",
+  "static/css/1.3b4c771d.chunk.css.map": "/static/css/1.3b4c771d.chunk.css.map",
   "index.html": "/index.html",
   "precache-manifest.2852f0aab847f343eb7af8d2f0ed56c1.js": "/precache-manifest.2852f0aab847f343eb7af8d2f0ed56c1.js",
+
   "service-worker.js": "/service-worker.js"
 }

@@ -14,7 +14,7 @@ import { StickyContainer, Sticky } from 'react-sticky';
 class DesignABullwhip extends Component {
 
   componentDidMount() {
-      window.scrollTo(0, 0) 
+      window.scrollTo(0, 0);
   }
   
   render() {
