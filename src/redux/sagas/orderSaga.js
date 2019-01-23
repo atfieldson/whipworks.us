@@ -38,12 +38,28 @@ function* determineShipping(action) {
 
 function* placeOrder(action) {
   try {
-    yield axios({
-      method: 'POST',
-      url: '/order/placeorder',
-      data: action.payload
-    })
+
+    const order = yield call( axios.post, '/order/placeorder', action.payload);
+
+    // const order = yield 
+    //   axios({
+    //     method: 'POST',
+    //     url: '/order/placeorder',
+    //     data: action.payload
+    //   });
+
+    // yield axios({
+    //   method: 'POST',
+    //   url: '/order/placeorder',
+    //   data: action.payload
+    // })
+    console.log('This is the order:', order);
+    if (order.status === 200){
     yield put({ type: 'COMPLETED_ORDER' });
+    }
+    else {
+      yield put({ type: 'ORDER_FAILURE' })
+    }
   } catch (error) {
     console.log(error)
   }

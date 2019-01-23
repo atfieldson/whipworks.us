@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 
 const app = express();
+<<<<<<< HEAD
 const bodyParser = require("body-parser");
 const sessionMiddleware = require("./modules/session-middleware");
 
@@ -15,7 +16,7 @@ const passport = require("./strategies/user.strategy");
 //   return next();
 //   }
 // })
-//End force use of SSL
+
 
 // Route includes
 const userRouter = require("./routes/user.router");
