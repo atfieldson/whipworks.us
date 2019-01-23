@@ -8,8 +8,8 @@ class CurrentWait extends Component {
             <div className="currentWaitContainer">
             <h3>Important Info</h3>
             <ul>
-            <li>The current wait for a Bullwhip is 4-6 weeks (it may take less).</li>
-            <li>Shipping and handling costs a flat rate of $20 in the USA.</li>
+            <li>The current wait for a Bullwhip is 3-5 weeks (it may take less).</li>
+            <li>Shipping and handling costs vary</li>
             </ul>
             </div>  
         );
