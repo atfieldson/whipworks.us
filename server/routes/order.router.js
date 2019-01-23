@@ -3,7 +3,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const pool = require('../modules/pool');
 const router = express.Router();
 
-
+const nodemailerPeon = require('../modules/nodemail');
 
 router.post("/placeorder", async (req, res) => {
   //order constants
@@ -42,6 +42,7 @@ router.post("/placeorder", async (req, res) => {
             VALUES ( $1, $2, $3, $4, $5, $6, $7, $8);`, [responseID.rows[0].id, bullwhip.item.whipLength.id, bullwhip.item.handleLength.id, bullwhip.item.color1.id, bullwhip.item.color2.id, bullwhip.item.pattern.id, bullwhip.item.concho.id, bullwhip.item.waxed])
         });
         res.sendStatus(200);
+        nodemailerPeon.sendEmail(null, "New WhipWorks Order Received",JSON.stringify(req.body, null, 4))
       }
       catch (err){
         console.log('error:', err)
