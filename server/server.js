@@ -15,9 +15,7 @@ app.get('*', function(req, res, next) {
   } else {
   return next();
 }
-// })
-
-
+})
 
 // Route includes
 const userRouter = require("./routes/user.router");

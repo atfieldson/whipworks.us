@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "31a17cccc80c5e28d5abb4d028b2c898",
-    "url": "/static/media/scarletRed.31a17ccc.jpg"
+    "revision": "04aa83ea1016a2168081ad4b62277d91",
+    "url": "/static/media/royalBlue.04aa83ea.jpg"
   },
   {
     "revision": "6963e848b8a764917cc9",
@@ -24,16 +24,16 @@ self.__precacheManifest = [
     "url": "/static/media/ww.eaee2a30.jpg"
   },
   {
+    "revision": "cb8708052498dc98b80330c7e27e6ffe",
+    "url": "/static/media/celticCopper.cb870805.jpg"
+  },
+  {
     "revision": "252ce6c21b9dc8df2d32acfeed75bd46",
     "url": "/static/media/celticBrass.252ce6c2.jpg"
   },
   {
     "revision": "020d889c0e9ce2fd29ee9b7b506148fb",
     "url": "/static/media/bearSilver.020d889c.jpg"
-  },
-  {
-    "revision": "cb8708052498dc98b80330c7e27e6ffe",
-    "url": "/static/media/celticCopper.cb870805.jpg"
   },
   {
     "revision": "26c296c7540b376d7105cb2a9b2ec884",
@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/static/media/elkSilver.641a51fb.jpg"
   },
   {
-    "revision": "d05ed4e3e5c978ab3f35c7855b2fddb2",
-    "url": "/static/media/pirateSkullSilver.d05ed4e3.jpg"
-  },
-  {
     "revision": "327404a4c8f1076e80a3626c9852883d",
     "url": "/static/media/buckSilver.327404a4.jpg"
+  },
+  {
+    "revision": "d05ed4e3e5c978ab3f35c7855b2fddb2",
+    "url": "/static/media/pirateSkullSilver.d05ed4e3.jpg"
   },
   {
     "revision": "1e3daeeae939828b12c8c3f6aabb2127",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/static/media/cobraPommel.83c9d226.jpg"
   },
   {
-    "revision": "acf3a47076ec31e4c787195845c9412f",
-    "url": "/static/media/wolfPommel.acf3a470.jpg"
-  },
-  {
     "revision": "775df68ac62f0fa55243913d3eef67b6",
     "url": "/static/media/dragonPommel.775df68a.jpg"
+  },
+  {
+    "revision": "acf3a47076ec31e4c787195845c9412f",
+    "url": "/static/media/wolfPommel.acf3a470.jpg"
   },
   {
     "revision": "cdab554c0a06cbad7a498827fe9b5b4f",
@@ -80,12 +80,12 @@ self.__precacheManifest = [
     "url": "/static/media/celtic.2198d39f.jpg"
   },
   {
-    "revision": "a80801f900204fe7e8eda835059f1804",
-    "url": "/static/media/egyptianEye.a80801f9.jpg"
-  },
-  {
     "revision": "90a04704ce4f921b9a226e73f3d6af3a",
     "url": "/static/media/neoCeltic.90a04704.jpg"
+  },
+  {
+    "revision": "a80801f900204fe7e8eda835059f1804",
+    "url": "/static/media/egyptianEye.a80801f9.jpg"
   },
   {
     "revision": "b3054acc5f4e7987df80d378b65dc104",
@@ -104,10 +104,6 @@ self.__precacheManifest = [
     "url": "/static/media/burgundy.621e6b8a.jpg"
   },
   {
-    "revision": "dd4f6eb23e2c1e3d77c47b5572a68827",
-    "url": "/static/media/caribbean.dd4f6eb2.jpg"
-  },
-  {
     "revision": "85a0cbc2e286c822b88831fd3fb184d6",
     "url": "/static/media/colonialBlue.85a0cbc2.jpg"
   },
@@ -116,8 +112,16 @@ self.__precacheManifest = [
     "url": "/static/media/copperhead.a05eec16.jpg"
   },
   {
+    "revision": "dd4f6eb23e2c1e3d77c47b5572a68827",
+    "url": "/static/media/caribbean.dd4f6eb2.jpg"
+  },
+  {
     "revision": "e663f31432d7f1992d63ead3bb5da703",
     "url": "/static/media/crimson.e663f314.jpg"
+  },
+  {
+    "revision": "a6d5c5eb857e738eab05ab2ef9de1227",
+    "url": "/static/media/gold.a6d5c5eb.jpg"
   },
   {
     "revision": "fe7769e3e6558b2748dc06031820c475",
@@ -128,32 +132,32 @@ self.__precacheManifest = [
     "url": "/static/media/galaxy.c8f2aa27.jpg"
   },
   {
-    "revision": "a6d5c5eb857e738eab05ab2ef9de1227",
-    "url": "/static/media/gold.a6d5c5eb.jpg"
+    "revision": "54618d5c51e2c02837920e33ebdd2b08",
+    "url": "/static/media/goldenrod.54618d5c.jpg"
   },
   {
     "revision": "7cfa3016655840398d0c2f1e2159d432",
     "url": "/static/media/imperialRed.7cfa3016.jpg"
   },
   {
-    "revision": "54618d5c51e2c02837920e33ebdd2b08",
-    "url": "/static/media/goldenrod.54618d5c.jpg"
+    "revision": "ee1a25825a5bdec1e9b246c9ff12a2f7",
+    "url": "/static/media/khaki.ee1a2582.jpg"
   },
   {
     "revision": "4802882a4bf310dc67624f467893c4a1",
     "url": "/static/media/internationalOrange.4802882a.jpg"
   },
   {
-    "revision": "ee1a25825a5bdec1e9b246c9ff12a2f7",
-    "url": "/static/media/khaki.ee1a2582.jpg"
+    "revision": "43379010c6ebcb3a0a336a8e83c1ae88",
+    "url": "/static/media/mossGreen.43379010.jpg"
   },
   {
     "revision": "17ace50cdf123d2121a1bb0164a87405",
     "url": "/static/media/neonOrange.17ace50c.jpg"
   },
   {
-    "revision": "43379010c6ebcb3a0a336a8e83c1ae88",
-    "url": "/static/media/mossGreen.43379010.jpg"
+    "revision": "fec4bad0f37d999979106c6b2b87b598",
+    "url": "/static/media/neonPink.fec4bad0.jpg"
   },
   {
     "revision": "76aacecd5fb96c778d8dcddf608c36f3",
@@ -164,16 +168,16 @@ self.__precacheManifest = [
     "url": "/static/media/orangeBlazeCamo.a0eee601.jpg"
   },
   {
-    "revision": "fec4bad0f37d999979106c6b2b87b598",
-    "url": "/static/media/neonPink.fec4bad0.jpg"
-  },
-  {
     "revision": "6963e848b8a764917cc9",
     "url": "/static/js/main.6963e848.chunk.js"
   },
   {
-    "revision": "04aa83ea1016a2168081ad4b62277d91",
-    "url": "/static/media/royalBlue.04aa83ea.jpg"
+    "revision": "31a17cccc80c5e28d5abb4d028b2c898",
+    "url": "/static/media/scarletRed.31a17ccc.jpg"
+  },
+  {
+    "revision": "20f4464e3b2d203429cf62d70c5f457d",
+    "url": "/static/media/turquoise.20f4464e.jpg"
   },
   {
     "revision": "d25449ca4139b142b2ce02bb44b071b2",
@@ -182,10 +186,6 @@ self.__precacheManifest = [
   {
     "revision": "f93c7e6e35c9ff24bcb428fe14b4ed8b",
     "url": "/static/media/yellow.f93c7e6e.jpg"
-  },
-  {
-    "revision": "20f4464e3b2d203429cf62d70c5f457d",
-    "url": "/static/media/turquoise.20f4464e.jpg"
   },
   {
     "revision": "61c1a0fc18a65da0886217e9f60143ea",
