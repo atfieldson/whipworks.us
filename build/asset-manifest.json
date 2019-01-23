@@ -9,7 +9,7 @@
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/BW117Chart.jpg": "/static/media/BW117Chart.8cd73a13.jpg",
   "static/media/ww.jpg": "/static/media/ww.eaee2a30.jpg",
-  "static/media/main.css": "/static/media/celticCopper.cb870805.jpg",
+  "static/media/main.css": "/static/media/celticBrass.252ce6c2.jpg",
   "static/media/wwBanner.jpg": "/static/media/wwBanner.61c1a0fc.jpg",
   "static/media/youtube.png": "/static/media/youtube.cf5be515.png",
   "static/media/BW118Chart.jpg": "/static/media/BW118Chart.02ace570.jpg",
@@ -49,6 +49,6 @@
   "static/css/main.f0e2f172.chunk.css.map": "/static/css/main.f0e2f172.chunk.css.map",
   "static/css/1.03689840.chunk.css.map": "/static/css/1.03689840.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.cd542b1cbbf4d851856c704959f4d552.js": "/precache-manifest.cd542b1cbbf4d851856c704959f4d552.js",
+  "precache-manifest.8f792fae2aaa03720ee648aa8859b4fb.js": "/precache-manifest.8f792fae2aaa03720ee648aa8859b4fb.js",
   "service-worker.js": "/service-worker.js"
 }

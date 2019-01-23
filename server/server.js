@@ -9,12 +9,12 @@ const sessionMiddleware = require("./modules/session-middleware");
 const passport = require("./strategies/user.strategy");
 
 //Forces all URL's to redirect to https://
-// app.get('*', function(req, res, next) {
-//   if (req.headers['x-forwarded-proto'] !== 'https') {
-//     return res.redirect('https://www.whipworks.com'+req.url);
-//   } else {
-//   return next();
-//   }
+app.get('*', function(req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect('https://www.whipworks.com'+req.url);
+  } else {
+  return next();
+}
 // })
 
 
