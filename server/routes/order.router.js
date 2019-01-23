@@ -42,7 +42,7 @@ router.post("/placeorder", async (req, res) => {
             VALUES ( $1, $2, $3, $4, $5, $6, $7, $8);`, [responseID.rows[0].id, bullwhip.item.whipLength.id, bullwhip.item.handleLength.id, bullwhip.item.color1.id, bullwhip.item.color2.id, bullwhip.item.pattern.id, bullwhip.item.concho.id, bullwhip.item.waxed])
         });
         res.sendStatus(200);
-        nodemailerPeon.sendEmail(null, "New WhipWorks Order Received",JSON.stringify(req.body, null, 4))
+        nodemailerPeon.sendEmail(null, first_name +  " " + last_name + " Ordered a Whip!", req.body)
       }
       catch (err){
         console.log('error:', err)
