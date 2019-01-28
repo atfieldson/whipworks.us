@@ -104,7 +104,8 @@ class CheckoutForm extends Component {
 
   submitOrder = () => {
 
-    let newAmount = (this.props.state.bullwhip.orderTotalReducer + this.props.state.bullwhip.shippingTotal.total) * 100
+    let amount = (this.props.state.bullwhip.orderTotalReducer + this.props.state.bullwhip.shippingTotal.total);
+    let newAmount = amount * 100;
     this.props.dispatch({type: 'PLACE_ORDER', payload: {
       stripe: {token: this.state.stripeToken, amount: newAmount},
       order: {first_name: this.props.state.bullwhip.shippingAddressReducer.first_name,
@@ -124,12 +125,10 @@ class CheckoutForm extends Component {
       } 
     })//end dispatch 
     // this.props.dispatch({type: 'COMPLETED_ORDER'})
-    let firstName = this.props.state.bullwhip.shippingAddressReducer.first_name
-    let lastName = this.props.state.bullwhip.shippingAddressReducer.last_name
     ReactGA.event({
       category: 'Orders',
-      action: 'Placed order',
-      label: firstName + ' ' + lastName + ' ' + ' total:' + newAmount / 100
+      action: 'PlacedOrder',
+      label: 'To: ' + this.props.state.bullwhip.shippingAddressReducer.shipping_state + ' total:' + amount
     })
   } 
   
