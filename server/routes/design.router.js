@@ -26,7 +26,7 @@ router.get('/design', (req, res) => {
 
 router.get('/whiplength', (req, res) => {
     pool.query(
-        `SELECT * FROM "whip_lengths";`
+        `SELECT * FROM "whip_lengths" ORDER BY length;`
     ).then((result) => {
         res.send(result.rows)
     }).catch(error => {
