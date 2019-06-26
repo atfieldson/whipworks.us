@@ -235,3 +235,31 @@ ADD CONSTRAINT c_handle_design_id FOREIGN KEY (handle_design_id) REFERENCES hand
 
 ALTER TABLE bullwhips
 ADD CONSTRAINT c_concho_id FOREIGN KEY (concho_id) REFERENCES conchos_and_pommels (id);
+
+UPDATE whip_lengths 
+SET cost = 194
+WHERE length = 4 
+
+UPDATE whip_lengths 
+SET cost = 214
+WHERE length = 5
+
+UPDATE whip_lengths 
+SET cost = 234
+WHERE length = 6
+
+UPDATE whip_lengths 
+SET cost = 259
+WHERE length = 7 
+
+UPDATE whip_lengths 
+SET cost = 284
+WHERE length = 8 
+
+UPDATE whip_lengths 
+SET cost = 384
+WHERE length = 10
+
+UPDATE whip_lengths 
+SET cost = 484
+WHERE length = 12
