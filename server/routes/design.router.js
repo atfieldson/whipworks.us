@@ -6,7 +6,7 @@ const router = express.Router();
 //get colors from db
 router.get('/color', (req, res) => {
     pool.query(
-        `SELECT * FROM "colors";`
+        `SELECT * FROM "colors" ORDER BY color;`
     ).then((result) => {
         res.send(result.rows)
     }).catch(error => {

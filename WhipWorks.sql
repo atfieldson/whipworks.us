@@ -47,13 +47,13 @@ CREATE TABLE "whip_lengths" (
 
 INSERT INTO "whip_lengths" ("length", "cost", "waxed_cost", "shipping_profile_id")
 VALUES 
-(4, 179, 20, 1), 
-(5, 199, 20, 1), 
-(6, 219, 25, 1), 
-(7, 244, 25, 1), 
-(8, 269, 25, 1), 
-(10, 364, 30, 1), 
-(12, 464, 30, 1)
+(4, 204, 20, 1), 
+(5, 234, 20, 1), 
+(6, 264, 25, 1), 
+(7, 299, 25, 1), 
+(8, 334, 25, 1), 
+(10, 464, 30, 1), 
+(12, 574, 30, 1)
 ; 
 
 CREATE TABLE "handle_lengths" (
@@ -117,9 +117,9 @@ VALUES
 ('pirate skull', 10, 'silver', 'pirateSkullSilver.jpg'),
 ('ram', 10, 'silver', 'ramSilver.jpg'),
 ('yin and yang', 10, 'silver', 'yinAndYangSilver.jpg'),
-('dragon pommel', 70, 'silver', 'dragonPommel.jpg'),
-('wolf pommel', 70, 'silver', 'wolfPommel.jpg'),
-('cobra pommel', 70, 'silver', 'cobraPommel.jpg');
+-- ('dragon pommel', 70, 'silver', 'dragonPommel.jpg'),
+('wolf pommel', 120, 'silver', 'wolfPommel.jpg'),
+('cobra pommel', 120, 'silver', 'cobraPommel.jpg');
 
 CREATE TABLE "colors" (
 	"id" SERIAL PRIMARY KEY,
@@ -162,6 +162,7 @@ VALUES
 ('neon turquoise', 'neonTurquoise.jpg', 'neonTurquoiseRight.jpg', 'neonTurquoiseLeft.jpg', 'neonTurquoiseRightWaxed.jpg', 'neonTurquoiseLeftWaxed.jpg'),
 ('olive drab', 'oliveDrab.jpg', 'oliveDrabRight.jpg', 'oliveDrabLeft.jpg', 'oliveDrabRightWaxed.jpg', 'oliveDrabLeftWaxed.jpg'),
 ('orange blaze camo', 'orangeBlazeCamo.jpg', 'orangeBlazeCamoRight.jpg', 'orangeBlazeCamoLeft.jpg', 'orangeBlazeCamoRightWaxed.jpg', 'orangeBlazeCamoLeftWaxed.jpg'),
+('rose pink', 'rosePink.jpg', 'rosePinkRight.jpg', 'rosePinkLeft.jpg', 'rosePinkRightWaxed.jpg', 'rosePinkLeftWaxed.jpg'),
 ('royal blue', 'royalBlue.jpg', 'royalBlueRight.jpg', 'royalBlueLeft.jpg', 'royalBlueRightWaxed.jpg', 'royalBlueLeftWaxed.jpg'),
 ('rust', 'rust.jpg', 'rustRight.jpg', 'rustLeft.jpg', 'rustRightWaxed.jpg', 'rustLeftWaxed.jpg'),
 ('scarlet red', 'scarletRed.jpg', 'scarletRedRight.jpg', 'scarletRedLeft.jpg', 'scarletRedRightWaxed.jpg', 'scarletRedLeftWaxed.jpg'),
