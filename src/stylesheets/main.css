@@ -222,6 +222,11 @@
   background-image: url("../components/DesignABullwhip/images/spools/orangeBlazeCamo.jpg");
 }
 
+.rosepink {
+  background-image: url("../components/DesignABullwhip/images/spools/rosePink.jpg");
+  color: black;
+}
+
 .royalblue {
   background-image: url("../components/DesignABullwhip/images/spools/royalBlue.jpg");
 }
