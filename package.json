@@ -64,6 +64,7 @@
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.0",
     "resolve": "1.8.1",
+    "sass": "^1.23.7",
     "sass-loader": "7.1.0",
     "stripe": "^6.12.1",
     "style-loader": "0.23.0",
