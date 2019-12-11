@@ -20,7 +20,7 @@ router.get('/design', (req, res) => {
     ).then((result) => {
         res.send(result.rows)
     }).catch(error => {
-        console.log('error getting colors', error);
+        console.log('error getting handle designs', error);
     })
 });
 

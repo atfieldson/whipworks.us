@@ -1104,6 +1104,126 @@ class CanvasRenderer extends Component {
         }//end for j
     };//end newPattern
 
+    webOfWyrdPattern = () => {
+        const c = this.canvas.getContext('2d');
+
+        let color1 = c.createPattern(this.refs.color1, "repeat");
+        let color2 = c.createPattern(this.refs.color2, "repeat");
+
+        let bw = 400;
+        let b16 = bw / 16;
+        let pattern1 = [0, 1, 3, 4, 5, 6, 7, 9, 10, 11, 12, 14, 15, 16];
+        let pattern2 = [1, 2, 7, 8, 10, 12, 14];
+        let pattern3 = [0, 2, 6, 8, 9, 10, 11, 12, 13, 14];
+        let pattern4 = [2, 3, 4, 5, 6, 7, 8, 10, 14, 16];
+        let pattern5 = [2, 4, 6, 8, 9, 14, 15];
+        let pattern6 = [0, 1, 2, 4, 5, 6, 7, 9, 10, 11, 12, 13, 15, 16];
+        let pattern7 = [2, 4, 7, 8, 13, 14];
+        let pattern8 = [1, 2, 3, 6, 8, 12, 14];
+        let pattern9 = [0, 2, 5, 8, 11, 14, 16];
+        let pattern10 = [2, 4, 8, 10, 13, 14, 15];
+        let pattern11 = [2, 3, 8, 9, 12, 14];
+    
+        let row1 = [-16, -5, 6, 17, 28];
+        let row2 = [-15, -4, 7, 18, 29];
+        let row3 = [-14, -3, 8, 19, 30];
+        let row4 = [-13, -2, 9, 20];
+        let row5 = [-12, -1, 10, 21];
+        let row6 = [-11, 0, 11, 22];
+        let row7 = [-10, 1, 12, 23];
+        let row8 = [-9, 2, 13, 24];
+        let row9 = [-8, 3, 14, 25];
+        let row10 = [-7, 4, 15, 26];
+    
+        for (let j = -b16 * 16; j <= b16 * 62; j += b16 * 2) {
+            for (let i = -b16 * 8; i <= bw * 2; i += b16) {
+                console.log('hello');
+                c.beginPath();
+                c.moveTo(i, i + j + 2 * b16);
+                c.lineTo(i - b16, i + j + b16);
+                c.lineTo(i, i + j);
+                c.lineTo(i + b16, i + j + b16)
+                c.closePath();
+                c.stroke();
+                //The egyptian eye does not function like Emerald did, 
+                //when row 1 completes its first 16, it actually turns into row4, 
+                //then row2, then row5, then row3, THEN row 1 again.  May need longer 
+                //arrays, as I can't subract or add 16 to the 'row if's' like I could have 
+                //done with emerald, as this pattern seems to run on a factor of 8? (16x(the five rows))
+                //Also, I still think there is some positioning that I am not taking into account, 
+                //the first 5 rows are correct, then it gets off.
+                if (row1.includes(j / (b16 * 2))) {
+                    if (pattern1.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row2.includes(j / (b16 * 2))) {
+                    if (pattern2.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row3.includes(j / (b16 * 2))) {
+                    if (pattern3.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row4.includes(j / (b16 * 2))) {
+                    if (pattern4.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row5.includes(j / (b16 * 2))) {
+                    if (pattern5.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row6.includes(j / (b16 * 2))) {
+                    if (pattern6.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row7.includes(j / (b16 * 2))) {
+                    if (pattern7.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row8.includes(j / (b16 * 2))) {
+                    if (pattern8.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row9.includes(j / (b16 * 2))) {
+                    if (pattern9.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else if (row10.includes(j / (b16 * 2))) {
+                    if (pattern10.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                } else {
+                    if (pattern11.includes(i / b16)) {
+                        c.fillStyle = color1;
+                    } else {
+                        c.fillStyle = color2;
+                    }
+                }
+                c.fill();
+            };//end for i 
+        }//end for j
+    }//end web of wyrd
+
     initialPattern = () => {
         const c = this.canvas.getContext('2d');
         const image = this.refs.initialHandleWrap;
@@ -1139,6 +1259,8 @@ class CanvasRenderer extends Component {
             this.neoCelticPattern();
         } else if (pattern === 'valknut') {
             this.valknutPattern();
+        } else if (pattern === 'web of wyrd') {
+            this.webOfWyrdPattern();
         }else {
             return false
         }
