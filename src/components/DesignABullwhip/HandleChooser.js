@@ -33,7 +33,6 @@ class HandleChooser extends Component {
     getHandleClasses = (handle) => {
         //takes in a name of a color and returns a string without spaces, the class
                 let name = handle.replace(/\s/g, '')
-        
                 return `handleButton capitalize ${name}`
             }
 

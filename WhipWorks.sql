@@ -87,7 +87,9 @@ VALUES
 ('emerald', 0, 'emerald.jpg', '16p'),
 ('valknut', 0, 'valknut.jpg', '16p'),
 ('vertical strip', 0, 'verticalStrip.jpg', '16p'),
-('neo celtic', 0, 'neoCeltic.jpg', '16p');
+('neo celtic', 0, 'neoCeltic.jpg', '16p'),
+('web of wyrd', 0, 'webOfWyrd.jpg', '16p');
+
 
 
 CREATE TABLE "conchos_and_pommels" (

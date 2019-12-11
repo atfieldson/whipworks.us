@@ -239,6 +239,7 @@ const colorsReducer = (state = [], action) => {
 const handlesReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_HANDLES':
+      console.log(action.payload);
       return action.payload;
     default:
       return state
