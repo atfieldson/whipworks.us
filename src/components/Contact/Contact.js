@@ -34,17 +34,20 @@ class Contact extends Component {
 
     return (
       <div className="contact-container">
+        <h2>Contact</h2>
         {error ||
           (errorMessage && (
-            <h2 className="contact-error">
+            <h3 className="contact-error">
               {errorMessage || "Something went wrong! Please try again."}
-            </h2>
+            </h3>
           ))}
         {success && (
-          <h2 className="contact-succes">Message sent successfully!</h2>
+          <h3 className="contact-succes">Message sent successfully!</h3>
         )}
         <form className="contact-form" onSubmit={this.handleSubmit}>
-          <label for="contact-email">Your Email Address</label>
+          <label className="contact-label" for="contact-email">
+            Your Email Address
+          </label>
           <input
             className="contact-input"
             type="text"
@@ -53,7 +56,9 @@ class Contact extends Component {
             value={email}
             onChange={e => this.setState({ email: e.target.value })}
           />
-          <label for="contact-name">Your Name</label>
+          <label className="contact-label" for="contact-name">
+            Your Name
+          </label>
           <input
             className="contact-input"
             type="text"
@@ -62,13 +67,16 @@ class Contact extends Component {
             value={name}
             onChange={e => this.setState({ name: e.target.value })}
           />
-          <label for="contact-name">Your Message</label>
+          <label className="contact-label" for="contact-name">
+            Your Message
+          </label>
           <textarea
             className="contact-textarea"
             type="text"
             placeholder="Type your message here..."
             id="contact-name"
             value={message}
+            rows="6"
             onChange={e => this.setState({ message: e.target.value })}
           />
           <button
