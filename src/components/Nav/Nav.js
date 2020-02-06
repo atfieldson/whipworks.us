@@ -1,12 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import ReactGA from 'react-ga';
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import ReactGA from "react-ga";
 
-const Nav = (props) => (
+const Nav = props => (
   <div className="nav">
     <Link to="/home">
-    <img className="nav-title" src={require('./wwBanner.jpg')} className="wwBanner" alt="WhipWorks" />
+      <img
+        className="nav-title"
+        src={require("./wwBanner.jpg")}
+        className="wwBanner"
+        alt="WhipWorks"
+      />
     </Link>
     {/* <img src={require("./ww.jpg")} className="WWLogo" alt="WhipWorks" /> */}
     {/* <Link to="/home">
@@ -17,13 +22,17 @@ const Nav = (props) => (
     </Link>  */}
 
     <div className="nav-link-container">
-      <Link className="nav-title" to="/bullwhip" 
-      onClick = {() => 
-        ReactGA.event({
-              category: 'Navigation',
-              action: 'Home to DaB',
-              label: 'NavBar'
-          })}>
+      <Link
+        className="nav-title"
+        to="/bullwhip"
+        onClick={() =>
+          ReactGA.event({
+            category: "Navigation",
+            action: "Home to DaB",
+            label: "NavBar"
+          })
+        }
+      >
         Design A Bullwhip
       </Link>
       {/* <Link className="nav-link" to="/specialty">
@@ -38,6 +47,9 @@ const Nav = (props) => (
       <Link className="nav-link" to="/video">
         Video
       </Link> */}
+      <Link className="nav-title" to="/contact">
+        Contact
+      </Link>
       <Link className="nav-title" to="/checkout">
         Checkout
       </Link>
@@ -47,11 +59,11 @@ const Nav = (props) => (
 
 // Instead of taking everything from state, we just want the user
 // object to determine if they are logged in
-// if they are logged in, we show them a few more links 
+// if they are logged in, we show them a few more links
 // if you wanted you could write this code like this:
 // const mapStateToProps = ({ user }) => ({ user });
 const mapStateToProps = state => ({
-  state,
+  state
 });
 
 export default connect(mapStateToProps)(Nav);

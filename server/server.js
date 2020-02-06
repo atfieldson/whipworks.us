@@ -10,18 +10,19 @@ const passport = require("./strategies/user.strategy");
 
 //Forces all URL's to redirect to https://
 
-app.get('*', function(req, res, next) {
-  if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect('https://www.whipworks.com'+req.url);
+app.get("*", function(req, res, next) {
+  if (req.headers["x-forwarded-proto"] !== "https") {
+    return res.redirect("https://www.whipworks.com" + req.url);
   } else {
-  return next();
-}
-})
+    return next();
+  }
+});
 
 // Route includes
 const userRouter = require("./routes/user.router");
 const designRouter = require("./routes/design.router");
 const orderRouter = require("./routes/order.router");
+const contactRouter = require("./routes/contact.router");
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -38,6 +39,7 @@ app.use(passport.session());
 app.use("/api/user", userRouter);
 app.use("/design", designRouter);
 app.use("/order", orderRouter);
+app.use("/contact", contactRouter);
 
 // Serve static files
 app.use(express.static("build"));
