@@ -103,7 +103,7 @@ let nodemailerPeon = {
 
       let mailOptions = {
         from: '"Adam Fieldson" <atfieldson@gmail.com>', // sender address
-        to: to || "atfieldson@gmail.com", // list of receivers
+        to: "atfieldson@gmail.com", // list of receivers
         cc: '"Adam Fieldson" <atfieldson@gmail.com>',
         subject: "Contact form submission",
         text: html, // plain text body

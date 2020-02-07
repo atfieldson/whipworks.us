@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
       res.sendStatus(400);
       return;
     }
+
     await nodemailerPeon.sendContactEmail(name, email, message);
     res.sendStatus(204);
   } catch (err) {
