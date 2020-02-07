@@ -9,7 +9,8 @@ class Contact extends Component {
     errorMessage: ""
   };
 
-  handleSubmit = () => {
+  handleSubmit = e => {
+    e.preventDefault();
     const { email, name, message } = this.state;
     const { dispatch } = this.props;
     if (!email) {
