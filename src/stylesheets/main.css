@@ -268,25 +268,25 @@
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: white;
 }
 
 a {
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
 }
 
 h1 {
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
 }
 
 .montserrat {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .checkoutComponent {
   text-align: center;
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
   min-height: 80vh;
 }
 
@@ -328,7 +328,7 @@ h1 {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .incomplete {
@@ -339,7 +339,7 @@ h1 {
 
 .checkoutContainer {
   text-align: center;
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -350,7 +350,7 @@ h1 {
 }
 
 .shippingForm {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   width: 80%;
 }
 
@@ -394,7 +394,7 @@ h1 {
 }
 
 .cartItem {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   border: 2px solid black;
   border-radius: 2px;
   margin-bottom: 8px;
@@ -424,7 +424,7 @@ ul {
 }
 
 .shippingFormInput {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   margin: 0;
   width: 100%;
   max-width: 100%;
@@ -433,43 +433,45 @@ ul {
 }
 
 .contact-input {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   margin: 0;
   width: 100%;
   max-width: 100%;
   max-height: 40px;
   font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 30px;
 }
 
 .contact-textarea {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   margin: 0;
   width: 100%;
   max-width: 100%;
   font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 30px;
 }
 
 .contact-success {
   color: green;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   margin: 0;
 }
 
 .contact-error {
   color: red;
-  margin: 0;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .contact-label {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   color: darkgray;
-  margin-top: 40px;
-  margin-bottom: 5px;
 }
 
 .contact-container {
   max-width: 600px;
+  margin: 2rem;
 }
 
 .fullNameInput {
@@ -543,7 +545,7 @@ input:-webkit-autofill {
 }
 
 .checkoutButtons {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -557,21 +559,23 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   max-width: 200px;
   margin: 2px;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
   font-size: 14px;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.checkoutButtons:hover, .checkoutButtons:focus {
+.checkoutButtons:hover,
+.checkoutButtons:focus {
   opacity: 1;
   outline: 0;
 }
@@ -662,7 +666,7 @@ input:-webkit-autofill {
 }
 
 .placeOrderModalContainer {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .modalLogo {
@@ -672,7 +676,7 @@ input:-webkit-autofill {
 
 .modalButton {
   border-radius: 5px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -687,16 +691,18 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: 20px;
   width: 200px;
-  opacity: .8;
+  opacity: 0.8;
   margin: 10px;
 }
 
-.modalButton:hover, .modalButton:focus {
+.modalButton:hover,
+.modalButton:focus {
   background: black;
   opacity: 1;
   color: white;
@@ -706,7 +712,7 @@ input:-webkit-autofill {
 }
 
 .currentWaitContainer {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   text-align: center;
   margin: 4px;
   /* border: 5px solid black; */
@@ -714,7 +720,7 @@ input:-webkit-autofill {
 }
 
 .monsterrat {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .paymentInfoContainer {
@@ -767,7 +773,7 @@ input:-webkit-autofill {
 
 .colorButton {
   border-radius: 5px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -783,7 +789,8 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 2px solid white;
@@ -801,7 +808,7 @@ input:-webkit-autofill {
 
 .colorButtonWhite {
   border-radius: 5px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   display: inline-block;
   height: 60px;
   width: 100px;
@@ -817,7 +824,8 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 2px solid white;
@@ -837,11 +845,11 @@ input:-webkit-autofill {
 }
 
 .colorChooserButton {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   height: 60px;
   width: 160px;
   font-size: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -854,12 +862,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .colorChooserButton:hover {
@@ -871,7 +880,7 @@ input:-webkit-autofill {
   height: 60px;
   width: 160px;
   font-size: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -884,7 +893,8 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
@@ -899,7 +909,7 @@ input:-webkit-autofill {
 /* Tooltip text */
 
 .tooltipwax .tooltiptextwax {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   width: 240px;
   bottom: 80px;
   left: -44px;
@@ -1011,7 +1021,7 @@ input:-webkit-autofill {
   height: 100px;
   width: 100px;
   font-size: 10px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1024,12 +1034,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
   background-size: cover;
   margin-bottom: 0;
 }
@@ -1055,10 +1066,9 @@ input:-webkit-autofill {
 }
 
 .contact-button {
-  height: 100px;
-  width: 100px;
-  font-size: 10px;
-  font-family: 'Montserrat';
+  padding: 1.5rem 1rem;
+  font-size: 16px;
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1071,12 +1081,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
   background-size: cover;
   margin-bottom: 0;
 }
@@ -1138,7 +1149,7 @@ input:-webkit-autofill {
 }
 
 .waxedColorPatternColumn h2 {
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
 }
 
 .detailsRenderColumn {
@@ -1207,7 +1218,7 @@ input:-webkit-autofill {
 }
 
 .handleRendererIncompleteMessage {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   position: absolute;
   z-index: 2;
   width: 100%;
@@ -1230,7 +1241,7 @@ input:-webkit-autofill {
   font-size: 50px;
   color: black;
   opacity: 1;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .rowToColumnDesign {
@@ -1408,7 +1419,7 @@ input:-webkit-autofill {
   height: 100%;
   width: 100%;
   font-size: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1421,12 +1432,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .renderButton:hover {
@@ -1438,7 +1450,7 @@ input:-webkit-autofill {
   height: 100%;
   width: 100%;
   font-size: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1451,12 +1463,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
   cursor: default;
 }
 
@@ -1466,7 +1479,7 @@ input:-webkit-autofill {
 }
 
 .inactiveRenderButton:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 @media (max-width: 500px) {
@@ -1499,7 +1512,7 @@ input:-webkit-autofill {
   height: 50px;
   width: 200px;
   font-size: 1rem;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1512,13 +1525,14 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
-  font-family: 'Montserrat';
+  opacity: 0.8;
+  font-family: "Montserrat";
   opacity: 1;
   background-size: cover;
   border: 2px solid white;
@@ -1583,7 +1597,7 @@ input:-webkit-autofill {
   margin: auto;
   text-align: center;
   margin-top: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .aboutBullwhipContainer p {
@@ -1593,11 +1607,11 @@ input:-webkit-autofill {
 }
 
 .aboutBullwhipContainer p a {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .aboutBullwhipContainer h2 {
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
 }
 
 .aboutBullwhipContainerPicContainer {
@@ -1703,7 +1717,7 @@ input:-webkit-autofill {
   height: 60px;
   width: 100px;
   font-size: 16px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1716,12 +1730,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .lengthButton:hover {
@@ -1735,7 +1750,7 @@ input:-webkit-autofill {
 }
 
 .tooltiplength .tooltiptextlength {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   width: 220px;
   bottom: 80px;
   left: -60px;
@@ -1832,7 +1847,7 @@ input:-webkit-autofill {
 }
 
 .tooltipRender .inactiveRenderButtonToolTip {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   width: 100%;
   bottom: 104%;
   left: -2%;
@@ -1877,14 +1892,14 @@ input:-webkit-autofill {
 }
 
 .yourWhip h2 {
-  font-family: 'BioRhyme', serif;
+  font-family: "BioRhyme", serif;
 }
 
 .yourWhipButtons {
   height: 60px;
   width: 160px;
   font-size: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   background-color: black;
   border-radius: 5px;
   display: inline-block;
@@ -1897,12 +1912,13 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .yourWhipButtons:hover {
@@ -1918,7 +1934,7 @@ input:-webkit-autofill {
 /* Tooltip text */
 
 .tooltipAddToCart .tooltiptextAddToCart {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   width: 200px;
   bottom: 65px;
   left: 0px;
@@ -1985,7 +2001,7 @@ input:-webkit-autofill {
 .yourWhipButtonsInactive {
   background-color: black;
   border-radius: 5px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   height: 60px;
   width: 160px;
   text-decoration: none;
@@ -1994,13 +2010,14 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 1px solid black;
   outline: 0;
   margin: 2px;
-  opacity: .8;
+  opacity: 0.8;
   font-size: 20px;
 }
 
@@ -2097,7 +2114,8 @@ input:-webkit-autofill {
   -webkit-transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, -webkit-transform 150ms ease;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  transition: background 250ms ease-in-out, transform 150ms ease, -webkit-transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease,
+    -webkit-transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }

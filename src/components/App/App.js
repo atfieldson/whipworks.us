@@ -24,6 +24,7 @@ import Gallery from "../Gallery/Gallery";
 import WhipmakingMaterials from "../WhipmakingMaterials/WhipmakingMaterials";
 import Video from "../Video/Video";
 import Checkout from "../Checkout/Checkout";
+import Contact from "../Contact/Contact";
 
 ReactGA.initialize("UA-131520101-1");
 
@@ -63,6 +64,7 @@ class App extends Component {
             <Route exact path="/materials" component={WhipmakingMaterials} />
             <Route exact path="/video" component={Video} />
             <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/contact" component={Contact} />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>
