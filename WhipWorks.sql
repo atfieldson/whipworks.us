@@ -119,7 +119,7 @@ VALUES
 ('pirate skull', 10, 'silver', 'pirateSkullSilver.jpg'),
 ('ram', 10, 'silver', 'ramSilver.jpg'),
 ('yin and yang', 10, 'silver', 'yinAndYangSilver.jpg'),
--- ('dragon pommel', 70, 'silver', 'dragonPommel.jpg'),
+-- ('dragon pommel', 120, 'silver', 'dragonPommel.jpg'),
 ('wolf pommel', 120, 'silver', 'wolfPommel.jpg'),
 ('cobra pommel', 120, 'silver', 'cobraPommel.jpg');
 

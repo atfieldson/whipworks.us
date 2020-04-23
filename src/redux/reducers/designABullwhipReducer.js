@@ -239,7 +239,7 @@ const colorsReducer = (state = [], action) => {
 const handlesReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_HANDLES':
-      console.log(action.payload);
+      // console.log(action.payload);
       return action.payload;
     default:
       return state
@@ -267,7 +267,13 @@ const handleLengthsReducer = (state = [], action) => {
 const conchosReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_CONCHOS':
-      return action.payload;
+      let conchos = []
+      action.payload.map(concho => {
+        if (concho.in_stock > 0) {
+          conchos.push(concho);
+        }
+      });
+      return conchos;
     default:
       return state
   }
